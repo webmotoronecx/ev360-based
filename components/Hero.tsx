@@ -4,9 +4,9 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import Link from "next/link";
 import { BrandMarquee } from "./BrandMarquee";
-import { siteConfig } from "@/config/site.config";
+import type { SiteConfig } from "@/config/site.config";
 
-export function Hero() {
+export function Hero({ content }: { content: Pick<SiteConfig, "hero" | "primaryCta" | "secondaryCta" | "brandMarquee"> }) {
   const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -16,7 +16,7 @@ export function Hero() {
   const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
   const heroOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.2]);
 
-  const { hero, primaryCta, secondaryCta } = siteConfig;
+  const { hero, primaryCta, secondaryCta, brandMarquee } = content;
 
   return (
     <section
@@ -94,7 +94,7 @@ export function Hero() {
 
       {/* Brand marquee at bottom */}
       <div className="absolute bottom-0 left-0 right-0 z-20">
-        <BrandMarquee />
+        <BrandMarquee content={brandMarquee} />
       </div>
     </section>
   );

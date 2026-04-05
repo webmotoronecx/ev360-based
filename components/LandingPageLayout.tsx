@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 import { ChevronRight } from 'lucide-react';
 import Link from "next/link";
 import { Footer } from '@/components/Footer';
-import { Navigation } from '@/components/Navigation';
+
 import { ReportPreview } from '@/components/ReportPreview';
 import { TiltCard } from '@/components/TiltCard';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
@@ -44,7 +44,7 @@ export function LandingPageLayout({
 }: LandingPageProps) {
   return (
     <div className="min-h-screen bg-white">
-      <Navigation />
+      
       
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 bg-black overflow-hidden" data-nav-theme="dark">

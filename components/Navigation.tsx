@@ -4,11 +4,10 @@ import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { siteConfig } from "@/config/site.config";
+import type { SiteConfig } from "@/config/site.config";
 
-export function Navigation() {
+export function Navigation({ content }: { content: Pick<SiteConfig, "nav" | "primaryCta" | "logo"> }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDarkBackground, setIsDarkBackground] = useState(true);
@@ -50,7 +49,7 @@ export function Navigation() {
     setIsMobileMenuOpen(false);
   }, [pathname]);
 
-  const { nav, primaryCta, logo } = siteConfig;
+  const { nav, primaryCta, logo } = content;
 
   return (
     <>
@@ -81,13 +80,11 @@ export function Navigation() {
                 className="flex items-center gap-2"
                 whileHover={{ scale: 1.05 }}
               >
-                <Image
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src={logo.src}
                   alt={logo.alt}
-                  width={120}
-                  height={32}
                   className={`${logo.heightClass} w-auto`}
-                  priority
                 />
               </motion.div>
             </Link>

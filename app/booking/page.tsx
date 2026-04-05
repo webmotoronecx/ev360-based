@@ -1,6 +1,6 @@
 "use client";
 
-import { Navigation } from '@/components/Navigation';
+
 import { Footer } from '@/components/Footer';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { motion } from 'motion/react';
@@ -74,7 +74,7 @@ export default function Page() {
   if (isSubmitted) {
     return (
       <div className="min-h-screen bg-white">
-        <Navigation />
+        
         
         <section className="pt-48 pb-24 min-h-screen flex items-center bg-white" data-nav-theme="light">
           <div className="max-w-[800px] mx-auto px-8 w-full">
@@ -148,7 +148,7 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navigation />
+      
 
       {/* Hero Section */}
       <section className="relative pt-48 pb-24 flex items-center justify-center overflow-hidden bg-white" data-nav-theme="light">

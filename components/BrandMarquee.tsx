@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "motion/react";
-import { siteConfig } from "@/config/site.config";
+import type { SiteConfig } from "@/config/site.config";
 
-export function BrandMarquee() {
-  const { eyebrow, brands } = siteConfig.brandMarquee;
+export function BrandMarquee({ content }: { content: SiteConfig["brandMarquee"] }) {
+  const { eyebrow, brands } = content;
   // Triple for seamless infinite scroll
   const duplicatedBrands = [...brands, ...brands, ...brands];
 
