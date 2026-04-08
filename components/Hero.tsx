@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { BrandMarquee } from "./BrandMarquee";
 import { siteConfig } from "@/config/site.config";
@@ -17,6 +17,18 @@ export function Hero() {
   const heroOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.2]);
 
   const { hero, primaryCta, secondaryCta } = siteConfig;
+  const images = hero.backgroundImages;
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextImage = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  }, [images.length]);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const timer = setInterval(nextImage, hero.rotationInterval * 1000);
+    return () => clearInterval(timer);
+  }, [images.length, hero.rotationInterval, nextImage]);
 
   return (
     <section
@@ -24,21 +36,28 @@ export function Hero() {
       className="relative w-full min-h-[85vh] flex items-center justify-center overflow-hidden"
       data-nav-theme={hero.theme}
     >
-      {/* Background with parallax */}
+      {/* Rotating background images with parallax */}
       <motion.div
         className="absolute inset-0"
         style={{ scale: heroScale, opacity: heroOpacity }}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={hero.backgroundImage}
-          alt=""
-          className="w-full h-full object-cover"
-        />
+        <AnimatePresence mode="popLayout">
+          <motion.img
+            key={currentIndex}
+            src={images[currentIndex]}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          />
+        </AnimatePresence>
+
         {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 z-[1]" />
         <div
-          className="absolute inset-0 opacity-40 mix-blend-overlay"
+          className="absolute inset-0 opacity-40 mix-blend-overlay z-[1]"
           style={{
             background:
               "radial-gradient(circle at center, var(--brand-primary) 0%, transparent 70%)",

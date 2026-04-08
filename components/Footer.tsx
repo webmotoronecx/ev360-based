@@ -3,7 +3,7 @@
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { motion } from "motion/react";
 import Link from "next/link";
-const logoSvg = '/brand/logo.svg';
+const logoSrc = '/brand/logo.png';
 
 export function Footer() {
   return (
@@ -85,7 +85,7 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-16 mb-16">
             {/* Brand */}
             <div className="space-y-6">
-              <img src={logoSvg} alt="EV360 Logo" className="h-8" />
+              <img src={logoSrc} alt="Autel Logo" className="h-8" />
               <p className="text-zinc-500 leading-relaxed text-sm">
                 Australia's benchmark for EV battery health transparency.
               </p>
@@ -149,7 +149,7 @@ export function Footer() {
 
           {/* Bottom Bar */}
           <div className="pt-8 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-xs text-zinc-600 font-mono">© 2025 EV360. ALL RIGHTS RESERVED.</p>
+            <p className="text-xs text-zinc-600 font-mono">© {new Date().getFullYear()} Autel. ALL RIGHTS RESERVED.</p>
             <div className="flex flex-wrap justify-center gap-8 text-xs font-mono uppercase tracking-wider">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)]">Instagram</a>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)]">Facebook</a>

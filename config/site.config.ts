@@ -50,8 +50,10 @@ export type SiteConfig = {
   hero: {
     headline: string;
     sub: string;
-    /** Image in /public (used as background) */
-    backgroundImage: string;
+    /** Array of background images — rotates with fade if more than one */
+    backgroundImages: string[];
+    /** Seconds between each image transition */
+    rotationInterval: number;
     /** data-nav-theme signal for the Navigation scroll detector */
     theme: "dark" | "light";
   };
@@ -64,14 +66,14 @@ export type SiteConfig = {
 };
 
 export const siteConfig: SiteConfig = {
-  name: "EV360",
+  name: "Autel",
   tagline: "360° EV battery health checks",
   description:
     "Complete battery assessments, delivered at your home, workplace, or our service centre.",
 
   logo: {
-    src: "/brand/logo.svg",
-    alt: "EV360",
+    src: "/brand/logo.png",
+    alt: "Autel",
     heightClass: "h-8",
   },
 
@@ -88,7 +90,11 @@ export const siteConfig: SiteConfig = {
   hero: {
     headline: "360° EV battery health checks. Starting from $199*",
     sub: "Complete battery assessments, delivered at your home, workplace, or our service centre.",
-    backgroundImage: "/assets/a1d6942ee887e7e369119006a92beb2d4a36fb01.png",
+    backgroundImages: [
+      "/assets/hero-byd.png",
+      "/assets/hero-mercedes.png",
+    ],
+    rotationInterval: 6,
     theme: "dark",
   },
 
@@ -96,19 +102,23 @@ export const siteConfig: SiteConfig = {
     eyebrow: "Supporting all EV brands",
     brands: [
       { name: "Tesla", url: "https://cdn.simpleicons.org/tesla/ffffff" },
-      { name: "BYD", url: "https://www.carlogos.org/logo/BYD-logo-2007-2560x1440.png", invert: true },
+      { name: "BYD", url: "/brand/marquee/byd.svg" },
       { name: "MG", url: "https://cdn.simpleicons.org/mg/ffffff" },
       { name: "Hyundai", url: "https://cdn.simpleicons.org/hyundai/ffffff" },
       { name: "Kia", url: "https://cdn.simpleicons.org/kia/ffffff" },
       { name: "Nissan", url: "https://cdn.simpleicons.org/nissan/ffffff" },
       { name: "BMW", url: "https://cdn.simpleicons.org/bmw/ffffff" },
-      { name: "Mercedes", url: "https://www.carlogos.org/logo/Mercedes-Benz-logo-2011-1920x1080.png", invert: true },
+      { name: "Mercedes", url: "/brand/marquee/mercedes.svg" },
       { name: "Audi", url: "https://cdn.simpleicons.org/audi/ffffff" },
       { name: "Volkswagen", url: "https://cdn.simpleicons.org/volkswagen/ffffff" },
       { name: "Polestar", url: "https://cdn.simpleicons.org/polestar/ffffff" },
       { name: "Volvo", url: "https://cdn.simpleicons.org/volvo/ffffff" },
       { name: "Porsche", url: "https://cdn.simpleicons.org/porsche/ffffff" },
       { name: "Ford", url: "https://cdn.simpleicons.org/ford/ffffff" },
+      { name: "GWM", url: "/brand/marquee/gwm.svg" },
+      { name: "Geely", url: "/brand/marquee/geely.svg" },
+      { name: "Zeekr", url: "/brand/marquee/zeekr.svg" },
+      { name: "CARA", url: "/brand/marquee/cara.png" },
     ],
   },
 };
