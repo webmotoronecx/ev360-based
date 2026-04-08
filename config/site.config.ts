@@ -66,14 +66,14 @@ export type SiteConfig = {
 };
 
 export const siteConfig: SiteConfig = {
-  name: "Autel",
+  name: "EV360",
   tagline: "360° EV battery health checks",
   description:
     "Complete battery assessments, delivered at your home, workplace, or our service centre.",
 
   logo: {
-    src: "/brand/logo.png",
-    alt: "Autel",
+    src: "/brand/logo.svg",
+    alt: "EV360",
     heightClass: "h-8",
   },
 
