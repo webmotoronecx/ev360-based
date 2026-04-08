@@ -1,8 +1,9 @@
 "use client";
 
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
-import { motion } from "motion/react";
-import Link from "next/link";
+import { motion } from 'motion/react';
+import Link from 'next/link';
+
 const logoSrc = '/brand/logo.svg';
 
 export function Footer() {
@@ -10,21 +11,21 @@ export function Footer() {
     <div className="relative pb-16 bg-black overflow-hidden" data-nav-theme="dark">
       {/* Background Image for entire section including bottom padding */}
       <div className="absolute inset-0">
-        <ImageWithFallback 
-          src="/assets/cta-background.png"
-          alt="EV360 technician with customer"
+        <ImageWithFallback
+          src="https://images.unsplash.com/photo-1739167378790-836fc651869c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHZlaGljbGUlMjBzdW5zZXQlMjByb2FkfGVufDF8fHx8MTc2NDEyNzIwMXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+          alt="Electric vehicle on scenic road"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
       </div>
-      
+
       {/* CTA Background Section */}
       <section className="relative py-64 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="/assets/cta-background.png"
-            alt="EV360 technician with customer"
+            src="https://images.unsplash.com/photo-1739167378790-836fc651869c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHZlaGljbGUlMjBzdW5zZXQlMjByb2FkfGVufDF8fHx8MTc2NDEyNzIwMXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            alt="Electric vehicle on scenic road"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
@@ -32,7 +33,7 @@ export function Footer() {
 
         {/* CTA Content */}
         <div className="relative z-10 max-w-[1440px] mx-auto px-8 lg:px-16 text-center">
-          <motion.h2 
+          <motion.h2
             className="text-4xl md:text-5xl font-light text-white tracking-tight leading-[1.1] mb-6 max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +42,7 @@ export function Footer() {
           >
             Ready to check your EV?
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-base md:text-lg text-white/90 mx-auto leading-relaxed mb-12 text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +59,7 @@ export function Footer() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <Link href="/booking">
-              <motion.button 
+              <motion.button
                 className="px-8 py-3 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow font-medium hover:bg-[#4B60FF]"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -67,7 +68,7 @@ export function Footer() {
               </motion.button>
             </Link>
             <Link href="/services">
-              <motion.button 
+              <motion.button
                 className="px-6 py-2.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20 smooth-transition font-medium hover:bg-white/20"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -85,6 +86,7 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-16 mb-16">
             {/* Brand */}
             <div className="space-y-6">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={logoSrc} alt="EV360 Logo" className="h-8" />
               <p className="text-zinc-500 leading-relaxed text-sm">
                 Australia&apos;s benchmark for EV battery health transparency.
@@ -169,7 +171,7 @@ export function Footer() {
 
           {/* Bottom Bar */}
           <div className="pt-8 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-xs text-zinc-600 font-mono">© {new Date().getFullYear()} EV360. ALL RIGHTS RESERVED.</p>
+            <p className="text-xs text-zinc-600 font-mono">&copy; {new Date().getFullYear()} EV360. ALL RIGHTS RESERVED.</p>
             <div className="flex flex-wrap justify-center gap-8 text-xs font-mono uppercase tracking-wider">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)]">Instagram</a>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)]">Facebook</a>

@@ -5,13 +5,14 @@ import { ArrowRight } from 'lucide-react';
 import { TiltCard } from '@/components/TiltCard';
 import { motion } from 'motion/react';
 
-interface EditorialCardProps {
+export interface EditorialCardProps {
   image: string;
   title: string;
   description: string;
+  delay?: number;
 }
 
-export function EditorialCard({ image, title, description }: EditorialCardProps) {
+export function EditorialCard({ image, title, description, delay = 0 }: EditorialCardProps) {
   return (
     <TiltCard className="group cursor-pointer smooth-transition h-full" tiltStrength={8}>
       <div className="bg-zinc-900 border border-white/5 rounded-[2rem] overflow-hidden h-full flex flex-col p-6 hover:border-[var(--brand-primary)]/30 transition-colors">

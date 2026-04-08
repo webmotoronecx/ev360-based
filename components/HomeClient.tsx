@@ -6,8 +6,8 @@ import { EditorialCard } from '@/components/EditorialCard';
 import { ReviewCard } from '@/components/ReviewCard';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { CheckCircle, ShieldCheck, Users, Award, ChevronRight, ArrowUpRight, ArrowRight, Zap, Battery, CarFront, Lock } from 'lucide-react';
-import { motion } from 'motion/react';
-import { useState } from 'react';
+import { motion, useScroll, useTransform } from 'motion/react';
+import { useRef, useState } from 'react';
 import Link from "next/link";
 import { ScrollProgress } from '@/components/ScrollProgress';
 import { AnimatedCounter } from '@/components/AnimatedCounter';
@@ -17,7 +17,6 @@ import { TiltCard } from '@/components/TiltCard';
 import { TextReveal, LineReveal } from '@/components/TextReveal';
 import { ParticleBackground } from '@/components/GridBackground';
 import { BrandMarquee } from '@/components/BrandMarquee';
-import { Hero } from '@/components/Hero';
 import { ReportPreview } from '@/components/ReportPreview';
 import { TrustedTechnology } from '@/components/TrustedTechnology';
 import { BusinessSolutions } from '@/components/BusinessSolutions';
@@ -28,8 +27,18 @@ const batteryValueImage = '/assets/22eb057b3bbdadb4a8847fef1f98c5cd56dd25b2.png'
 const reportImage = '/assets/f82e310949ec251e9d18c8d2dff33e9d24a0cc54.png';
 
 export function HomeClient() {
+  const heroRef = useRef(null);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [activeProblem, setActiveProblem] = useState(0);
+
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+
+  const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.2]);
+  const textY = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
   const problemCards = [
     {
@@ -87,7 +96,82 @@ export function HomeClient() {
   return (
     <div className="min-h-screen bg-white">
       <ScrollProgress />
-      <Hero />
+
+      {/* Hero Section - Fixed */}
+      <section ref={heroRef} className="fixed top-0 left-0 w-full h-[85vh] flex items-center justify-center overflow-hidden z-0" data-nav-theme="dark">
+        {/* Background Video with Parallax */}
+        <motion.div
+          className="absolute inset-0"
+          style={{ scale: heroScale, opacity: heroOpacity }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/assets/a1d6942ee887e7e369119006a92beb2d4a36fb01.png"
+            alt="Hero background"
+            className="w-full h-full object-cover"
+          />
+          {/* Gradient Overlays */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
+          <div
+            className="absolute inset-0 opacity-40 mix-blend-overlay"
+            style={{
+              background: 'radial-gradient(circle at center, #334AFF 0%, transparent 70%)',
+            }}
+          />
+        </motion.div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-[1440px] mx-auto px-8 lg:px-16 text-center">
+          <div className="space-y-8 max-w-4xl mx-auto">
+            <motion.h1
+              className="text-5xl md:text-6xl font-light text-white tracking-tight leading-[1.1]"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+            >
+              360° EV battery health checks. Starting from $199*
+            </motion.h1>
+            <motion.p
+              className="text-base md:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+            >Complete battery assessments, delivered at your home, workplace, or our service centre.</motion.p>
+            <motion.div
+              className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.9, ease: "easeOut" }}
+            >
+              <Link href="/booking">
+                <motion.button
+                  className="px-8 py-3 rounded-full bg-[var(--brand-primary)] text-white font-medium smooth-transition hover:shadow-[0_0_30px_rgba(51,74,255,0.4)] hover:bg-[#4B60FF]"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Check My EV
+                </motion.button>
+              </Link>
+              <Link href="/how-it-works">
+                <motion.button
+                  className="px-6 py-3 rounded-full border border-white/20 text-white font-medium hover:bg-white/10 transition-colors backdrop-blur-md"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  How It Works
+                </motion.button>
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Brand Marquee Overlay */}
+        <div className="absolute bottom-0 left-0 right-0 z-20">
+          <BrandMarquee />
+        </div>
+      </section>
+
+      {/* Spacer to push content below hero */}
+      <div className="h-[85vh]" />
 
       {/* Content Wrapper - scrolls over hero */}
       <div className="relative z-10 bg-white">
@@ -237,7 +321,7 @@ export function HomeClient() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 }}
                 >
-                  <Link href="/full-ev-diagnostics" className="block h-full w-full p-6 flex flex-col justify-between">
+                  <Link href="/diagnostics" className="block h-full w-full p-6 flex flex-col justify-between">
                     <Battery className="w-8 h-8 text-[#334AFF]" />
                     <div>
                       <h4 className="text-white font-medium mb-1">Range Analysis</h4>
@@ -254,7 +338,7 @@ export function HomeClient() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 }}
                 >
-                  <Link href="/full-ev-diagnostics" className="block h-full w-full p-6 flex flex-col justify-between">
+                  <Link href="/diagnostics" className="block h-full w-full p-6 flex flex-col justify-between">
                     <ShieldCheck className="w-8 h-8 text-[#334AFF]" />
                     <div>
                       <h4 className="text-white font-medium mb-1">Warranty Audit</h4>
@@ -617,6 +701,7 @@ export function HomeClient() {
                 image={card.image}
                 title={card.title}
                 description={card.description}
+                delay={index * 0.1}
               />
             ))}
           </div>
