@@ -5,14 +5,14 @@ import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { motion } from 'motion/react';
 import { Battery, TrendingDown, Zap, ThermometerSun, AlertTriangle, ShieldCheck } from 'lucide-react';
 import { ScrollProgress } from '@/components/ScrollProgress';
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Page() {
   const guideTopics = [
     {
       icon: Battery,
       title: "Understanding Battery Health",
-      content: "Your EV's battery is its most valuable component. State of Health (SOH) measures the current capacity compared to when new. A healthy battery should retain 85-90% capacity after 5 years. Factors affecting health include charging habits, temperature exposure, and driving patterns."
+      content: "Your EV\u2019s battery is its most valuable component. State of Health (SOH) measures the current capacity compared to when new. A healthy battery should retain 85-90% capacity after 5 years. Factors affecting health include charging habits, temperature exposure, and driving patterns."
     },
     {
       icon: TrendingDown,
@@ -44,10 +44,10 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-white">
       <ScrollProgress />
-      
+
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <motion.div 
+        <motion.div
           className="absolute inset-0"
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
@@ -72,7 +72,7 @@ export default function Page() {
               EV Battery Health Guide
             </h1>
             <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
-              Everything you need to know about maintaining and understanding your electric vehicle's battery
+              Everything you need to know about maintaining and understanding your electric vehicle&apos;s battery
             </p>
           </motion.div>
         </div>
@@ -93,7 +93,7 @@ export default function Page() {
             </h2>
             <div className="space-y-6 text-lg text-zinc-700 leading-relaxed">
               <p>
-                Your EV's battery is its most expensive and important component, often representing 30-40% of the vehicle's total value. Understanding battery health isn't just about range—it's about protecting your investment, maintaining resale value, and ensuring your vehicle performs as expected.
+                Your EV&apos;s battery is its most expensive and important component, often representing 30-40% of the vehicle&apos;s total value. Understanding battery health isn&apos;t just about range&mdash;it&apos;s about protecting your investment, maintaining resale value, and ensuring your vehicle performs as expected.
               </p>
               <p>
                 Unlike traditional cars where engine wear happens gradually over hundreds of thousands of kilometers, EV battery degradation is influenced by many factors: how you charge, where you drive, and even where you park. The good news? With proper care and regular monitoring, modern EV batteries can last well beyond their warranty periods.
@@ -122,7 +122,7 @@ export default function Page() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
                   <motion.div
-                    className="w-16 h-16 rounded-2xl bg-[var(--brand-light-gray)]/30 flex items-center justify-center"
+                    className="w-16 h-16 rounded-2xl bg-[#eaedff] flex items-center justify-center"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                   >
                     <Icon className="w-8 h-8 text-[var(--electric-green)]" />
@@ -156,7 +156,7 @@ export default function Page() {
               <div>
                 <h3 className="text-2xl text-zinc-900 mb-4">What is SOH?</h3>
                 <p>
-                  State of Health (SOH) is expressed as a percentage comparing your battery's current maximum capacity to its original capacity when new. For example, a battery with 90% SOH can store 90% of the energy it could when brand new.
+                  State of Health (SOH) is expressed as a percentage comparing your battery&apos;s current maximum capacity to its original capacity when new. For example, a battery with 90% SOH can store 90% of the energy it could when brand new.
                 </p>
               </div>
 
@@ -164,11 +164,11 @@ export default function Page() {
                 <h4 className="text-xl text-zinc-900 mb-4">SOH Benchmarks:</h4>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
-                    <span className="text-[var(--electric-green)] mt-1">✓</span>
+                    <span className="text-[var(--electric-green)] mt-1">{"\u2713"}</span>
                     <span><strong>95-100% SOH:</strong> Excellent - Battery is like new</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-[var(--electric-green)] mt-1">✓</span>
+                    <span className="text-[var(--electric-green)] mt-1">{"\u2713"}</span>
                     <span><strong>85-94% SOH:</strong> Good - Normal degradation for 3-5 year old vehicles</span>
                   </li>
                   <li className="flex items-start gap-3">
@@ -176,7 +176,7 @@ export default function Page() {
                     <span><strong>75-84% SOH:</strong> Fair - Consider professional assessment</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-red-600 mt-1">✗</span>
+                    <span className="text-red-600 mt-1">{"\u2717"}</span>
                     <span><strong>Below 75% SOH:</strong> Concerning - May affect warranty, requires inspection</span>
                   </li>
                 </ul>
@@ -185,7 +185,7 @@ export default function Page() {
               <div>
                 <h3 className="text-2xl text-zinc-900 mb-4">How We Measure SOH</h3>
                 <p>
-                  Our diagnostic equipment connects directly to your vehicle's battery management system (BMS) to retrieve accurate capacity data. We don't rely on the dashboard display, which can be optimistic. Our professional tools provide the real numbers you need for buying, selling, or maintaining your EV.
+                  Our diagnostic equipment connects directly to your vehicle&apos;s battery management system (BMS) to retrieve accurate capacity data. We don&apos;t rely on the dashboard display, which can be optimistic. Our professional tools provide the real numbers you need for buying, selling, or maintaining your EV.
                 </p>
               </div>
             </div>
@@ -265,27 +265,27 @@ export default function Page() {
               <p>Consider getting a professional battery health check if you:</p>
               <ul className="space-y-4 ml-6">
                 <li className="flex items-start gap-3">
-                  <span className="text-[var(--electric-green)] text-2xl leading-none">•</span>
+                  <span className="text-[var(--electric-green)] text-2xl leading-none">{"\u2022"}</span>
                   <span>Are considering buying a used EV (essential for pre-purchase)</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[var(--electric-green)] text-2xl leading-none">•</span>
+                  <span className="text-[var(--electric-green)] text-2xl leading-none">{"\u2022"}</span>
                   <span>Notice more than 20% range reduction from new</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[var(--electric-green)] text-2xl leading-none">•</span>
+                  <span className="text-[var(--electric-green)] text-2xl leading-none">{"\u2022"}</span>
                   <span>Are approaching warranty expiration (document baseline health)</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[var(--electric-green)] text-2xl leading-none">•</span>
+                  <span className="text-[var(--electric-green)] text-2xl leading-none">{"\u2022"}</span>
                   <span>Experience unusual charging behavior or battery warnings</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[var(--electric-green)] text-2xl leading-none">•</span>
+                  <span className="text-[var(--electric-green)] text-2xl leading-none">{"\u2022"}</span>
                   <span>Plan to sell your EV (transparency builds buyer confidence)</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[var(--electric-green)] text-2xl leading-none">•</span>
+                  <span className="text-[var(--electric-green)] text-2xl leading-none">{"\u2022"}</span>
                   <span>Want annual health monitoring for peace of mind</span>
                 </li>
               </ul>
@@ -308,12 +308,12 @@ export default function Page() {
               Ready to check your battery health?
             </h2>
             <p className="text-xl text-zinc-600 max-w-2xl mx-auto">
-              Get professional insights into your EV's most valuable component
+              Get professional insights into your EV&apos;s most valuable component
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
               <Link href="/booking">
                 <motion.button
-                  className="px-6 py-2.5 rounded-full bg-[#334AFF] text-white smooth-transition electric-glow"
+                  className="px-6 py-2.5 rounded-full bg-[#334AFF] text-white smooth-transition"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

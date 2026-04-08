@@ -6,7 +6,7 @@ import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import { ScrollProgress } from '@/components/ScrollProgress';
 import { useState } from 'react';
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Page() {
   const [formData, setFormData] = useState({
@@ -33,10 +33,10 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-white">
       <ScrollProgress />
-      
+
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <motion.div 
+        <motion.div
           className="absolute inset-0"
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
@@ -61,7 +61,7 @@ export default function Page() {
               Get in Touch
             </h1>
             <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
-              We're here to answer your questions about EV battery health
+              We&apos;re here to answer your questions about EV battery health
             </p>
           </motion.div>
         </div>
@@ -148,7 +148,7 @@ export default function Page() {
                   Send us a message
                 </h2>
                 <p className="text-xl text-zinc-600 leading-relaxed">
-                  Have a question about our services or need help choosing the right battery health check? Fill out the form and we'll get back to you within 24 hours.
+                  Have a question about our services or need help choosing the right battery health check? Fill out the form and we&apos;ll get back to you within 24 hours.
                 </p>
               </div>
 
@@ -278,7 +278,7 @@ export default function Page() {
 
               <motion.button
                 type="submit"
-                className="w-full py-4 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow flex items-center justify-center gap-2 hover:bg-[#2030cc]"
+                className="w-full py-4 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow flex items-center justify-center gap-2 hover:bg-[#4B60FF]"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >

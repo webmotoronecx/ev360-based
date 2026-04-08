@@ -4,7 +4,7 @@ import { Footer } from '@/components/Footer';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { motion } from 'motion/react';
 import { CheckCircle, Clock, MapPin, FileText } from 'lucide-react';
-import Link from "next/link";
+import Link from 'next/link';
 import { ScrollProgress } from '@/components/ScrollProgress';
 import { TiltCard } from '@/components/TiltCard';
 import { ParallaxImage } from '@/components/ParallaxImage';
@@ -62,10 +62,10 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-white">
       <ScrollProgress />
-      
+
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden" data-nav-theme="dark">
-        <motion.div 
+        <motion.div
           className="absolute inset-0"
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
@@ -99,7 +99,7 @@ export default function Page() {
       {/* Service Packages */}
       <section className="py-32 bg-white" data-nav-theme="light">
         <div className="max-w-[1440px] mx-auto px-8 lg:px-16">
-          <motion.div 
+          <motion.div
             className="text-center mb-20"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -116,7 +116,7 @@ export default function Page() {
 
           <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
             {services.map((service, index) => (
-              <ServiceCard 
+              <ServiceCard
                 key={index}
                 {...service}
                 delay={index * 0.2}
@@ -143,7 +143,7 @@ export default function Page() {
                 <span className="text-[var(--brand-primary)] font-medium">Verified.</span>
               </h2>
               <p className="text-lg text-zinc-400 mb-8 leading-relaxed">
-                Every service includes a detailed digital report. We don't just guess; we interrogate the battery management system to extract the truth about your vehicle's health.
+                Every service includes a detailed digital report. We don&apos;t just guess; we interrogate the battery management system to extract the truth about your vehicle&apos;s health.
               </p>
 
               <ul className="space-y-4 mb-10">
@@ -163,7 +163,7 @@ export default function Page() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                  <Link href="/booking">
-                  <button className="px-8 py-3 rounded-full bg-[var(--brand-primary)] text-white font-medium hover:scale-105 transition-transform w-full sm:w-auto text-center">
+                  <button className="px-8 py-3 rounded-full bg-[var(--brand-primary)] text-white font-medium hover:scale-105 transition-transform w-full sm:w-auto text-center hover:bg-[#4B60FF]">
                     Get Your Report
                   </button>
                  </Link>
@@ -201,7 +201,7 @@ export default function Page() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-4xl font-light mb-6 tracking-tight">
-              What's Included in Every Check
+              What&apos;s Included in Every Check
             </h2>
             <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
               Professional diagnostics and transparent reporting as standard
@@ -242,7 +242,7 @@ export default function Page() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
                   <motion.div
-                    className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[var(--brand-light-gray)]/30"
+                    className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#eaedff]"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                   >
                     <Icon className="w-8 h-8 text-[var(--brand-primary)]" />
@@ -300,7 +300,7 @@ export default function Page() {
               </div>
 
               <motion.button
-                className="px-8 py-4 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow font-medium"
+                className="px-8 py-4 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow font-medium hover:bg-[#4B60FF]"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -344,7 +344,7 @@ export default function Page() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
               <Link href="/how-it-works">
                 <motion.button
-                  className="px-6 py-2.5 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow font-medium"
+                  className="px-6 py-2.5 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow font-medium hover:bg-[#4B60FF]"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

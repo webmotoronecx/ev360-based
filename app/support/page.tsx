@@ -5,7 +5,7 @@ import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { motion } from 'motion/react';
 import { MessageCircle, Phone, Mail, FileText, Calendar, CheckCircle } from 'lucide-react';
 import { ScrollProgress } from '@/components/ScrollProgress';
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Page() {
   const supportOptions = [
@@ -70,7 +70,7 @@ export default function Page() {
       title: "Service Questions",
       questions: [
         "Which service do I need?",
-        "What's included in each package?",
+        "What\u2019s included in each package?",
         "Do you service my EV model?",
         "Is mobile service available in my area?"
       ]
@@ -110,10 +110,10 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-white">
       <ScrollProgress />
-      
+
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <motion.div 
+        <motion.div
           className="absolute inset-0"
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
@@ -135,7 +135,7 @@ export default function Page() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h1 className="text-5xl md:text-6xl font-light text-white tracking-tight leading-[1.1]">
-              We're Here to Help
+              We&apos;re Here to Help
             </h1>
             <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
               Get support from our certified EV battery specialists
@@ -165,8 +165,9 @@ export default function Page() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {supportOptions.map((option, index) => {
               const Icon = option.icon;
-              const isLink = option.link && option.link !== "#";
-              
+              const isInternalLink = option.link.startsWith('/');
+              const isExternalLink = option.link && option.link !== "#";
+
               const CardContent = (
                 <motion.div
                   className="p-8 rounded-2xl border border-zinc-200 smooth-transition hover:border-[var(--electric-green)] hover:shadow-lg space-y-6 h-full flex flex-col"
@@ -179,7 +180,7 @@ export default function Page() {
                   <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--electric-green)]/10 to-[var(--electric-blue)]/10 flex items-center justify-center">
                     <Icon className="w-7 h-7 text-[var(--electric-green)]" />
                   </div>
-                  
+
                   <div className="flex-grow">
                     <h3 className="text-2xl mb-2">{option.title}</h3>
                     <p className="text-zinc-600 mb-4">{option.description}</p>
@@ -188,7 +189,7 @@ export default function Page() {
                   </div>
 
                   <motion.button
-                    className="w-full py-3 rounded-full border-2 border-zinc-300 smooth-transition hover:border-[var(--electric-green)] hover:text-[var(--electric-green)]"
+                    className="w-full py-3 rounded-full bg-[#334AFF] text-white font-medium hover:bg-[#4B60FF] transition-all duration-300"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -197,10 +198,18 @@ export default function Page() {
                 </motion.div>
               );
 
-              return isLink ? (
-                <Link key={index} href={option.link}>
+              if (isInternalLink) {
+                return (
+                  <Link key={index} href={option.link}>
+                    {CardContent}
+                  </Link>
+                );
+              }
+
+              return isExternalLink ? (
+                <a key={index} href={option.link}>
                   {CardContent}
-                </Link>
+                </a>
               ) : (
                 <div key={index}>
                   {CardContent}
@@ -245,7 +254,7 @@ export default function Page() {
                 <ul className="space-y-3">
                   {category.questions.map((question, qIdx) => (
                     <li key={qIdx} className="text-zinc-600 text-sm leading-relaxed flex items-start gap-2">
-                      <span className="text-[var(--electric-green)] mt-1">•</span>
+                      <span className="text-[var(--electric-green)] mt-1">{"\u2022"}</span>
                       <span>{question}</span>
                     </li>
                   ))}
@@ -327,7 +336,7 @@ export default function Page() {
               <div className="pt-4">
                 <a href="tel:1300383360">
                   <motion.button
-                    className="px-8 py-3 rounded-full bg-[#334AFF] text-white smooth-transition electric-glow text-lg"
+                    className="px-8 py-3 rounded-full bg-[#334AFF] text-white smooth-transition text-lg"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

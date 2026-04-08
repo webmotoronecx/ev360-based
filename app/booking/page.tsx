@@ -1,12 +1,11 @@
 "use client";
 
-import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { motion } from 'motion/react';
 import { Calendar, Clock, MapPin, CheckCircle, ChevronRight, ChevronDown, CreditCard, Home, FileText } from 'lucide-react';
 import { useState } from 'react';
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Page() {
   const [step, setStep] = useState(1);
@@ -74,8 +73,7 @@ export default function Page() {
   if (isSubmitted) {
     return (
       <div className="min-h-screen bg-white">
-        <Navigation />
-        
+
         <section className="pt-48 pb-24 min-h-screen flex items-center bg-white" data-nav-theme="light">
           <div className="max-w-[800px] mx-auto px-8 w-full">
             <motion.div
@@ -87,11 +85,11 @@ export default function Page() {
               <div className="w-24 h-24 bg-[var(--brand-primary)]/10 rounded-full flex items-center justify-center mx-auto mb-8 shadow-[0_0_30px_rgba(51,74,255,0.2)]">
                 <CheckCircle className="w-12 h-12 text-[var(--brand-primary)]" />
               </div>
-              
+
               <h1 className="text-5xl md:text-6xl font-light tracking-tight leading-[1.1]">
                 Booking Confirmed!
               </h1>
-              
+
               <p className="text-xl text-zinc-600 max-w-2xl mx-auto leading-relaxed">
                 Thank you, {formData.firstName}. Your {services.find(s => s.id === formData.service)?.name} has been scheduled.
               </p>
@@ -101,7 +99,7 @@ export default function Page() {
                   <FileText className="w-5 h-5 text-[var(--brand-primary)]" />
                   Booking Reference: #EV-{Math.floor(Math.random() * 10000) + 1000}
                 </h3>
-                
+
                 <div className="space-y-4">
                   <div className="flex justify-between py-3 border-b border-zinc-200">
                     <span className="text-zinc-500">Date</span>
@@ -127,7 +125,7 @@ export default function Page() {
                   A confirmation email has been sent to <span className="text-zinc-900 font-medium">{formData.email}</span>
                 </p>
                 <Link href="/">
-                  <motion.button 
+                  <motion.button
                     className="px-8 py-3 rounded-full bg-zinc-900 text-white smooth-transition hover:bg-zinc-800 flex items-center gap-2 mx-auto font-medium"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -148,7 +146,6 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navigation />
 
       {/* Hero Section */}
       <section className="relative pt-48 pb-24 flex items-center justify-center overflow-hidden bg-white" data-nav-theme="light">
@@ -163,7 +160,7 @@ export default function Page() {
               Book Your Check
             </h1>
             <p className="text-base md:text-lg text-zinc-600 max-w-2xl mx-auto leading-relaxed">
-              Choose your service, date and time — we'll take care of the rest
+              Choose your service, date and time &mdash; we&apos;ll take care of the rest
             </p>
           </motion.div>
         </div>
@@ -209,7 +206,7 @@ export default function Page() {
       <section className="py-20 bg-white" data-nav-theme="light">
         <div className="max-w-[1200px] mx-auto px-8">
           <form onSubmit={handleSubmit}>
-            
+
             {/* Step 1: Service Selection */}
             {step === 1 && (
               <motion.div
@@ -220,7 +217,7 @@ export default function Page() {
               >
                 <div className="text-center space-y-4">
                   <h2 className="text-5xl md:text-6xl font-light tracking-tight">Choose Your Service</h2>
-                  <p className="text-zinc-600">Select the health check package that's right for you</p>
+                  <p className="text-zinc-600">Select the health check package that&apos;s right for you</p>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8 max-w-[1100px] mx-auto">
@@ -241,14 +238,14 @@ export default function Page() {
                           Most Popular
                         </div>
                       )}
-                      
+
                       <div className="space-y-6">
                         <div>
                           <h3 className="text-2xl mb-2">{service.name}</h3>
                           <div className="text-4xl font-light text-[var(--brand-primary)] mb-3 font-mono">{service.price}</div>
                           <p className="text-zinc-600 text-sm">{service.description}</p>
                         </div>
-                        
+
                         <div className="pt-6 border-t border-zinc-200">
                           <div className="flex items-center gap-2 text-sm text-zinc-600 font-mono">
                             <Clock className="w-4 h-4" />
@@ -281,7 +278,7 @@ export default function Page() {
 
                 {/* Service Comparison Table */}
                 {showComparison && (
-                  <motion.div 
+                  <motion.div
                     className="max-w-[1100px] mx-auto"
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
@@ -324,8 +321,8 @@ export default function Page() {
                           { feature: 'Warranty Status Verification', essential: false, comprehensive: false, prePurchase: true },
                           { feature: 'Negotiation Support Report', essential: false, comprehensive: false, prePurchase: true }
                         ].map((row, index) => (
-                          <div 
-                            key={index} 
+                          <div
+                            key={index}
                             className={`grid grid-cols-4 border-b border-zinc-200 last:border-b-0 ${index % 2 === 0 ? 'bg-white' : 'bg-zinc-50/50'}`}
                           >
                             <div className="p-6 text-sm text-zinc-700">{row.feature}</div>
@@ -333,21 +330,21 @@ export default function Page() {
                               {row.essential ? (
                                 <CheckCircle className="w-5 h-5 text-[var(--brand-primary)]" />
                               ) : (
-                                <span className="text-zinc-300">—</span>
+                                <span className="text-zinc-300">&mdash;</span>
                               )}
                             </div>
                             <div className="p-6 flex justify-center items-center bg-[var(--brand-light-gray)]/20">
                               {row.comprehensive ? (
                                 <CheckCircle className="w-5 h-5 text-[var(--brand-primary)]" />
                               ) : (
-                                <span className="text-zinc-300">—</span>
+                                <span className="text-zinc-300">&mdash;</span>
                               )}
                             </div>
                             <div className="p-6 flex justify-center items-center">
                               {row.prePurchase ? (
                                 <CheckCircle className="w-5 h-5 text-[var(--brand-primary)]" />
                               ) : (
-                                <span className="text-zinc-300">—</span>
+                                <span className="text-zinc-300">&mdash;</span>
                               )}
                             </div>
                           </div>
@@ -362,7 +359,7 @@ export default function Page() {
                     type="button"
                     onClick={() => formData.service && setStep(2)}
                     disabled={!formData.service}
-                    className="px-8 py-3 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 font-medium hover:bg-[#2030cc]"
+                    className="px-8 py-3 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 font-medium hover:bg-[#4B60FF]"
                     whileHover={formData.service ? { scale: 1.05 } : {}}
                     whileTap={formData.service ? { scale: 0.95 } : {}}
                   >
@@ -382,7 +379,7 @@ export default function Page() {
               >
                 <div className="text-center space-y-4">
                   <h2 className="text-5xl md:text-6xl font-light tracking-tight">Select Date & Time</h2>
-                  <p className="text-zinc-600">Choose when you'd like your battery health check</p>
+                  <p className="text-zinc-600">Choose when you&apos;d like your battery health check</p>
                 </div>
 
                 {/* Service Type Selection */}
@@ -402,7 +399,7 @@ export default function Page() {
                         <MapPin className="w-6 h-6 text-[var(--brand-primary)] flex-shrink-0" />
                         <div>
                           <h3 className="text-xl mb-2">Mobile Service</h3>
-                          <p className="text-sm text-zinc-600">We come to your location — home, work, or anywhere in the metro area</p>
+                          <p className="text-sm text-zinc-600">We come to your location &mdash; home, work, or anywhere in the metro area</p>
                         </div>
                       </div>
                     </motion.div>
@@ -519,7 +516,7 @@ export default function Page() {
                     type="button"
                     onClick={() => formData.date && formData.time && formData.location && setStep(3)}
                     disabled={!formData.date || !formData.time || !formData.location}
-                    className="px-8 py-3 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 font-medium hover:bg-[#2030cc]"
+                    className="px-8 py-3 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 font-medium hover:bg-[#4B60FF]"
                     whileHover={formData.date && formData.time && formData.location ? { scale: 1.05 } : {}}
                     whileTap={formData.date && formData.time && formData.location ? { scale: 0.95 } : {}}
                   >
@@ -634,7 +631,7 @@ export default function Page() {
                         />
                       </div>
                     </div>
-                    
+
                     <div className="space-y-2">
                       <label htmlFor="additionalNotes" className="block text-xs font-mono uppercase tracking-wider text-zinc-500 mb-2">Additional Notes (Optional)</label>
                       <textarea
@@ -661,7 +658,7 @@ export default function Page() {
                   </motion.button>
                   <motion.button
                     type="submit"
-                    className="px-8 py-3 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow flex items-center gap-2 font-medium hover:bg-[#2030cc]"
+                    className="px-8 py-3 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow flex items-center gap-2 font-medium hover:bg-[#4B60FF]"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

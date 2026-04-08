@@ -4,7 +4,7 @@ import { Footer } from '@/components/Footer';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { motion } from 'motion/react';
 import { Building2, Car, Shield, Users, TrendingUp, CheckCircle } from 'lucide-react';
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Page() {
   const partnerTypes = [
@@ -67,7 +67,7 @@ export default function Page() {
     {
       icon: Shield,
       title: "Brand Trust",
-      description: "Association with Australia's leading EV battery health specialists"
+      description: "Association with Australia\u2019s leading EV battery health specialists"
     },
     {
       icon: Users,
@@ -80,7 +80,7 @@ export default function Page() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden" data-nav-theme="dark">
-        <motion.div 
+        <motion.div
           className="absolute inset-0"
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
@@ -105,7 +105,7 @@ export default function Page() {
               Partner With EV360
             </h1>
             <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
-              Join Australia's leading EV battery health assessment network
+              Join Australia&apos;s leading EV battery health assessment network
             </p>
           </motion.div>
         </div>
@@ -114,7 +114,7 @@ export default function Page() {
       {/* Partner Types */}
       <section className="py-32 bg-white" data-nav-theme="light">
         <div className="max-w-[1440px] mx-auto px-8 lg:px-16">
-          <motion.div 
+          <motion.div
             className="text-center mb-20"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -144,7 +144,7 @@ export default function Page() {
                 >
                   <div className="flex items-start gap-6">
                     <motion.div
-                      className="flex-shrink-0 w-16 h-16 rounded-2xl bg-[var(--brand-light-gray)]/30 flex items-center justify-center"
+                      className="flex-shrink-0 w-16 h-16 rounded-2xl bg-[#eaedff] flex items-center justify-center"
                       whileHover={{ scale: 1.1, rotate: 5 }}
                     >
                       <Icon className="w-8 h-8 text-[var(--electric-green)]" />
@@ -201,7 +201,7 @@ export default function Page() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
                   <motion.div
-                    className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white shadow-lg"
+                    className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#ebedff]"
                     whileHover={{ scale: 1.1, y: -5 }}
                   >
                     <Icon className="w-8 h-8 text-[var(--electric-green)]" />
@@ -249,7 +249,7 @@ export default function Page() {
                   Increasing customer confidence by 85%
                 </h2>
                 <p className="text-xl text-zinc-600 leading-relaxed mb-6">
-                  "Since partnering with EV360, we've seen a dramatic increase in used EV sales. The battery health reports give our customers the confidence they need to make purchasing decisions."
+                  &ldquo;Since partnering with EV360, we&apos;ve seen a dramatic increase in used EV sales. The battery health reports give our customers the confidence they need to make purchasing decisions.&rdquo;
                 </p>
                 <div className="pt-6 border-t border-zinc-200">
                   <p className="text-zinc-900">Sarah Mitchell</p>
@@ -310,7 +310,7 @@ export default function Page() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
               >
-                <div className="w-16 h-16 mx-auto rounded-2xl bg-[var(--brand-light-gray)]/30 flex items-center justify-center">
+                <div className="w-16 h-16 mx-auto rounded-2xl bg-[#eaedff] flex items-center justify-center">
                   <span className="text-3xl font-light text-[var(--electric-green)]">{step.num}</span>
                 </div>
                 <h3 className="text-xl">{step.title}</h3>
@@ -335,7 +335,7 @@ export default function Page() {
               Ready to partner with us?
             </h2>
             <p className="text-xl text-zinc-600">
-              Join Australia's leading EV battery health assessment network and grow your business
+              Join Australia&apos;s leading EV battery health assessment network and grow your business
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">

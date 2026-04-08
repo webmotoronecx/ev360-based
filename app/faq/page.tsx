@@ -6,7 +6,7 @@ import { motion } from 'motion/react';
 import { Plus, Minus } from 'lucide-react';
 import { useState } from 'react';
 import { ScrollProgress } from '@/components/ScrollProgress';
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Page() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -17,7 +17,7 @@ export default function Page() {
       questions: [
         {
           q: "What is an EV battery health check?",
-          a: "An EV battery health check is a comprehensive diagnostic assessment that measures your battery's State of Health (SOH), capacity, and overall performance. Our technicians use professional-grade equipment to analyze the battery's current condition and predict future performance."
+          a: "An EV battery health check is a comprehensive diagnostic assessment that measures your battery\u2019s State of Health (SOH), capacity, and overall performance. Our technicians use professional-grade equipment to analyze the battery\u2019s current condition and predict future performance."
         },
         {
           q: "How long does a battery health check take?",
@@ -28,8 +28,8 @@ export default function Page() {
           a: "Yes! We bring our fully equipped mobile diagnostic units to your home, office, or any convenient location across Australia. You can also visit our diagnostic centres if you prefer."
         },
         {
-          q: "What's included in the report?",
-          a: "You'll receive a detailed digital report including battery State of Health (SOH), capacity analysis, diagnostic scan results, charging efficiency metrics, and expert recommendations. All reports are easy to understand with clear visualizations."
+          q: "What\u2019s included in the report?",
+          a: "You\u2019ll receive a detailed digital report including battery State of Health (SOH), capacity analysis, diagnostic scan results, charging efficiency metrics, and expert recommendations. All reports are easy to understand with clear visualizations."
         }
       ]
     },
@@ -59,7 +59,7 @@ export default function Page() {
       questions: [
         {
           q: "What is State of Health (SOH)?",
-          a: "State of Health (SOH) is a measurement that indicates your battery's current capacity compared to when it was new. A 90% SOH means your battery retains 90% of its original capacity. This is one of the key metrics we measure during our checks."
+          a: "State of Health (SOH) is a measurement that indicates your battery\u2019s current capacity compared to when it was new. A 90% SOH means your battery retains 90% of its original capacity. This is one of the key metrics we measure during our checks."
         },
         {
           q: "How much battery degradation is normal?",
@@ -67,7 +67,7 @@ export default function Page() {
         },
         {
           q: "Can battery health be improved?",
-          a: "While you can't reverse degradation, you can slow it down with proper charging habits: avoid frequent fast charging, keep the battery between 20-80%, and minimize exposure to extreme temperatures."
+          a: "While you can\u2019t reverse degradation, you can slow it down with proper charging habits: avoid frequent fast charging, keep the battery between 20-80%, and minimize exposure to extreme temperatures."
         },
         {
           q: "When should I be concerned about my battery?",
@@ -124,10 +124,10 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-white">
       <ScrollProgress />
-      
+
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden" data-nav-theme="dark">
-        <motion.div 
+        <motion.div
           className="absolute inset-0"
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
@@ -164,7 +164,7 @@ export default function Page() {
           <div className="space-y-16">
             {faqs.map((category, categoryIdx) => (
               <div key={categoryIdx}>
-                <motion.h2 
+                <motion.h2
                   className="text-3xl md:text-4xl font-light mb-12 text-zinc-900"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -244,7 +244,7 @@ export default function Page() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
               <Link href="/contact">
                 <motion.button
-                  className="px-6 py-2.5 rounded-full bg-[#334AFF] text-white smooth-transition electric-glow"
+                  className="px-6 py-2.5 rounded-full bg-[#334AFF] text-white smooth-transition"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

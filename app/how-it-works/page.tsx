@@ -3,25 +3,25 @@
 import { Footer } from '@/components/Footer';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { motion, AnimatePresence } from 'motion/react';
-import { Calendar, MapPin, FileCheck, MessageCircle, Battery, Zap, ChevronDown } from 'lucide-react';
-import Link from "next/link";
+import { Calendar, MapPin, FileCheck, MessageCircle, Battery, Zap, ChevronDown, Building, Home } from 'lucide-react';
+import Link from 'next/link';
 import { useState } from 'react';
 
 import { ReportPreview } from '@/components/ReportPreview';
 
 export default function Page() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
-  
+
   const steps = [
     {
       number: "01",
       title: "Choose Your Service",
-      description: "Select the EV health check package that suits your needs—from a quick battery assessment to comprehensive pre-purchase inspection.",
+      description: "Select the EV health check package that suits your needs\u2014from a quick battery assessment to comprehensive pre-purchase inspection.",
       icon: Battery,
       details: [
         "Browse our service packages",
         "Compare features and pricing",
-        "Read what's included",
+        "Read what\u2019s included",
         "Get instant pricing"
       ]
     },
@@ -67,7 +67,7 @@ export default function Page() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden" data-nav-theme="dark">
-        <motion.div 
+        <motion.div
           className="absolute inset-0"
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
@@ -101,7 +101,7 @@ export default function Page() {
       {/* The Process */}
       <section className="py-32 bg-white" data-nav-theme="light">
         <div className="max-w-[1440px] mx-auto px-8 lg:px-16">
-          <motion.div 
+          <motion.div
             className="text-center mb-24"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -134,12 +134,12 @@ export default function Page() {
                   <div className={`space-y-8 ${isEven ? 'md:order-1' : 'md:order-2'}`}>
                     <div className="inline-flex items-center gap-4">
                       <motion.div
-                        className="w-20 h-20 rounded-2xl bg-[var(--brand-light-gray)]/30 flex items-center justify-center"
+                        className="w-20 h-20 rounded-2xl flex items-center justify-center bg-[#eaedff]"
                         whileHover={{ scale: 1.1, rotate: 5 }}
                       >
-                        <Icon className="w-10 h-10 text-[var(--brand-primary)]" />
+                        <Icon className="w-10 h-10 text-[#334AFF]" />
                       </motion.div>
-                      <span className="text-7xl font-extralight text-zinc-200">{step.number}</span>
+                      <span className="text-7xl font-extralight text-[#c7cdff] tracking-tighter">{step.number}</span>
                     </div>
 
                     <div>
@@ -215,17 +215,17 @@ export default function Page() {
           <div className="grid md:grid-cols-3 gap-12">
             {[
               {
-                icon: MapPin,
+                icon: Home,
                 title: "Your Home",
-                desc: "Most convenient option—our mobile unit comes to your driveway with all professional equipment."
+                desc: "Most convenient option\u2014our mobile unit comes to your driveway with all professional equipment."
               },
               {
                 icon: MapPin,
                 title: "Your Workplace",
-                desc: "Schedule during work hours and we'll come to your office car park—no time off needed."
+                desc: "Schedule during work hours and we\u2019ll come to your office car park\u2014no time off needed."
               },
               {
-                icon: MapPin,
+                icon: Building,
                 title: "Our Diagnostic Centre",
                 desc: "Visit our fully equipped facility for the ultimate diagnostic experience with real-time insights."
               }
@@ -242,10 +242,10 @@ export default function Page() {
                   whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
                 >
                   <motion.div
-                    className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[var(--brand-light-gray)]/30"
+                    className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#eaedff]"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                   >
-                    <Icon className="w-8 h-8 text-[var(--brand-primary)]" />
+                    <Icon className="w-8 h-8 text-[#334AFF]" />
                   </motion.div>
                   <h3 className="text-2xl">{location.title}</h3>
                   <p className="text-zinc-600 leading-relaxed">{location.desc}</p>
@@ -286,7 +286,7 @@ export default function Page() {
                   What to expect during your check
                 </h2>
                 <p className="text-xl text-zinc-600 leading-relaxed">
-                  Our professional, transparent approach means you're informed every step of the way.
+                  Our professional, transparent approach means you&apos;re informed every step of the way.
                 </p>
               </div>
 
@@ -342,7 +342,7 @@ export default function Page() {
               },
               {
                 q: "Do I need to be present during the check?",
-                a: "We recommend being present so we can discuss findings and answer questions, but it's not required. We'll provide a detailed report either way."
+                a: "We recommend being present so we can discuss findings and answer questions, but it\u2019s not required. We\u2019ll provide a detailed report either way."
               },
               {
                 q: "What equipment do you use?",
@@ -350,7 +350,7 @@ export default function Page() {
               },
               {
                 q: "When will I receive my report?",
-                a: "Digital reports are delivered within 24 hours of your check, often sooner. You'll receive an email with a secure link to view and download."
+                a: "Digital reports are delivered within 24 hours of your check, often sooner. You\u2019ll receive an email with a secure link to view and download."
               },
               {
                 q: "Is the mobile service the same quality?",

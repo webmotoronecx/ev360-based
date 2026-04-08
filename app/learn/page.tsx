@@ -6,7 +6,7 @@ import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { motion } from 'motion/react';
 import { BookOpen, TrendingUp, Shield, Zap } from 'lucide-react';
 import { useState } from 'react';
-import Link from "next/link";
+import Link from 'next/link';
 import { articles } from '@/lib/data/articles';
 
 export default function Page() {
@@ -41,15 +41,15 @@ export default function Page() {
     }
   ];
 
-  const filteredArticles = selectedCategory === "All" 
-    ? articles 
+  const filteredArticles = selectedCategory === "All"
+    ? articles
     : articles.filter(article => article.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden" data-nav-theme="dark">
-        <motion.div 
+        <motion.div
           className="absolute inset-0"
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
@@ -88,7 +88,7 @@ export default function Page() {
               const Icon = category.icon;
               const isSelected = selectedCategory === category.title;
               const count = categoryCounts[category.title] || 0;
-              
+
               return (
                 <motion.div
                   key={index}
@@ -103,7 +103,7 @@ export default function Page() {
                   whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
                 >
                   <motion.div
-                    className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[var(--brand-light-gray)]/30"
+                    className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#eaedff]"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                   >
                     <Icon className="w-8 h-8" style={{ color: category.color }} />
@@ -120,7 +120,7 @@ export default function Page() {
       {/* Articles Grid */}
       <section className="py-32 bg-white" data-nav-theme="light">
         <div className="max-w-[1440px] mx-auto px-8 lg:px-16">
-          <motion.div 
+          <motion.div
             className="mb-20 flex justify-between items-end"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -132,13 +132,13 @@ export default function Page() {
                 {selectedCategory === "All" ? "Latest Articles" : `${selectedCategory} Articles`}
               </h2>
               <p className="text-xl text-zinc-600 max-w-2xl">
-                {selectedCategory === "All" 
+                {selectedCategory === "All"
                   ? "Everything you need to know about EV battery health, maintenance, and ownership"
                   : `Browse our curated guides about ${selectedCategory.toLowerCase()}`}
               </p>
             </div>
             {selectedCategory !== "All" && (
-              <button 
+              <button
                 onClick={() => setSelectedCategory("All")}
                 className="text-zinc-500 hover:text-[var(--brand-primary)] transition-colors underline underline-offset-4"
               >
@@ -162,7 +162,7 @@ export default function Page() {
               </motion.div>
             ))}
           </div>
-          
+
           {filteredArticles.length === 0 && (
             <div className="text-center py-20 text-zinc-500">
               No articles found in this category.
@@ -199,7 +199,7 @@ export default function Page() {
               />
               <motion.button
                 type="submit"
-                className="px-8 py-4 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow whitespace-nowrap font-medium hover:bg-[#2030cc]"
+                className="px-8 py-4 rounded-full bg-[var(--brand-primary)] text-white smooth-transition whitespace-nowrap font-medium hover:bg-[#4B60FF]"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
