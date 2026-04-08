@@ -59,11 +59,11 @@ export function Footer() {
           >
             <Link href="/booking">
               <motion.button 
-                className="px-8 py-3 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow font-medium"
+                className="px-8 py-3 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow font-medium hover:bg-[#4B60FF]"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Book Battery Check
+                Check My EV
               </motion.button>
             </Link>
             <Link href="/services">
@@ -87,9 +87,29 @@ export function Footer() {
             <div className="space-y-6">
               <img src={logoSrc} alt="EV360 Logo" className="h-8" />
               <p className="text-zinc-500 leading-relaxed text-sm">
-                Australia's benchmark for EV battery health transparency.
+                Australia&apos;s benchmark for EV battery health transparency.
               </p>
-              
+
+              {/* Trust Strip */}
+              <div className="pt-6 border-t border-zinc-800/50 space-y-4">
+                <p className="text-[10px] text-zinc-600 font-mono uppercase tracking-wider">
+                  Backed by trusted EV technology
+                </p>
+                <div className="flex items-center gap-6">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/assets/ef719d3c9d9449aff813a567befa1431ce8b7c5d.png"
+                    alt="Autel"
+                    className="h-4 opacity-40 brightness-0 invert"
+                  />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/assets/4b9bf8f584b0839423911570418f1bfd35f24f01.png"
+                    alt="CARA"
+                    className="h-4 opacity-40 brightness-0 invert"
+                  />
+                </div>
+              </div>
             </div>
             {/* Locations */}
             <div>
@@ -118,7 +138,7 @@ export function Footer() {
               <ul className="space-y-4">
                 <li><Link href="/services" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Battery Health Testing</Link></li>
                 <li><Link href="/services" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Full EV Diagnostics</Link></li>
-                <li><Link href="/services" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Mobile Service</Link></li>
+                <li><Link href="/mobile-services" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Mobile Service</Link></li>
                 <li><Link href="/services" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Diagnostic Centre</Link></li>
               </ul>
             </div>
@@ -130,7 +150,7 @@ export function Footer() {
                 <li><Link href="/about" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">About</Link></li>
                 <li><Link href="/stories" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Customer Stories</Link></li>
                 <li><Link href="/partners" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Partners</Link></li>
-                <li><a href="#" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Careers</a></li>
+                <li><Link href="/careers" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Careers</Link></li>
                 <li><Link href="/contact" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Contact</Link></li>
               </ul>
             </div>
