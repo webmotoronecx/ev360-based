@@ -22,9 +22,9 @@ export function Footer() {
       <section className="relative py-64 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1739167378790-836fc651869c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHZlaGljbGUlMjBzdW5zZXQlMjByb2FkfGVufDF8fHx8MTc2NDEyNzIwMXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Electric vehicle on scenic road"
+          <ImageWithFallback
+            src="/assets/cta-background.png"
+            alt="EV360 technician with customer"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
