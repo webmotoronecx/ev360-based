@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react';
 import Link from 'next/link';
-import { Users, Truck, ShieldCheck, Building2, ChevronRight } from 'lucide-react';
+import { Users, Truck, ChevronRight } from 'lucide-react';
 
 export function BusinessSolutions() {
   const solutions = [
@@ -17,18 +17,6 @@ export function BusinessSolutions() {
       title: "Fleet Managers",
       description: "Maximize residual values and minimize downtime with lifecycle battery tracking.",
       link: "/fleet"
-    },
-    {
-      icon: <ShieldCheck className="w-7 h-7 text-[#334AFF]" />,
-      title: "Insurers",
-      description: "Data-driven risk assessment and claims verification for electric vehicles.",
-      link: "/insurance"
-    },
-    {
-      icon: <Building2 className="w-7 h-7 text-[#334AFF]" />,
-      title: "Strata & Property",
-      description: "Mitigate fire risk and ensure safety compliance for basement charging.",
-      link: "/property"
     }
   ];
 
