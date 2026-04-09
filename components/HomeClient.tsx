@@ -102,8 +102,8 @@ export function HomeClient() {
               <Link href="/buying" className="block h-full w-full">
                 <div className="absolute inset-0">
                   <ImageWithFallback
-                    src="/assets/HomePage.png"
-                    alt="Buying an EV"
+                    src="/assets/hero_buyerspage.png"
+                    alt="Pre-Purchase Verification"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-40"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
@@ -304,9 +304,6 @@ export function HomeClient() {
       {/* Trusted Technology Section */}
       <TrustedTechnology />
 
-      {/* Business Solutions Section */}
-      <BusinessSolutions />
-
       {/* Customer Reviews Section */}
       <section className="relative py-32 bg-black overflow-hidden" data-nav-theme="dark">
         <ParticleBackground />
@@ -418,6 +415,9 @@ export function HomeClient() {
         </div>
       </section>
 
+      {/* Business Solutions Section */}
+      <BusinessSolutions />
+
       {/* Trust & Transparency Section */}
       <section className="py-32 bg-zinc-950" data-nav-theme="dark">
         <div className="max-w-[1440px] mx-auto px-8 lg:px-16">
@@ -437,112 +437,151 @@ export function HomeClient() {
           </motion.div>
 
           {/* Bento Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-            {/* Large Feature Card - Technician at Work */}
+            {/* Row 1: Large Feature Card + Right Column */}
+            {/* Large Feature Card - Technician at Work (spans 2 cols, 2 rows) */}
             <motion.div
-              className="md:col-span-2 lg:col-span-2 lg:row-span-2 relative overflow-hidden rounded-[2rem] group min-h-[400px] lg:min-h-[600px] border border-white/5"
+              className="lg:col-span-2 lg:row-span-2 relative overflow-hidden rounded-[2rem] group h-[600px] border border-white/5"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6 }}
             >
-              <TiltCard className="h-full">
-                <div className="relative h-full overflow-hidden rounded-[2rem]">
-                  <ImageWithFallback
-                    src={technicianImage}
-                    alt="EV technician performing diagnostic"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-10">
-                    <div className="inline-flex items-center gap-1.5 mb-3 px-3 py-1.5 rounded-full bg-[#334AFF]">
-                      <Award className="w-4 h-4 text-white" />
-                      <span className="text-xs text-white uppercase tracking-wider font-mono">Certified Expertise</span>
-                    </div>
-                    <h3 className="text-3xl md:text-4xl font-light text-white mb-3">
-                      Trained EV specialists
-                    </h3>
-                    <p className="text-zinc-300 leading-relaxed max-w-md">
-                      Our certified technicians bring deep expertise in EV battery systems and diagnostics.
-                    </p>
+              <div className="relative h-full overflow-hidden rounded-[2rem]">
+                <ImageWithFallback
+                  src={technicianImage}
+                  alt="EV technician performing diagnostic"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-10">
+                  <div className="inline-flex items-center gap-1.5 mb-3 px-3 py-1.5 rounded-full bg-[#334AFF]">
+                    <Award className="w-4 h-4 text-white" />
+                    <span className="text-xs text-white uppercase tracking-[0.6px] font-mono">Certified Expertise</span>
                   </div>
+                  <h3 className="text-4xl font-light text-white mb-3">
+                    Trained EV specialists
+                  </h3>
+                  <p className="text-zinc-300 leading-relaxed max-w-md">
+                    Our certified technicians bring deep expertise in EV battery systems and diagnostics.
+                  </p>
                 </div>
-              </TiltCard>
+              </div>
             </motion.div>
 
-            {/* Stat Card - EVs Inspected */}
+            {/* Stat Card - 500+ EVs Inspected */}
             <motion.div
-              className="relative overflow-hidden rounded-[2rem] min-h-[280px] border border-white/5"
+              className="relative overflow-hidden rounded-[2rem] h-[288px] border border-white/5"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <TiltCard className="h-full">
-                <div
-                  className="h-full rounded-[2rem] p-8 flex flex-col justify-center relative overflow-hidden bg-zinc-900/50 backdrop-blur-sm"
-                >
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--brand-primary)]/10 rounded-full blur-3xl mix-blend-screen" />
-                  <div className="relative z-10">
-                    <div className="text-5xl md:text-6xl text-white mb-2 font-mono tracking-tighter">
-                      <AnimatedCounter end={500} duration={2.5} suffix="+" />
-                    </div>
-                    <p className="text-zinc-500 text-sm font-mono uppercase tracking-wider">EVs inspected across Australia</p>
+              <div className="h-full rounded-[2rem] p-8 flex flex-col justify-center relative overflow-hidden bg-zinc-900/50">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-[var(--brand-primary)]/10 rounded-full blur-[64px]" />
+                <div className="relative z-10">
+                  <div className="text-[60px] text-white font-mono tracking-[-3px] leading-none mb-2">
+                    <AnimatedCounter end={500} duration={2.5} suffix="+" />
                   </div>
+                  <p className="text-zinc-500 text-sm font-mono uppercase tracking-[0.7px]">EVs inspected across Australia</p>
                 </div>
-              </TiltCard>
+              </div>
             </motion.div>
 
-            {/* Diagnostic Tools Card */}
+            {/* Professional Tools Card */}
             <motion.div
-              className="relative overflow-hidden rounded-[2rem] min-h-[280px] border border-white/5"
+              className="relative overflow-hidden rounded-[2rem] h-[288px] border border-white/5"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <TiltCard className="h-full">
-                <div
-                  className="h-full rounded-[2rem] p-8 flex flex-col justify-center relative overflow-hidden bg-zinc-900/50 backdrop-blur-sm"
-                >
-                  <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-[var(--brand-primary)]/20 rounded-full blur-2xl" />
-                  <div className="relative z-10">
-                    <ShieldCheck className="w-12 h-12 text-white mb-6" />
-                    <h3 className="text-2xl text-white mb-2 font-light">Professional tools</h3>
-                    <p className="text-zinc-500 font-mono text-xs uppercase tracking-wider">Industry-leading diagnostic equipment</p>
-                  </div>
+              <div className="h-full rounded-[2rem] p-8 flex flex-col justify-center relative overflow-hidden bg-zinc-900/50">
+                <div className="absolute bottom-0 right-0 w-32 h-32 bg-[var(--brand-primary)]/20 rounded-full blur-[40px]" />
+                <div className="relative z-10">
+                  <ShieldCheck className="w-12 h-12 text-white mb-6" />
+                  <h3 className="text-2xl text-white mb-2 font-light">Professional tools</h3>
+                  <p className="text-zinc-500 font-mono text-xs uppercase tracking-[0.6px]">Industry-leading diagnostic equipment</p>
                 </div>
-              </TiltCard>
+              </div>
             </motion.div>
 
-            {/* Mobile Service Card */}
+            {/* Row 2: Three equal cards */}
+            {/* Clear, honest reporting */}
             <motion.div
-              className="md:col-span-2 relative overflow-hidden rounded-[2rem] min-h-[280px] border border-white/5"
+              className="relative overflow-hidden rounded-[2rem] group h-[320px] border border-white/5"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <TiltCard className="h-full">
-                <div className="relative h-full overflow-hidden rounded-[2rem]">
-                  <ImageWithFallback
-                    src={mobileVanImage}
-                    alt="Mobile EV service van"
-                    className="w-full h-full object-cover opacity-40"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
-                  <div className="absolute inset-0 p-8 flex flex-col justify-center">
-                    <Zap className="w-10 h-10 text-[#334AFF] mb-4" />
-                    <h3 className="text-2xl md:text-3xl font-light text-white mb-2">
-                      We come to you
-                    </h3>
-                    <p className="text-zinc-400 max-w-md">
-                      Mobile service available at your home, workplace, or preferred location.
-                    </p>
+              <div className="relative h-full overflow-hidden rounded-[2rem]">
+                <ImageWithFallback
+                  src="/assets/clear-honest-reporting.jpg"
+                  alt="EV charging port"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-10">
+                  <div className="inline-flex items-center gap-1.5 mb-3 px-3 py-1.5 rounded-full bg-[#334AFF]">
+                    <CheckCircle className="w-4 h-4 text-white" />
+                    <span className="text-xs text-white uppercase tracking-[0.6px] font-mono">100% Transparent</span>
                   </div>
+                  <h3 className="text-2xl font-light text-white mb-2">
+                    Clear, honest reporting
+                  </h3>
+                  <p className="text-zinc-300 text-sm leading-relaxed">
+                    No hidden details or conflicts of interest. Just data you can trust.
+                  </p>
                 </div>
-              </TiltCard>
+              </div>
+            </motion.div>
+
+            {/* We come to you */}
+            <motion.div
+              className="relative overflow-hidden rounded-[2rem] group h-[320px] border border-white/5"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <div className="relative h-full overflow-hidden rounded-[2rem]">
+                <ImageWithFallback
+                  src="/assets/we-come-to-you.png"
+                  alt="EV360 mobile service van"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-10">
+                  <div className="inline-flex items-center gap-1.5 mb-3 px-3 py-1.5 rounded-full bg-[#334AFF]">
+                    <Zap className="w-4 h-4 text-white" />
+                    <span className="text-xs text-white uppercase tracking-[0.6px] font-mono">Convenience</span>
+                  </div>
+                  <h3 className="text-2xl font-light text-white">
+                    We come to you
+                  </h3>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* 100% Customer Satisfaction */}
+            <motion.div
+              className="relative overflow-hidden rounded-[2rem] h-[320px] border border-white/5"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              <div className="h-full rounded-[2rem] p-8 flex flex-col justify-center relative overflow-hidden bg-zinc-900/50">
+                <div className="absolute -top-8 -left-8 w-48 h-48 bg-[var(--brand-primary)]/10 rounded-full blur-[64px]" />
+                <div className="relative z-10">
+                  <div className="text-[60px] text-white font-mono tracking-[-3px] leading-none mb-2">
+                    <AnimatedCounter end={100} duration={2} suffix="%" />
+                  </div>
+                  <p className="text-zinc-500 text-sm font-mono uppercase tracking-[0.7px]">Customer satisfaction rate</p>
+                </div>
+              </div>
             </motion.div>
 
           </div>
