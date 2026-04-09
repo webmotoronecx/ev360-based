@@ -46,7 +46,7 @@ export function BusinessEnquiryForm({ type, title, subtitle }: BusinessEnquiryFo
         <p className="text-zinc-600 max-w-lg mx-auto mb-8">
           Thanks for your interest in our {type} solutions. A member of our partnerships team will be in touch within 24 hours to discuss your specific requirements.
         </p>
-        <button 
+        <button
           onClick={() => setIsSuccess(false)}
           className="text-[var(--brand-primary)] font-medium hover:underline"
         >
@@ -136,7 +136,7 @@ export function BusinessEnquiryForm({ type, title, subtitle }: BusinessEnquiryFo
               placeholder="Manager"
             />
           </div>
-          
+
           <div className="space-y-2">
             <label htmlFor="scale" className="text-sm font-medium text-zinc-700">
               {type === 'Dealership' && 'Monthly EV Sales Volume'}
@@ -174,7 +174,7 @@ export function BusinessEnquiryForm({ type, title, subtitle }: BusinessEnquiryFo
         <motion.button
           type="submit"
           disabled={isSubmitting}
-          className="w-full py-4 rounded-full bg-[var(--brand-primary)] text-white font-medium text-lg hover:scale-[1.02] transition-transform flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+          className="w-full py-4 rounded-full bg-[var(--brand-primary)] text-white font-medium text-lg hover:scale-[1.02] transition-transform flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed hover:bg-[#4B60FF]"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >

@@ -701,7 +701,7 @@ export function HomeClient() {
                 image={card.image}
                 title={card.title}
                 description={card.description}
-                delay={index * 0.1}
+
               />
             ))}
           </div>

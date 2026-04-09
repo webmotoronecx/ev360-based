@@ -42,10 +42,15 @@
   --ring: var(--brand-primary);
   --radius: 0.625rem;
 
-  /* Effects */
+  /* Legacy compatibility & functional tokens */
+  --electric-green: var(--brand-primary);
+  --electric-blue: var(--brand-primary);
   --electric-glow: rgba(51, 74, 255, 0.4);
+
   --glass-bg: rgba(255, 255, 255, 0.15);
   --glass-border: rgba(255, 255, 255, 0.5);
+  --warm-gradient-start: rgba(51, 74, 255, 0.2);
+  --warm-gradient-end: rgba(21, 21, 21, 0.15);
 }
 
 .dark {
@@ -111,11 +116,11 @@ code, kbd, samp, pre {
   font-family: var(--font-mono);
 }
 
-/* Glass morphism utility (used by Navigation) */
+/* Custom glass morphism utilities */
 .glass-blur {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(40px) saturate(180%);
-  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  backdrop-filter: blur(200px) saturate(300%);
+  -webkit-backdrop-filter: blur(200px) saturate(300%);
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow:
     0 0 0 0.5px rgba(255, 255, 255, 0.1) inset,

@@ -25,10 +25,10 @@ export function AnimatedCounter({ end, duration = 2, suffix = '', prefix = '', d
     const animate = (currentTime: number) => {
       if (!startTime) startTime = currentTime;
       const progress = Math.min((currentTime - startTime) / (duration * 1000), 1);
-      
+
       // Ease out cubic
       const easeProgress = 1 - Math.pow(1 - progress, 3);
-      
+
       setCount(startValue + (end - startValue) * easeProgress);
 
       if (progress < 1) {
@@ -42,7 +42,7 @@ export function AnimatedCounter({ end, duration = 2, suffix = '', prefix = '', d
   }, [end, duration, isInView]);
 
   return (
-    <span ref={ref} className="font-mono">
+    <span ref={ref} className="font-mono text-[#eaedff]">
       {prefix}
       {count.toFixed(decimals)}
       {suffix}

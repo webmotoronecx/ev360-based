@@ -478,7 +478,7 @@ export default function Page() {
               </Link>
             </div>
             <p className="text-sm text-white/60 pt-4">
-              50-mile service radius - Evening & weekend available - Same-day booking often available
+              50-mile service radius &bull; Evening & weekend available &bull; Same-day booking often available
             </p>
           </motion.div>
         </div>

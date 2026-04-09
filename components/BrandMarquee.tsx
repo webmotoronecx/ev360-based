@@ -9,9 +9,9 @@ export function BrandMarquee() {
   const duplicatedBrands = [...brands, ...brands, ...brands];
 
   return (
-    <div className="relative w-full py-8 md:py-12">
-      <div className="text-center mb-6 md:mb-10 px-8">
-        <p className="text-[9px] md:text-[10px] text-white/25 tracking-[0.25em] uppercase font-mono font-extralight">
+    <div className="relative w-full py-12">
+      <div className="text-center mb-10 px-8">
+        <p className="text-[9px] md:text-[10px] text-white/25 tracking-[0.25em] uppercase font-mono font-extralight px-[20px] py-[0px]">
           {eyebrow}
         </p>
       </div>
@@ -20,9 +20,9 @@ export function BrandMarquee() {
         className="relative w-full overflow-hidden"
         style={{
           WebkitMaskImage:
-            "linear-gradient(to right, transparent 0%, transparent 10%, black 25%, black 75%, transparent 90%, transparent 100%)",
+            "linear-gradient(to right, transparent 0%, transparent 22.5%, black 32.5%, black 67.5%, transparent 77.5%, transparent 100%)",
           maskImage:
-            "linear-gradient(to right, transparent 0%, transparent 10%, black 25%, black 75%, transparent 90%, transparent 100%)",
+            "linear-gradient(to right, transparent 0%, transparent 22.5%, black 32.5%, black 67.5%, transparent 77.5%, transparent 100%)",
         }}
       >
         <motion.div
@@ -32,7 +32,7 @@ export function BrandMarquee() {
             x: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 15,
+              duration: 18,
               ease: "linear",
             },
           }}
@@ -41,14 +41,19 @@ export function BrandMarquee() {
             <div
               key={index}
               className="flex-shrink-0 flex items-center justify-center"
-              style={{ minWidth: "80px" }}
+              style={{ minWidth: "90px" }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={brand.url}
                 alt={brand.name}
-                className="h-6 md:h-7 w-auto object-contain opacity-40"
-                style={{ filter: brand.invert ? "brightness(0) invert(1)" : "none" }}
+                className="w-auto object-contain opacity-40"
+                style={{
+                  height: (brand.name === 'Zeekr' || brand.name === 'Geely' || brand.name === 'GWM')
+                    ? '1.25rem'
+                    : '1.5rem',
+                  filter: brand.invert ? "brightness(0) invert(1)" : "none",
+                }}
                 onError={(e) => {
                   const target = e.currentTarget;
                   const parent = target.parentElement;

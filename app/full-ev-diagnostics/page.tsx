@@ -422,7 +422,7 @@ export default function Page() {
               </Link>
             </div>
             <p className="text-sm text-white/60 pt-4">
-              Mobile service available - 24-hour report delivery - Expert consultation included
+              Mobile service available &bull; 24-hour report delivery &bull; Expert consultation included
             </p>
           </motion.div>
         </div>

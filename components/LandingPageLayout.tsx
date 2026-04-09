@@ -2,9 +2,8 @@
 
 import { motion } from 'motion/react';
 import { ChevronRight } from 'lucide-react';
-import Link from "next/link";
+import Link from 'next/link';
 import { Footer } from '@/components/Footer';
-import { Navigation } from '@/components/Navigation';
 import { ReportPreview } from '@/components/ReportPreview';
 import { TiltCard } from '@/components/TiltCard';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
@@ -44,8 +43,6 @@ export function LandingPageLayout({
 }: LandingPageProps) {
   return (
     <div className="min-h-screen bg-white">
-      <Navigation />
-      
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 bg-black overflow-hidden" data-nav-theme="dark">
         {/* Abstract Background */}
@@ -70,20 +67,20 @@ export function LandingPageLayout({
               <p className="text-xl text-zinc-400 max-w-xl leading-relaxed mb-10">
                 {subtitle}
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
                 {/* If form is present, scroll to it. Else link to ctaLink */}
                 {form ? (
-                   <button 
+                   <button
                     onClick={() => document.getElementById('enquire')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="px-8 py-4 rounded-full bg-[var(--brand-primary)] text-white font-medium hover:scale-105 transition-transform w-full sm:w-auto flex items-center justify-center gap-2 group cursor-pointer"
+                    className="px-8 py-4 rounded-full bg-[var(--brand-primary)] text-white font-medium hover:scale-105 transition-transform w-full sm:w-auto flex items-center justify-center gap-2 group cursor-pointer hover:bg-[#4B60FF]"
                   >
                     {ctaText} <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </button>
                 ) : (
                   <Link href={ctaLink}>
-                    <motion.button 
-                      className="px-8 py-4 rounded-full bg-[var(--brand-primary)] text-white font-medium hover:scale-105 transition-transform w-full sm:w-auto flex items-center justify-center gap-2 group"
+                    <motion.button
+                      className="px-8 py-4 rounded-full bg-[var(--brand-primary)] text-white font-medium hover:scale-105 transition-transform w-full sm:w-auto flex items-center justify-center gap-2 group hover:bg-[#4B60FF]"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -91,10 +88,10 @@ export function LandingPageLayout({
                     </motion.button>
                   </Link>
                 )}
-                
+
                 {secondaryCtaText && secondaryCtaLink && (
                   <Link href={secondaryCtaLink}>
-                    <motion.button 
+                    <motion.button
                       className="px-8 py-4 rounded-full border border-zinc-700 text-white hover:bg-white/10 transition-colors w-full sm:w-auto font-medium"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
@@ -126,7 +123,7 @@ export function LandingPageLayout({
       {/* Benefits Grid */}
       <section className="py-24 bg-white" data-nav-theme="light">
         <div className="max-w-[1440px] mx-auto px-8 lg:px-16">
-          <motion.div 
+          <motion.div
             className="grid md:grid-cols-3 gap-12"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -137,8 +134,8 @@ export function LandingPageLayout({
               const Icon = benefit.icon;
               return (
                 <div key={index} className="space-y-4">
-                  <div className="w-12 h-12 rounded-xl bg-zinc-100 flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-zinc-900" />
+                  <div className="w-12 h-12 rounded-xl bg-[#ebedff] flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-[#3346ff]" />
                   </div>
                   <h3 className="text-2xl font-light">{benefit.title}</h3>
                   <p className="text-zinc-600 leading-relaxed">
