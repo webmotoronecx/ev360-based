@@ -1,9 +1,5 @@
 "use client";
 
-import { Footer } from '@/components/Footer';
-import { EditorialCard } from '@/components/EditorialCard';
-import { ReviewCard } from '@/components/ReviewCard';
-import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { CheckCircle, ShieldCheck, Users, Award, ArrowUpRight, Zap, Battery, CarFront, Lock } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useState } from 'react';
@@ -13,8 +9,12 @@ import { AnimatedCounter } from '@/components/AnimatedCounter';
 import { TiltCard } from '@/components/TiltCard';
 import { ParticleBackground } from '@/components/GridBackground';
 import { ReportPreview } from '@/components/ReportPreview';
+import { Footer } from '@/components/Footer';
+import { EditorialCard } from '@/components/EditorialCard';
+import { ReviewCard } from '@/components/ReviewCard';
 import { TrustedTechnology } from '@/components/TrustedTechnology';
 import { BusinessSolutions } from '@/components/BusinessSolutions';
+import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { Hero } from '@/components/Hero';
 
 const technicianImage = '/assets/1b2b252267a47a3c99ef04d3de02f27d219c9150.png';
@@ -25,51 +25,16 @@ const reportImage = '/assets/f82e310949ec251e9d18c8d2dff33e9d24a0cc54.png';
 export function HomeClient() {
   const [activeProblem, setActiveProblem] = useState(0);
 
-  const problemCards = [
-    {
-      image: "https://images.unsplash.com/photo-1664013885879-42498caa2068?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBidXlpbmclMjB0ZXNsYSUyMGRlYWxlcnNoaXB8ZW58MXx8fHwxNzY0MTYyNjMyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      title: "Buying an EV?",
-      solutionTitle: "Pre-Purchase Verification",
-      description: "Make a confident investment. Our comprehensive battery report reveals the true condition, remaining capacity, and any hidden faults of any electric vehicle before you commit.",
-      link: "/buying"
-    },
-    {
-      image: reportImage,
-      title: "Selling your EV?",
-      solutionTitle: "Certified Health Report",
-      description: "Command a higher resale price. An independent EV360 certificate proves your battery's health to potential buyers, differentiating your vehicle from the rest of the market.",
-      link: "/selling"
-    },
-    {
-      image: "https://images.unsplash.com/photo-1610356992334-183d6b7b2acb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZXNsYSUyMHNjcmVlbiUyMGRhc2hib2FyZHxlbnwxfHx8fDE3NjQxMjc0MTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Range dropping?",
-      solutionTitle: "True Capacity Analysis",
-      description: "Get clarity on your battery's real capacity. If you're noticing you can't go as far as you used to, our detailed health assessment will pinpoint if it's normal degradation or a cell defect."
-    },
-    {
-      image: "https://images.unsplash.com/photo-1670813007457-5e12ba8cf03f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHZlaGljbGUlMjBjaXR5fGVufDF8fHx8MTc2NDA2ODY3MXww&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Warranty ending?",
-      solutionTitle: "End-of-Warranty Audit",
-      description: "Don't get caught out. Document your EV's health before your manufacturer warranty expires to ensure you have the evidence needed for any potential battery replacement claims."
-    },
-    {
-      image: "https://images.unsplash.com/photo-1694479452720-782feb4d488b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjYXIlMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc2Mzk2OTQ1NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Charging issues?",
-      solutionTitle: "BMS & Charging Diagnostics",
-      description: "Identify the root cause. Whether it's slow charging, interrupted sessions, or overheating, our diagnostic testing analyzes the BMS data to find performance bottlenecks."
-    }
-  ];
-
   const educationCards = [
     {
       image: "https://images.unsplash.com/photo-1692052664566-477579a08e8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHZlaGljbGUlMjBkcml2ZXdheSUyMGhvbWV8ZW58MXx8fHwxNzY0MDY4NjY4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       title: "What State of Health (SOH) Means",
-      description: "Understanding battery SOH is crucial for knowing your EV's true condition and remaining value."
+      description: "Understanding battery SOH is crucial for knowing your EV&apos;s true condition and remaining value."
     },
     {
       image: batteryValueImage,
       title: "How Battery Health Affects EV Value",
-      description: "Learn why battery health is the single most important factor in determining an electric vehicle's resale value."
+      description: "Learn why battery health is the single most important factor in determining an electric vehicle&apos;s resale value."
     },
     {
       image: "https://images.unsplash.com/photo-1738101001619-f0fd42ceafb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHZlaGljbGUlMjBvZmZpY2UlMjBwYXJraW5nfGVufDF8fHx8MTc2NDA2ODY2OXww&ixlib=rb-4.1.0&q=80&w=1080",
@@ -82,6 +47,7 @@ export function HomeClient() {
     <div className="min-h-screen bg-white">
       <ScrollProgress />
 
+      {/* Hero */}
       <Hero />
 
       {/* Content Wrapper - scrolls over hero */}
@@ -232,7 +198,7 @@ export function HomeClient() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 }}
                 >
-                  <Link href="/diagnostics" className="block h-full w-full p-6 flex flex-col justify-between">
+                  <Link href="/services" className="block h-full w-full p-6 flex flex-col justify-between">
                     <Battery className="w-8 h-8 text-[#334AFF]" />
                     <div>
                       <h4 className="text-white font-medium mb-1">Range Analysis</h4>
@@ -249,7 +215,7 @@ export function HomeClient() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 }}
                 >
-                  <Link href="/diagnostics" className="block h-full w-full p-6 flex flex-col justify-between">
+                  <Link href="/services" className="block h-full w-full p-6 flex flex-col justify-between">
                     <ShieldCheck className="w-8 h-8 text-[#334AFF]" />
                     <div>
                       <h4 className="text-white font-medium mb-1">Warranty Audit</h4>
@@ -416,7 +382,7 @@ export function HomeClient() {
                 name: "Emma Thompson",
                 location: "Brisbane, QLD",
                 vehicle: "Nissan Leaf",
-                review: "After noticing reduced range, the comprehensive check identified the issue and gave me peace of mind about my battery's health.",
+                review: "After noticing reduced range, the comprehensive check identified the issue and gave me peace of mind about my battery&apos;s health.",
                 rating: 5,
                 image: "https://images.unsplash.com/photo-1754298949882-216a1c92dbb5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc3dvbWFuJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzY0MDI4MDk3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
                 verified: true
@@ -587,22 +553,29 @@ export function HomeClient() {
         </div>
       </section>
 
-      {/* Education Section */}
+      {/* EV Education Hub */}
       <section className="py-32 bg-white" data-nav-theme="light">
         <div className="max-w-[1440px] mx-auto px-8 lg:px-16">
           <motion.div
-            className="text-center mb-16"
+            className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-5xl font-light mb-6 tracking-tight text-zinc-900">
-              Knowledge is power.
-            </h2>
-            <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-              Learn everything you need to know about EV battery health, degradation, and what to look for when buying or selling an electric vehicle.
-            </p>
+            <div>
+              <h2 className="text-3xl md:text-5xl font-light mb-6 tracking-tight text-zinc-900">
+                EV Education Hub
+              </h2>
+              <p className="text-lg text-zinc-600 max-w-2xl">
+                Learn everything you need to know about EV battery health and ownership.
+              </p>
+            </div>
+            <Link href="/learn">
+              <button className="px-6 py-3 rounded-full border border-zinc-300 text-zinc-900 hover:bg-zinc-100 transition-colors font-medium whitespace-nowrap">
+                View All Articles
+              </button>
+            </Link>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -615,20 +588,6 @@ export function HomeClient() {
               />
             ))}
           </div>
-
-          <motion.div
-            className="text-center mt-12"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <Link href="/learn">
-              <button className="px-8 py-3 rounded-full bg-zinc-900 text-white hover:scale-105 transition-transform font-medium">
-                Explore All Articles
-              </button>
-            </Link>
-          </motion.div>
         </div>
       </section>
 
