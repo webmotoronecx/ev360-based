@@ -72,7 +72,7 @@ export default function Page() {
           transition={{ duration: 1.5 }}
         >
           <ImageWithFallback
-            src="/assets/16287cb76b4c4efad14b989be12db54a5edea747.png"
+            src="/assets/services-hero.png"
             alt="EV diagnostic service"
             className="w-full h-full object-cover"
           />
