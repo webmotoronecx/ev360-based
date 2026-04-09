@@ -1,8 +1,8 @@
 "use client";
 
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
-import { motion } from 'motion/react';
-import Link from 'next/link';
+import { motion } from "motion/react";
+import Link from "next/link";
 
 const logoSrc = '/brand/logo.svg';
 
@@ -12,7 +12,7 @@ export function Footer() {
       {/* Background Image for entire section including bottom padding */}
       <div className="absolute inset-0">
         <ImageWithFallback
-          src="https://images.unsplash.com/photo-1739167378790-836fc651869c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHZlaGljbGUlMjBzdW5zZXQlMjByb2FkfGVufDF8fHx8MTc2NDEyNzIwMXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+          src="/assets/footer-bg.png"
           alt="Electric vehicle on scenic road"
           className="w-full h-full object-cover"
         />
@@ -24,7 +24,7 @@ export function Footer() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1739167378790-836fc651869c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHZlaGljbGUlMjBzdW5zZXQlMjByb2FkfGVufDF8fHx8MTc2NDEyNzIwMXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            src="/assets/footer-bg.png"
             alt="Electric vehicle on scenic road"
             className="w-full h-full object-cover"
           />
@@ -64,7 +64,7 @@ export function Footer() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Check My EV
+                Book Battery Check
               </motion.button>
             </Link>
             <Link href="/services">
@@ -81,9 +81,9 @@ export function Footer() {
       </section>
 
       {/* Rounded Footer Container - Overlays CTA */}
-      <div className="max-w-[1400px] mx-auto px-6 relative z-20 -mt-48">
-        <footer className="bg-black/60 backdrop-blur-xl rounded-[2rem] p-16 lg:p-24 border border-white/10">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-16 mb-16">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-6 relative z-20 -mt-48">
+        <footer className="bg-black/60 backdrop-blur-xl rounded-[2rem] p-8 md:p-16 lg:p-24 border border-white/10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-16 mb-16">
             {/* Brand */}
             <div className="space-y-6">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -113,6 +113,7 @@ export function Footer() {
                 </div>
               </div>
             </div>
+
             {/* Locations */}
             <div>
               <h4 className="text-white mb-6 font-medium">Locations</h4>
@@ -139,7 +140,7 @@ export function Footer() {
               <h4 className="text-white mb-6 font-medium">Services</h4>
               <ul className="space-y-4">
                 <li><Link href="/services" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Battery Health Testing</Link></li>
-                <li><Link href="/services" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Full EV Diagnostics</Link></li>
+                <li><Link href="/full-ev-diagnostics" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Full EV Diagnostics</Link></li>
                 <li><Link href="/mobile-services" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Mobile Service</Link></li>
                 <li><Link href="/services" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Diagnostic Centre</Link></li>
               </ul>
@@ -171,8 +172,8 @@ export function Footer() {
 
           {/* Bottom Bar */}
           <div className="pt-8 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-xs text-zinc-600 font-mono">&copy; {new Date().getFullYear()} EV360. ALL RIGHTS RESERVED.</p>
-            <div className="flex flex-wrap justify-center gap-8 text-xs font-mono uppercase tracking-wider">
+            <p className="text-xs text-zinc-600 font-mono">© {new Date().getFullYear()} EV360. ALL RIGHTS RESERVED.</p>
+            <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-xs font-mono uppercase tracking-wider">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)]">Instagram</a>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)]">Facebook</a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)]">LinkedIn</a>

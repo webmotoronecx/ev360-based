@@ -106,7 +106,7 @@ export function HomeClient() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/assets/a1d6942ee887e7e369119006a92beb2d4a36fb01.png"
+            src="/assets/EV360Hero_v3FINAL.png"
             alt="Hero background"
             className="w-full h-full object-cover"
           />

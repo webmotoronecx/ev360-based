@@ -86,7 +86,7 @@ export function Navigation() {
                   alt={logo.alt}
                   width={120}
                   height={32}
-                  className={`${logo.heightClass} w-auto`}
+                  className={`${logo.heightClass} w-auto brightness-0 invert`}
                   priority
                 />
               </motion.div>
@@ -107,7 +107,7 @@ export function Navigation() {
               ))}
               <Link href={primaryCta.href}>
                 <motion.button
-                  className="px-5 py-2.5 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow font-medium"
+                  className="px-5 py-2.5 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow font-medium hover:bg-[#4B60FF]"
                   whileHover={{ scale: 1.05 }}
                 >
                   {primaryCta.label}
@@ -168,7 +168,7 @@ export function Navigation() {
                   </Link>
                 ))}
                 <Link href={primaryCta.href} className="mt-4">
-                  <button className="w-full px-6 py-4 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow font-medium hover:scale-105 transition-transform">
+                  <button className="w-full px-6 py-4 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow font-medium hover:bg-[#4B60FF] hover:scale-105 transition-transform">
                     {primaryCta.label}
                   </button>
                 </Link>
