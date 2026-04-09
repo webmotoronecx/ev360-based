@@ -339,7 +339,7 @@ export function HomeClient() {
         </div>
       </section>
 
-      {/* Trusted Technology Section - NEW */}
+      {/* Trusted Technology Section */}
       <TrustedTechnology />
 
       {/* Business Solutions Section */}
