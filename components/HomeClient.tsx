@@ -415,9 +415,6 @@ export function HomeClient() {
         </div>
       </section>
 
-      {/* Business Solutions Section */}
-      <BusinessSolutions />
-
       {/* Trust & Transparency Section */}
       <section className="py-32 bg-zinc-950" data-nav-theme="dark">
         <div className="max-w-[1440px] mx-auto px-8 lg:px-16">
@@ -588,6 +585,9 @@ export function HomeClient() {
         </div>
       </section>
 
+      {/* Business Solutions Section */}
+      <BusinessSolutions />
+
       {/* EV Education Hub */}
       <section className="py-32 bg-white" data-nav-theme="light">
         <div className="max-w-[1440px] mx-auto px-8 lg:px-16">
@@ -623,38 +623,6 @@ export function HomeClient() {
               />
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Final CTA Section */}
-      <section className="relative py-32 bg-gradient-to-b from-zinc-950 to-black overflow-hidden" data-nav-theme="dark">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[var(--brand-primary)]/20 rounded-full blur-[150px]" />
-        </div>
-
-        <div className="relative z-10 max-w-[1440px] mx-auto px-8 lg:px-16 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl md:text-6xl font-light text-white mb-8 tracking-tight">
-              Ready to check your EV&apos;s battery health?
-            </h2>
-            <p className="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto">
-              Book a comprehensive 360° battery health check today. Starting from $199.
-            </p>
-            <Link href="/booking">
-              <motion.button
-                className="px-10 py-4 rounded-full bg-[#334AFF] text-white hover:bg-[#4B60FF] transition-all font-medium text-lg"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Book Your Check
-              </motion.button>
-            </Link>
-          </motion.div>
         </div>
       </section>
 
