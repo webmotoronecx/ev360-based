@@ -69,7 +69,7 @@ export function Hero() {
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 md:px-8 lg:px-16 text-center pt-28 md:pt-20 pb-32">
         <div className="space-y-6 md:space-y-8 max-w-4xl mx-auto">
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl font-light text-white tracking-tight leading-[1.1]"
+            className="text-4xl sm:text-5xl md:text-[60px] font-normal text-white tracking-[-1.5px] leading-[1.1]"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
