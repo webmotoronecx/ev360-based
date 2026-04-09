@@ -102,7 +102,7 @@ export function HomeClient() {
               <Link href="/buying" className="block h-full w-full">
                 <div className="absolute inset-0">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1664013885879-42498caa2068?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=2070&auto=format"
+                    src="/assets/HomePage.png"
                     alt="Buying an EV"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-40"
                   />
