@@ -238,10 +238,11 @@ export function HomeClient() {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="absolute inset-0 bg-gradient-to-tr from-[var(--brand-primary)]/10 to-purple-500/10 rounded-full blur-[100px] -z-10" />
-              <TiltCard>
-                <ReportPreview className="w-full max-w-md mx-auto shadow-2xl rotate-[-2deg] hover:rotate-0 transition-transform duration-500" />
-              </TiltCard>
+              <img
+                src="/assets/Cert_Mockup.png"
+                alt="EV360 Certificate and Battery Health Report"
+                className="w-full max-w-[684px] mx-auto"
+              />
             </motion.div>
 
             {/* Right: Content */}
