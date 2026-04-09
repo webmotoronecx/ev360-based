@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle, ShieldCheck, Users, Award, ArrowUpRight, Zap, Battery, CarFront, Lock } from 'lucide-react';
+import { CheckCircle, ShieldCheck, Users, Award, ArrowUpRight, Zap, Battery, CarFront } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useState } from 'react';
 import Link from "next/link";
@@ -102,7 +102,7 @@ export function HomeClient() {
               <Link href="/buying" className="block h-full w-full">
                 <div className="absolute inset-0">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=2070&auto=format&fit=crop"
+                    src="https://images.unsplash.com/photo-1664013885879-42498caa2068?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=2070&auto=format"
                     alt="Buying an EV"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-40"
                   />
@@ -115,9 +115,8 @@ export function HomeClient() {
                     <div className="w-12 h-12 rounded-full bg-[#334AFF] backdrop-blur-md flex items-center justify-center border border-white/10">
                       <CarFront className="w-6 h-6 text-white" />
                     </div>
-                    <div className="px-4 py-1.5 rounded-full bg-[var(--brand-primary)] border border-white/20 backdrop-blur-md flex items-center gap-2">
-                      <Lock className="w-3 h-3 text-white" />
-                      <span className="text-white text-xs font-mono uppercase tracking-wider">For Buyers</span>
+                    <div className="px-4 py-2.5 rounded-full bg-[rgba(51,74,255,0.2)] border border-[rgba(51,74,255,0.3)]">
+                      <span className="text-[#334AFF] text-xs font-bold uppercase tracking-[0.6px]">For Buyers</span>
                     </div>
                   </div>
 
@@ -163,11 +162,7 @@ export function HomeClient() {
                       <div className="w-10 h-10 rounded-full bg-[#334AFF] backdrop-blur-md flex items-center justify-center border border-white/10">
                         <Award className="w-5 h-5 text-white" />
                       </div>
-                      <span className="inline-flex items-center gap-2 bg-[#334AFF] text-white text-xs font-mono uppercase tracking-widest px-4 py-2 rounded-full">
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M6 1.5C4.75736 1.5 3.75 2.50736 3.75 3.75V4.5H8.25V3.75C8.25 2.50736 7.24264 1.5 6 1.5Z" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                          <rect x="2.25" y="4.5" width="7.5" height="6" rx="1.5" stroke="white" strokeWidth="1.2"/>
-                        </svg>
+                      <span className="text-white/60 text-xs font-mono uppercase tracking-[1.2px]">
                         For Sellers
                       </span>
                     </div>
