@@ -170,22 +170,29 @@ export default function Page() {
 
                   {/* Visual */}
                   <motion.div
-                    className={`relative h-[500px] rounded-[2rem] overflow-hidden shadow-2xl ${isEven ? 'md:order-2' : 'md:order-1'}`}
+                    className={`relative h-[500px] rounded-[2rem] overflow-hidden ${isEven ? 'md:order-2' : 'md:order-1'}`}
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="absolute inset-0 bg-[var(--brand-light-gray)]/50" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      {index === 3 ? (
-                         <div className="w-full h-full p-8 flex items-center justify-center">
-                            <ReportPreview className="w-full max-w-sm shadow-2xl scale-90" />
-                         </div>
-                      ) : (
+                    <div className="absolute inset-0 bg-[#d3ddde]/50" />
+                    {index === 0 && (
+                      <ImageWithFallback src="/assets/how-it-works-step1.png" alt="Choose your service" className="absolute inset-0 w-full h-full object-cover" />
+                    )}
+                    {index === 1 && (
+                      <ImageWithFallback src="/assets/how-it-works-step2.png" alt="Book your appointment" className="absolute inset-0 w-full h-full object-cover" />
+                    )}
+                    {index === 2 && (
+                      <div className="absolute inset-0 bg-[#d3ddde]/50 flex items-center justify-center">
                         <div className="w-32 h-32 rounded-[2rem] bg-gradient-to-br from-[var(--brand-primary)] to-[#2030cc] flex items-center justify-center shadow-2xl">
                           <Icon className="w-16 h-16 text-white" />
                         </div>
-                      )}
-                    </div>
+                      </div>
+                    )}
+                    {index === 3 && (
+                      <div className="absolute inset-0 bg-[#d3ddde]/50 flex items-center justify-center">
+                        <ReportPreview className="w-full max-w-sm shadow-2xl scale-90" />
+                      </div>
+                    )}
                   </motion.div>
                 </motion.div>
               );
@@ -295,9 +302,7 @@ export default function Page() {
                   "Friendly introduction and initial vehicle inspection",
                   "Connection of professional diagnostic equipment",
                   "Live battery health and system diagnostics",
-                  "Visual inspection of EV components",
-                  "Questions and concerns addressed",
-                  "Summary of findings before we leave"
+                  "Visual inspection of EV components"
                 ].map((item, index) => (
                   <motion.div
                     key={index}
