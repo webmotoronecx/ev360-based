@@ -354,30 +354,24 @@ export function HomeClient() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                name: "Sarah Chen",
-                location: "Sydney, NSW",
-                vehicle: "Tesla Model 3",
-                review: "The pre-purchase inspection gave me complete confidence in buying my used EV. The detailed battery report was invaluable during negotiations.",
+                name: "Nick Hurst",
+                review: "Great operation with great people. Ahead of the curve with their tech focused approach to business. Appreciate the great work. Good coffee too.",
                 rating: 5,
-                image: "https://images.unsplash.com/photo-1649589244330-09ca58e4fa64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbiUyMHBvcnRyYWl0fGVufDF8fHx8MTc2NDA1NjU5OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+                image: "https://randomuser.me/api/portraits/men/32.jpg",
                 verified: true
               },
               {
-                name: "Michael Roberts",
-                location: "Melbourne, VIC",
-                vehicle: "Hyundai Ioniq 5",
-                review: "Mobile service was incredibly convenient. The technician was professional and explained everything clearly. Highly recommend!",
+                name: "Judd Abello",
+                review: "Fantastic customer service and super professional staff. They got the job done quickly and explained everything clearly. I'll definitely be coming back — highly recommend!",
                 rating: 5,
-                image: "https://images.unsplash.com/photo-1672685667592-0392f458f46f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBtYW4lMjBwb3J0cmFpdHxlbnwxfHx8fDE3NjQwMTQyNjZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+                image: "https://randomuser.me/api/portraits/men/75.jpg",
                 verified: true
               },
               {
-                name: "Emma Thompson",
-                location: "Brisbane, QLD",
-                vehicle: "Nissan Leaf",
-                review: "After noticing reduced range, the comprehensive check identified the issue and gave me peace of mind about my battery&apos;s health.",
+                name: "Nishee Nattraj",
+                review: "Big shout out to Gonzalo! Not only did he do a great job with my car but was also kind enough to work around my busy schedule and holiday plans. Couldn't be happier with the service!",
                 rating: 5,
-                image: "https://images.unsplash.com/photo-1754298949882-216a1c92dbb5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc3dvbWFuJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzY0MDI4MDk3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+                image: "https://randomuser.me/api/portraits/women/44.jpg",
                 verified: true
               }
             ].map((testimonial, index) => (
