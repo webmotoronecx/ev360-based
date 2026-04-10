@@ -316,7 +316,7 @@ export default function Page() {
               transition={{ duration: 0.8 }}
             >
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1596495717678-69df9f89c2a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3b3Jrc2hvcCUyMHRlY2hub2xvZ3l8ZW58MXx8fHwxNzY0MTE4MzIxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                src="/assets/mobile-service.png"
                 alt="Mobile EV service"
                 className="w-full h-full object-cover"
               />

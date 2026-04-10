@@ -117,7 +117,6 @@ export const siteConfig: SiteConfig = {
       { name: "GWM", url: "/brand/marquee/gwm.svg" },
       { name: "Geely", url: "/brand/marquee/geely.svg" },
       { name: "Zeekr", url: "/brand/marquee/zeekr.svg" },
-      { name: "CARA", url: "/brand/marquee/cara.png" },
     ],
   },
 };
