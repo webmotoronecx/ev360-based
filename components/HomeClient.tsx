@@ -371,7 +371,7 @@ export function HomeClient() {
                 name: "Nishee Nattraj",
                 review: "Big shout out to Gonzalo! Not only did he do a great job with my car but was also kind enough to work around my busy schedule and holiday plans. Couldn't be happier with the service!",
                 rating: 5,
-                image: "https://randomuser.me/api/portraits/women/44.jpg",
+                image: "https://randomuser.me/api/portraits/women/57.jpg",
                 verified: true
               }
             ].map((testimonial, index) => (
