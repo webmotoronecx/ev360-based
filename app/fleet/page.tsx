@@ -8,9 +8,10 @@ export default function Page() {
   const content = (
     <div className="grid md:grid-cols-2 gap-16 items-center">
       <div className="order-2 md:order-1 relative h-[400px] bg-zinc-200 rounded-[2rem] overflow-hidden shadow-lg border border-white/20">
-        <img 
-          src="https://images.unsplash.com/photo-1608023568014-6636291b5584?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21tZXJjaWFsJTIwZWxlY3RyaWMlMjB2ZWhpY2xlJTIwZmxlZXQlMjBjaGFyZ2luZyUyMGRlcG90fGVufDF8fHx8MTc3MTkxMTk4Mnww&ixlib=rb-4.1.0&q=80&w=1080" 
-          alt="Fleet depot charging" 
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/assets/12_ForFleet/data-driven-fleet-management.jpeg"
+          alt="Data-driven fleet management"
           className="w-full h-full object-cover"
         />
       </div>
@@ -44,7 +45,7 @@ export default function Page() {
     <LandingPageLayout
       title="Optimize Your Electric Fleet Lifecycle"
       subtitle="Maximize residual values and minimize downtime with regular, independent battery health monitoring for your entire fleet."
-      heroImage="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHZlaGljbGUlMjBjaGFyZ2VyJTIwYXVzdHJhbGlhfGVufDF8fHx8MTc2NDExODk0MHww&ixlib=rb-4.1.0&q=80&w=1080"
+      heroImage="/assets/12_ForFleet/optimize-your-electric-fleet-lifecycle.png"
       audience="Fleet Managers"
       benefits={[
         {

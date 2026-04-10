@@ -4,32 +4,60 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { CheckCircle, Loader2, Send } from 'lucide-react';
 
+type FormType = 'Dealership' | 'Fleet' | 'Insurance' | 'Property';
+
 interface BusinessEnquiryFormProps {
-  type: 'Dealership' | 'Fleet' | 'Insurance' | 'Property';
+  type: FormType;
   title?: string;
   subtitle?: string;
 }
 
+// Unique form identifiers — one per landing page / form surface
+const FORM_IDS: Record<FormType, string> = {
+  Dealership: 'form-dealership',
+  Fleet: 'form-fleet',
+  Insurance: 'form-insurance',
+  Property: 'form-property',
+};
+
 export function BusinessEnquiryForm({ type, title, subtitle }: BusinessEnquiryFormProps) {
+  const formId = FORM_IDS[type];
   const [formState, setFormState] = useState({
     name: '',
     email: '',
     phone: '',
     company: '',
     role: '',
+    scale: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setErrorMsg(null);
+
+    try {
+      const response = await fetch('/api/business-enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ formId, type, ...formState }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || 'Failed to submit');
+      }
+
       setIsSuccess(true);
-    }, 1500);
+    } catch (err) {
+      setErrorMsg(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -57,13 +85,14 @@ export function BusinessEnquiryForm({ type, title, subtitle }: BusinessEnquiryFo
   }
 
   return (
-    <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-zinc-100" id="enquire">
+    <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-zinc-100" id="enquire" data-form-id={formId}>
       <div className="mb-10">
         <h3 className="text-3xl font-light mb-3">{title || `Partner with EV360 for ${type}s`}</h3>
         <p className="text-zinc-500">{subtitle || "Fill out the form below and our dedicated business team will contact you shortly."}</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
+        <input type="hidden" name="formId" value={formId} />
         <div className="grid md:grid-cols-2 gap-6">
           <div className="space-y-2">
             <label htmlFor="name" className="text-sm font-medium text-zinc-700">Full Name</label>
@@ -147,6 +176,8 @@ export function BusinessEnquiryForm({ type, title, subtitle }: BusinessEnquiryFo
             <select
               id="scale"
               name="scale"
+              value={formState.scale}
+              onChange={handleChange}
               className="w-full px-4 py-3 rounded-xl bg-zinc-50 border border-zinc-200 focus:border-[var(--brand-primary)] focus:ring-1 focus:ring-[var(--brand-primary)] outline-none transition-all"
             >
               <option value="">Select range...</option>
@@ -170,6 +201,12 @@ export function BusinessEnquiryForm({ type, title, subtitle }: BusinessEnquiryFo
             placeholder="Tell us about your requirements..."
           />
         </div>
+
+        {errorMsg && (
+          <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-sm text-red-700">
+            {errorMsg}
+          </div>
+        )}
 
         <motion.button
           type="submit"

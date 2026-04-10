@@ -120,7 +120,7 @@ export default function Page() {
           transition={{ duration: 1.5 }}
         >
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1496152658208-d41635783718?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMHNlcnZpY2UlMjBoZWxwJTIwZGVza3xlbnwxfHx8fDE3NjQxMzA3MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            src="/assets/17_Support/hero_support.jpeg"
             alt="Customer support"
             className="w-full h-full object-cover"
           />

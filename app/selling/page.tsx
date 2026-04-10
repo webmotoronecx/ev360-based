@@ -7,9 +7,10 @@ export default function Page() {
   const content = (
     <div className="grid md:grid-cols-2 gap-16 items-center">
       <div className="order-2 md:order-1 relative h-[400px] bg-zinc-200 rounded-[2rem] overflow-hidden shadow-lg border border-white/20">
-        <img 
-          src="https://images.unsplash.com/photo-1681505526188-b05e68c77582?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb250cmFjdCUyMGRvY3VtZW50JTIwc2lnbmF0dXJlJTIwaGFuZHNoYWtlfGVufDF8fHx8MTc3MTkxMTQzMHww&ixlib=rb-4.1.0&q=80&w=1080" 
-          alt="Handshake over contract" 
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/assets/10_ForSellers/prove-your-cars-value.png"
+          alt="Prove your car's value"
           className="w-full h-full object-cover"
         />
       </div>
@@ -35,7 +36,7 @@ export default function Page() {
     <LandingPageLayout
       title="Sell Your EV Faster & For More"
       subtitle="The #1 question every buyer asks is 'How is the battery?'. Answer it with authority using an independent EV360 Health Certificate."
-      heroImage="https://images.unsplash.com/photo-1560179707-f14e90ef3623?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjBidWlsZGluZ3xlbnwxfHx8fDE3NjQxMTg5NjB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      heroImage="/assets/10_ForSellers/sell-your-ev-faster-for-more.png"
       audience="Sellers"
       benefits={[
         {

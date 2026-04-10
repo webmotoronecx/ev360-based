@@ -23,7 +23,7 @@ export function Footer() {
         {/* Footer Container */}
         <div className="max-w-[1352px] mx-auto px-4 md:px-6 relative z-20">
           <footer className="bg-black/60 backdrop-blur-xl rounded-[2rem] px-8 md:px-16 lg:px-24 pt-16 md:pt-24 pb-8 border border-white/10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-12 mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 md:gap-12 mb-16">
               {/* Brand */}
               <div className="space-y-6">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -83,6 +83,19 @@ export function Footer() {
                   <li><Link href="/full-ev-diagnostics" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Full EV Diagnostics</Link></li>
                   <li><Link href="/mobile-services" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Mobile Service</Link></li>
                   <li><Link href="/services" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Diagnostic Centre</Link></li>
+                </ul>
+              </div>
+
+              {/* Solutions */}
+              <div>
+                <h4 className="text-white mb-6 font-medium">Solutions</h4>
+                <ul className="space-y-4">
+                  <li><Link href="/buying" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">For Buyers</Link></li>
+                  <li><Link href="/selling" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">For Sellers</Link></li>
+                  <li><Link href="/fleet" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Fleet Managers</Link></li>
+                  <li><Link href="/dealerships" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Dealerships</Link></li>
+                  <li><Link href="/insurance" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Insurers</Link></li>
+                  <li><Link href="/property" className="text-zinc-400 smooth-transition hover:text-[var(--brand-primary)] text-sm">Strata &amp; Property</Link></li>
                 </ul>
               </div>
 

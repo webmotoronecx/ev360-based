@@ -33,9 +33,10 @@ export default function Page() {
         </ul>
       </div>
       <div className="relative h-[400px] bg-zinc-200 rounded-[2rem] overflow-hidden shadow-lg border border-white/20">
-        <img 
-          src="https://images.unsplash.com/photo-1619598093251-8250d7d0b40e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnN1cmFuY2UlMjBjbGFpbSUyMGRvY3VtZW50JTIwY2xpcGJvYXJkJTIwY2FyJTIwZGFtYWdlfGVufDF8fHx8MTc3MTkxMTk4NXww&ixlib=rb-4.1.0&q=80&w=1080" 
-          alt="Insurance claim" 
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/assets/14_Insurers/accurate-risk-value-assessment.png"
+          alt="Accurate risk and value assessment"
           className="w-full h-full object-cover"
         />
       </div>
@@ -46,7 +47,7 @@ export default function Page() {
     <LandingPageLayout
       title="Smarter EV Underwriting & Claims"
       subtitle="Stop guessing. Integrate independent battery health data into your policy pricing and claims workflows for electric vehicles."
-      heroImage="https://images.unsplash.com/photo-1555140713-973b9f36cd1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWNoYW5pYyUyMGhvbGRpbmclMjBjbGlwYm9hcmQlMjBlbGVjdHJpYyUyMGNhciUyMGluc3BlY3Rpb24lMjBjZXJ0aWZpY2F0ZXxlbnwxfHx8fDE3NzE5MTE0MjV8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      heroImage="/assets/14_Insurers/smarter-ev-underwriting-claims.jpeg"
       audience="Insurers"
       benefits={[
         {

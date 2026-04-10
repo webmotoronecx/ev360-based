@@ -30,9 +30,10 @@ export default function Page() {
         </ul>
       </div>
       <div className="relative h-[400px] bg-zinc-200 rounded-[2rem] overflow-hidden shadow-lg border border-white/20">
-        <img 
-          src="https://images.unsplash.com/photo-1622333847289-41e8172e650a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxFViUyMGRhc2hib2FyZCUyMGludGVyaW9yfGVufDF8fHx8MTc2NDA2ODY3MHww&ixlib=rb-4.1.0&q=80&w=1080" 
-          alt="EV dashboard showing range" 
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/assets/09_ForBuyers/avoid-the-mistake.png"
+          alt="Avoid the $15,000 mistake"
           className="w-full h-full object-cover"
         />
       </div>
@@ -43,7 +44,7 @@ export default function Page() {
     <LandingPageLayout
       title="Buy Your Next EV With Total Confidence"
       subtitle="The used EV market is growing, but battery health is invisible. Our pre-purchase inspection reveals the true condition of the battery before you hand over your cash."
-      heroImage="https://images.unsplash.com/photo-1670813007457-5e12ba8cf03f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHZlaGljbGUlMjBjaXR5fGVufDF8fHx8MTc2NDA2ODY3MXww&ixlib=rb-4.1.0&q=80&w=1080"
+      heroImage="/assets/09_ForBuyers/buy-your-next-ev-with-total-confidence.png"
       audience="Buyers"
       benefits={[
         {

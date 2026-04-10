@@ -31,9 +31,10 @@ export default function Page() {
         </ul>
       </div>
       <div className="relative h-[400px] bg-zinc-200 rounded-[2rem] overflow-hidden shadow-lg border border-white/20">
-        <img 
-          src="https://images.unsplash.com/photo-1652509584057-7bbe6d7401db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYXBweSUyMHBlcnNvbiUyMGhvbGRpbmclMjBjYXIlMjBrZXlzJTIwZWxlY3RyaWMlMjB2ZWhpY2xlJTIwZGVhbGVyc2hpcHxlbnwxfHx8fDE3NzE5MTE5NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080" 
-          alt="Dealership Sales" 
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/assets/13_Dealerships/build-trust-sell-more-inventory.png"
+          alt="Build trust, sell more inventory"
           className="w-full h-full object-cover"
         />
       </div>
@@ -44,7 +45,7 @@ export default function Page() {
     <LandingPageLayout
       title="Turn Inventory Faster with Certified EVs"
       subtitle="Eliminate buyer hesitation. Certify your used EV stock with independent battery health reports and command premium market prices."
-      heroImage="https://images.unsplash.com/photo-1664013885879-42498caa2068?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBidXlpbmclMjB0ZXNsYSUyMGRlYWxlcnNoaXB8ZW58MXx8fHwxNzY0MTYyNjMyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+      heroImage="/assets/13_Dealerships/turn-inventory-faster-with-certified-evs.jpeg"
       audience="Dealerships"
       benefits={[
         {
