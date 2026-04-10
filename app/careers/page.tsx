@@ -101,7 +101,7 @@ export default function Page() {
           transition={{ duration: 1.5 }}
         >
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1758873271761-6cfe9b4f000c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwdGVhbSUyMHdvcmtpbmclMjBvZmZpY2UlMjBjb2xsYWJvcmF0aW9ufGVufDF8fHx8MTc3MzYzMTUxOXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            src="/assets/careers-hero.png"
             alt="Join the EV360 team"
             className="w-full h-full object-cover"
           />

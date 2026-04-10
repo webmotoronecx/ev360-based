@@ -139,7 +139,7 @@ export default function Page() {
           transition={{ duration: 1.5 }}
         >
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            src="/assets/mobile-services-hero.png"
             alt="Mobile EV services"
             className="w-full h-full object-cover"
           />

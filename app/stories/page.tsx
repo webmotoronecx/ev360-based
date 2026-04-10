@@ -15,9 +15,8 @@ export default function Page() {
       vehicle: "2021 Tesla Model 3",
       story: "Pre-Purchase Peace of Mind",
       quote: "We were about to spend $45,000 on a used Model 3. EV360's inspection revealed the battery had degraded to 82% health - way below what the seller claimed. They saved us from a costly mistake and helped us negotiate $8,000 off the price.",
-      image: "https://images.unsplash.com/photo-1536048284960-eb628c365abb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdXN0cmFsaWFuJTIwZmFtaWx5JTIwY2FyfGVufDF8fHx8MTc2NDEzMDk3Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/assets/pre-purchase-peace-of-mind.png",
       savings: "$8,000",
-      service: "Pre-Purchase Inspection",
       instagramReel: null // Placeholder for future Instagram embed
     },
     {
@@ -26,9 +25,8 @@ export default function Page() {
       vehicle: "2020 Nissan Leaf",
       story: "Warranty Claim Success",
       quote: "My Leaf was losing range fast but the dealer kept saying it was 'normal'. EV360's diagnostic report showed 76% battery health, which qualified me for a warranty replacement. The detailed report gave me the evidence I needed.",
-      image: "https://images.unsplash.com/photo-1705850239069-b6fb8bb7c479?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMGNhciUyMG93bmVyJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzY0MTMwOTc2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/assets/warranty-claim-success.png",
       savings: "$22,000",
-      service: "Full Diagnostic Report",
       instagramReel: null
     },
     {
@@ -37,9 +35,8 @@ export default function Page() {
       vehicle: "2022 Hyundai Ioniq 5",
       story: "First-Time EV Buyer Confidence",
       quote: "As a first-time EV buyer, I had so many questions. The team at EV360 not only checked my car thoroughly but educated me on what to look for in battery health. Now I feel confident about my purchase and know exactly how to maintain it.",
-      image: "https://images.unsplash.com/photo-1603714228681-b399854b8f80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGN1c3RvbWVyJTIwc21pbGluZ3xlbnwxfHx8fDE3NjQwOTk1MzV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: "/assets/first-time-ev-buyer-confidence.png",
       savings: "Peace of Mind",
-      service: "Battery Health Check",
       instagramReel: null
     }
   ];
@@ -142,7 +139,7 @@ export default function Page() {
           transition={{ duration: 1.5 }}
         >
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1695668543969-ea7dec95047c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMHRlc3RpbW9uaWFsJTIwaW50ZXJ2aWV3fGVufDF8fHx8MTc2NDEzMDk3Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            src="/assets/stories-page-hero.png"
             alt="Customer stories"
             className="w-full h-full object-cover"
           />
@@ -259,9 +256,6 @@ export default function Page() {
                         </motion.button>
                       </div>
                     )}
-                    <div className="absolute top-6 right-6 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
-                      <span className="text-white text-sm">{story.service}</span>
-                    </div>
                   </div>
                 </div>
 
