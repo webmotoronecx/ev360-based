@@ -3,10 +3,12 @@
 import { Footer } from '@/components/Footer';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, Loader2 } from 'lucide-react';
 import { ScrollProgress } from '@/components/ScrollProgress';
 import { useState } from 'react';
 import Link from 'next/link';
+
+const FORM_ID = 'form-contact';
 
 export default function Page() {
   const [formData, setFormData] = useState({
@@ -16,11 +18,34 @@ export default function Page() {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setErrorMsg(null);
+
+    try {
+      const response = await fetch('/api/business-enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ formId: FORM_ID, type: 'Contact', ...formData }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || 'Failed to submit');
+      }
+
+      setIsSuccess(true);
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    } catch (err) {
+      setErrorMsg(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -276,14 +301,37 @@ export default function Page() {
                 />
               </div>
 
+              {isSuccess && (
+                <div className="p-4 rounded-xl bg-green-50 border border-green-200 flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                  <p className="text-sm text-green-700">Thanks! We&apos;ll be in touch within 24 hours.</p>
+                </div>
+              )}
+
+              {errorMsg && (
+                <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-sm text-red-700">
+                  {errorMsg}
+                </div>
+              )}
+
               <motion.button
                 type="submit"
-                className="w-full py-4 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow flex items-center justify-center gap-2 hover:bg-[#4B60FF]"
+                disabled={isSubmitting}
+                className="w-full py-4 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow flex items-center justify-center gap-2 hover:bg-[#4B60FF] disabled:opacity-70 disabled:cursor-not-allowed"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Send className="w-5 h-5" />
-                Send Message
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" />
+                    Send Message
+                  </>
+                )}
               </motion.button>
 
               <p className="text-sm text-zinc-500 text-center">
