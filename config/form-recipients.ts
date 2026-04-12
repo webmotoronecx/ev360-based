@@ -25,28 +25,28 @@ export const formRecipients: Record<string, FormRecipient> = {
   // Contact page — general enquiries
   "form-contact": {
     label: "General Contact",
-    to: "hello@ev360.com.au",
+    to: "jgetalada@motoronecx.com",
   },
 
   // Business landing pages
   "form-fleet": {
     label: "Fleet Managers",
-    to: "fleet@ev360.com.au",
+    to: "jgetalada@motoronecx.com",
   },
 
   "form-dealership": {
     label: "Dealerships",
-    to: "dealerships@ev360.com.au",
+    to: "jgetalada@motoronecx.com",
   },
 
   "form-insurance": {
     label: "Insurers",
-    to: "insurance@ev360.com.au",
+    to: "jgetalada@motoronecx.com",
   },
 
   "form-property": {
     label: "Strata & Property",
-    to: "property@ev360.com.au",
+    to: "jgetalada@motoronecx.com",
   },
 };
 
@@ -56,7 +56,7 @@ export const formRecipients: Record<string, FormRecipient> = {
  */
 export const fallbackRecipient: FormRecipient = {
   label: "Unknown Form",
-  to: "hello@ev360.com.au",
+  to: "jgetalada@motoronecx.com",
 };
 
 /**
