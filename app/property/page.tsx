@@ -1,6 +1,6 @@
 "use client";
 
-import { GHLForm } from '../../components/GHLForm';
+import { BusinessEnquiryForm } from '../../components/BusinessEnquiryForm';
 import { LandingPageLayout } from '../../components/LandingPageLayout';
 import { Home, Zap, ShieldCheck, CheckCircle } from 'lucide-react';
 
@@ -67,7 +67,7 @@ export default function Page() {
       ctaText="Discuss Safety Protocol"
       ctaLink="/contact"
       content={content}
-      form={<GHLForm formKey="form-property" title="Protect Your Property with EV360" subtitle="Fill out the form below and our dedicated business team will contact you shortly." />}
+      form={<BusinessEnquiryForm type="Property" title="Protect Your Property with EV360" />}
     />
   );
 }

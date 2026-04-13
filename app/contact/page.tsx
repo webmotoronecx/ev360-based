@@ -3,12 +3,57 @@
 import { Footer } from '@/components/Footer';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, Loader2 } from 'lucide-react';
 import { ScrollProgress } from '@/components/ScrollProgress';
 import Link from 'next/link';
-import { GHLForm } from '@/components/GHLForm';
+import { useState } from 'react';
+
+const FORM_ID = 'form-contact';
 
 export default function Page() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setErrorMsg(null);
+
+    try {
+      const response = await fetch('/api/business-enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ formId: FORM_ID, type: 'Contact', ...formData }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || 'Failed to submit');
+      }
+
+      setIsSuccess(true);
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    } catch (err) {
+      setErrorMsg(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -163,14 +208,136 @@ export default function Page() {
               </div>
             </motion.div>
 
-            <motion.div
+            <motion.form
+              onSubmit={handleSubmit}
+              className="space-y-6"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <GHLForm formKey="form-contact" />
-            </motion.div>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="name" className="block text-xs font-mono uppercase tracking-wider text-zinc-500 mb-2">
+                    Your Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl border border-zinc-300 focus:border-[var(--electric-green)] focus:ring-2 focus:ring-[var(--electric-green)]/20 outline-none smooth-transition"
+                    placeholder="John Smith"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-xs font-mono uppercase tracking-wider text-zinc-500 mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl border border-zinc-300 focus:border-[var(--electric-green)] focus:ring-2 focus:ring-[var(--electric-green)]/20 outline-none smooth-transition"
+                    placeholder="0400 000 000"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-xs font-mono uppercase tracking-wider text-zinc-500 mb-2">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-xl border border-zinc-300 focus:border-[var(--electric-green)] focus:ring-2 focus:ring-[var(--electric-green)]/20 outline-none smooth-transition"
+                  placeholder="john@example.com"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="subject" className="block text-xs font-mono uppercase tracking-wider text-zinc-500 mb-2">
+                  Subject *
+                </label>
+                <select
+                  id="subject"
+                  name="subject"
+                  required
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-xl border border-zinc-300 focus:border-[var(--electric-green)] focus:ring-2 focus:ring-[var(--electric-green)]/20 outline-none smooth-transition"
+                >
+                  <option value="">Select a subject</option>
+                  <option value="booking">Book a Service</option>
+                  <option value="pre-purchase">Pre-Purchase Inspection</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="warranty">Warranty Question</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-xs font-mono uppercase tracking-wider text-zinc-500 mb-2">
+                  Message *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={6}
+                  className="w-full px-4 py-3 rounded-xl border border-zinc-300 focus:border-[var(--electric-green)] focus:ring-2 focus:ring-[var(--electric-green)]/20 outline-none smooth-transition resize-none"
+                  placeholder="Tell us about your EV and what you need help with..."
+                />
+              </div>
+
+              {isSuccess && (
+                <div className="p-4 rounded-xl bg-green-50 border border-green-200 flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                  <p className="text-sm text-green-700">Thanks! We&apos;ll be in touch within 24 hours.</p>
+                </div>
+              )}
+
+              {errorMsg && (
+                <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-sm text-red-700">
+                  {errorMsg}
+                </div>
+              )}
+
+              <motion.button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full py-4 rounded-full bg-[var(--brand-primary)] text-white smooth-transition electric-glow flex items-center justify-center gap-2 hover:bg-[#4B60FF] disabled:opacity-70 disabled:cursor-not-allowed"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" />
+                    Send Message
+                  </>
+                )}
+              </motion.button>
+
+              <p className="text-sm text-zinc-500 text-center">
+                By submitting this form, you agree to our privacy policy
+              </p>
+            </motion.form>
           </div>
         </div>
       </section>

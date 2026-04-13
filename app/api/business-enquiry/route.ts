@@ -1,99 +1,69 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
-import { getRecipient } from "@/config/form-recipients";
-import { getTemplates, type FormSubmission } from "@/lib/email-templates";
+import { getGHLWebhook } from "@/config/ghl-webhooks";
 
+/**
+ * Receives form submissions from the website and forwards them to the
+ * matching GHL inbound webhook URL (configured in config/ghl-webhooks.ts).
+ *
+ * GHL handles everything downstream:
+ *  - Creating/updating the contact
+ *  - Tagging and adding to the right pipeline
+ *  - Sending confirmation email to the customer
+ *  - Sending notification email/SMS to the EV360 team
+ */
 export async function POST(request: NextRequest) {
   try {
-    const body = (await request.json()) as FormSubmission;
+    const body = await request.json();
     const { formId, name, email, message } = body;
 
     // Basic validation
-    if (!name || !email || !message) {
+    if (!name || !email) {
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 }
       );
     }
 
-    const apiKey = process.env.RESEND_API_KEY;
-    const fromEmail =
-      process.env.BUSINESS_EMAIL_FROM || "EV360 Website <noreply@ev360.com.au>";
+    const webhook = getGHLWebhook(formId);
 
-    // Look up recipient(s) and templates from the centralized config
-    const recipient = getRecipient(formId);
-    const { adminTemplate, customerTemplate } = getTemplates(formId);
-
-    // Render both emails
-    const adminSubject = adminTemplate.subject(body);
-    const adminHtml = adminTemplate.html(body);
-    const customerSubject = customerTemplate.subject(body);
-    const customerHtml = customerTemplate.html(body);
-
-    // Dev mode — log only when no API key configured
-    if (!apiKey) {
+    // Dev mode — no webhook configured yet
+    if (!webhook) {
       console.warn(
-        "[business-enquiry] RESEND_API_KEY not set — logging submission only"
+        `[form-submit] No GHL webhook configured for formId "${formId}" — logging submission only`
       );
-      console.log({
-        formId,
-        recipient,
-        admin: { to: recipient.to, subject: adminSubject },
-        customer: { to: email, subject: customerSubject },
-        body,
-      });
+      console.log({ formId, body });
       return NextResponse.json({ ok: true, dev: true });
     }
 
-    const resend = new Resend(apiKey);
-
-    // Send admin notification
-    const adminResult = await resend.emails.send({
-      from: fromEmail,
-      to: Array.isArray(recipient.to) ? recipient.to : [recipient.to],
-      cc: recipient.cc
-        ? Array.isArray(recipient.cc)
-          ? recipient.cc
-          : [recipient.cc]
-        : undefined,
-      bcc: recipient.bcc
-        ? Array.isArray(recipient.bcc)
-          ? recipient.bcc
-          : [recipient.bcc]
-        : undefined,
-      replyTo: email,
-      subject: adminSubject,
-      html: adminHtml,
+    // Forward the submission to GHL
+    const ghlResponse = await fetch(webhook.url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        formId,
+        formLabel: webhook.label,
+        submittedAt: new Date().toISOString(),
+        ...body,
+      }),
     });
 
-    if (adminResult.error) {
-      console.error("[business-enquiry] Admin email error:", adminResult.error);
-      return NextResponse.json(
-        { error: "Failed to send admin notification" },
-        { status: 500 }
-      );
-    }
-
-    // Send customer confirmation (don't fail the request if this errors —
-    // the admin already got the message, which is the critical path)
-    const customerResult = await resend.emails.send({
-      from: fromEmail,
-      to: [email],
-      subject: customerSubject,
-      html: customerHtml,
-    });
-
-    if (customerResult.error) {
+    if (!ghlResponse.ok) {
+      const errorText = await ghlResponse.text().catch(() => "");
       console.error(
-        "[business-enquiry] Customer confirmation error:",
-        customerResult.error
+        `[form-submit] GHL webhook failed (${ghlResponse.status}):`,
+        errorText
       );
-      // Still return success — admin got the enquiry
+      return NextResponse.json(
+        { error: "Failed to forward submission" },
+        { status: 502 }
+      );
     }
 
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error("[business-enquiry] Error:", err);
+    console.error("[form-submit] Error:", err);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
