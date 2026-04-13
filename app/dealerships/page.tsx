@@ -1,6 +1,6 @@
 "use client";
 
-import { BusinessEnquiryForm } from '../../components/BusinessEnquiryForm';
+import { GHLForm } from '../../components/GHLForm';
 import { LandingPageLayout } from '../../components/LandingPageLayout';
 import {  ShieldCheck, Award, Zap, Building } from 'lucide-react';
 
@@ -69,7 +69,7 @@ export default function Page() {
       secondaryCtaText="View Sample Report"
       secondaryCtaLink="/sample-report"
       content={content}
-      form={<BusinessEnquiryForm type="Dealership" title="Partner with EV360 Dealership Solutions" />}
+      form={<GHLForm formKey="form-dealership" title="Partner with EV360 Dealership Solutions" subtitle="Fill out the form below and our dedicated business team will contact you shortly." />}
     />
   );
 }

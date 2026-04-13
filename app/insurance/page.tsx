@@ -1,6 +1,6 @@
 "use client";
 
-import { BusinessEnquiryForm } from '../../components/BusinessEnquiryForm';
+import { GHLForm } from '../../components/GHLForm';
 import { LandingPageLayout } from '../../components/LandingPageLayout';
 import {  ShieldAlert, ClipboardCheck, Lock, FileText } from 'lucide-react';
 
@@ -69,7 +69,7 @@ export default function Page() {
       ctaText="Partner With Us"
       ctaLink="/contact"
       content={content}
-      form={<BusinessEnquiryForm type="Insurance" title="EV360 for Insurers & Underwriters" />}
+      form={<GHLForm formKey="form-insurance" title="EV360 for Insurers & Underwriters" subtitle="Fill out the form below and our dedicated business team will contact you shortly." />}
     />
   );
 }

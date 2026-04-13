@@ -1,6 +1,6 @@
 "use client";
 
-import { BusinessEnquiryForm } from '../../components/BusinessEnquiryForm';
+import { GHLForm } from '../../components/GHLForm';
 import { LandingPageLayout } from '../../components/LandingPageLayout';
 import {  Truck, Activity, BarChart, Clock } from 'lucide-react';
 
@@ -67,7 +67,7 @@ export default function Page() {
       ctaText="Request Fleet Consultation"
       ctaLink="/contact"
       content={content}
-      form={<BusinessEnquiryForm type="Fleet" title="Optimize Your Fleet with EV360" />}
+      form={<GHLForm formKey="form-fleet" title="Optimize Your Fleet with EV360" subtitle="Fill out the form below and our dedicated business team will contact you shortly." />}
     />
   );
 }
