@@ -25,7 +25,7 @@ export const formRecipients: Record<string, FormRecipient> = {
   // Contact page — general enquiries
   "form-contact": {
     label: "General Contact",
-    to: "jgetalada@motoronecx.com",
+    to: ["jgetalada@motoronecx.com", "joffgetalada@gmail.com"],
   },
 
   // Business landing pages
