@@ -26,7 +26,7 @@ export interface GHLWebhookConfig {
 export const ghlWebhooks: Record<string, GHLWebhookConfig> = {
   "form-contact": {
     label: "Website — Contact Form",
-    url: "REPLACE_WITH_GHL_WEBHOOK_URL",
+    url: "https://services.leadconnectorhq.com/hooks/Le0a16YsUwJZPkYCafpJ/webhook-trigger/6974e74f-44a1-4d6f-b177-ee2fb13fbcae",
   },
 
   "form-fleet": {

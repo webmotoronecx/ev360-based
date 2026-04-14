@@ -6,7 +6,7 @@ import { motion } from 'motion/react';
 import { Mail, Phone, MapPin, Send, CheckCircle, Loader2 } from 'lucide-react';
 import { ScrollProgress } from '@/components/ScrollProgress';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const FORM_ID = 'form-contact';
 
@@ -16,11 +16,17 @@ export default function Page() {
     email: '',
     phone: '',
     subject: '',
-    message: ''
+    message: '',
+    website: '' // honeypot — must stay empty
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const formLoadedAt = useRef<number>(0);
+
+  useEffect(() => {
+    formLoadedAt.current = Date.now();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,10 +34,12 @@ export default function Page() {
     setErrorMsg(null);
 
     try {
+      const elapsed = Date.now() - formLoadedAt.current;
+
       const response = await fetch('/api/business-enquiry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ formId: FORM_ID, type: 'Contact', ...formData }),
+        body: JSON.stringify({ formId: FORM_ID, type: 'Contact', elapsed, ...formData }),
       });
 
       if (!response.ok) {
@@ -40,7 +48,7 @@ export default function Page() {
       }
 
       setIsSuccess(true);
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '', website: '' });
     } catch (err) {
       setErrorMsg(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
     } finally {
@@ -216,6 +224,20 @@ export default function Page() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
+              {/* Honeypot — hidden from humans, bots fill it in and get rejected */}
+              <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}>
+                <label htmlFor="website">Website (leave blank)</label>
+                <input
+                  type="text"
+                  id="website"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={formData.website}
+                  onChange={handleChange}
+                />
+              </div>
+
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-xs font-mono uppercase tracking-wider text-zinc-500 mb-2">

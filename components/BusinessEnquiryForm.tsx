@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { CheckCircle, Loader2, Send } from 'lucide-react';
 
@@ -29,11 +29,17 @@ export function BusinessEnquiryForm({ type, title, subtitle }: BusinessEnquiryFo
     company: '',
     role: '',
     scale: '',
-    message: ''
+    message: '',
+    website: '' // honeypot — must stay empty; bots will fill it
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const formLoadedAt = useRef<number>(0);
+
+  useEffect(() => {
+    formLoadedAt.current = Date.now();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,10 +47,12 @@ export function BusinessEnquiryForm({ type, title, subtitle }: BusinessEnquiryFo
     setErrorMsg(null);
 
     try {
+      const elapsed = Date.now() - formLoadedAt.current;
+
       const response = await fetch('/api/business-enquiry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ formId, type, ...formState }),
+        body: JSON.stringify({ formId, type, elapsed, ...formState }),
       });
 
       if (!response.ok) {
@@ -93,6 +101,20 @@ export function BusinessEnquiryForm({ type, title, subtitle }: BusinessEnquiryFo
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <input type="hidden" name="formId" value={formId} />
+
+        {/* Honeypot — hidden from humans, bots fill it in and get rejected */}
+        <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}>
+          <label htmlFor="website">Website (leave blank)</label>
+          <input
+            type="text"
+            id="website"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            value={formState.website}
+            onChange={handleChange}
+          />
+        </div>
         <div className="grid md:grid-cols-2 gap-6">
           <div className="space-y-2">
             <label htmlFor="name" className="text-sm font-medium text-zinc-700">Full Name</label>
