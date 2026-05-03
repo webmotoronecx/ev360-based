@@ -134,7 +134,7 @@ export default function Page() {
           transition={{ duration: 1.5 }}
         >
           <ImageWithFallback
-            src="/assets/16_FAQ/hero_faq.jpeg"
+            src="/assets/16_FAQ/hero_faq.webp"
             alt="Customer support"
             className="w-full h-full object-cover"
           />

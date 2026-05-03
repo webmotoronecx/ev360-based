@@ -73,7 +73,7 @@ export default function Page() {
           transition={{ duration: 1.5 }}
         >
           <ImageWithFallback
-            src="/assets/Hero_HowItWorks_v3.png"
+            src="/assets/Hero_HowItWorks_v3.webp"
             alt="EV battery diagnostic"
             className="w-full h-full object-cover"
           />
@@ -175,16 +175,16 @@ export default function Page() {
                   >
                     <div className="absolute inset-0 bg-[#d3ddde]/50" />
                     {index === 0 && (
-                      <ImageWithFallback src="/assets/how-it-works-step1.png" alt="Choose your service" className="absolute inset-0 w-full h-full object-cover" />
+                      <ImageWithFallback src="/assets/how-it-works-step1.webp" alt="Choose your service" className="absolute inset-0 w-full h-full object-cover" />
                     )}
                     {index === 1 && (
-                      <ImageWithFallback src="/assets/how-it-works-step2.png" alt="Book your appointment" className="absolute inset-0 w-full h-full object-cover" />
+                      <ImageWithFallback src="/assets/how-it-works-step2.webp" alt="Book your appointment" className="absolute inset-0 w-full h-full object-cover" />
                     )}
                     {index === 2 && (
-                      <ImageWithFallback src="/assets/we-arrive-inspect.png" alt="We arrive and inspect" className="absolute inset-0 w-full h-full object-cover" />
+                      <ImageWithFallback src="/assets/we-arrive-inspect.webp" alt="We arrive and inspect" className="absolute inset-0 w-full h-full object-cover" />
                     )}
                     {index === 3 && (
-                      <ImageWithFallback src="/assets/how-it-works/receive-report.png" alt="Receive your report" className="absolute inset-0 w-full h-full object-cover" />
+                      <ImageWithFallback src="/assets/how-it-works/receive-report.webp" alt="Receive your report" className="absolute inset-0 w-full h-full object-cover" />
                     )}
                   </motion.div>
                 </motion.div>
@@ -268,7 +268,7 @@ export default function Page() {
               transition={{ duration: 0.8 }}
             >
               <ImageWithFallback
-                src="/assets/what-to-expect.png"
+                src="/assets/what-to-expect.webp"
                 alt="EV diagnostic in progress"
                 className="w-full h-full object-cover"
               />

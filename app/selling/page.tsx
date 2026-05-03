@@ -9,7 +9,7 @@ export default function Page() {
       <div className="order-2 md:order-1 relative h-[400px] bg-zinc-200 rounded-[2rem] overflow-hidden shadow-lg border border-white/20">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/assets/10_ForSellers/prove-your-cars-value.png"
+          src="/assets/10_ForSellers/prove-your-cars-value.webp"
           alt="Prove your car's value"
           className="w-full h-full object-cover"
         />
@@ -36,7 +36,7 @@ export default function Page() {
     <LandingPageLayout
       title="Sell Your EV Faster & For More"
       subtitle="The #1 question every buyer asks is 'How is the battery?'. Answer it with authority using an independent EV360 Health Certificate."
-      heroImage="/assets/10_ForSellers/sell-your-ev-faster-for-more.png"
+      heroImage="/assets/10_ForSellers/sell-your-ev-faster-for-more.webp"
       audience="Sellers"
       benefits={[
         {

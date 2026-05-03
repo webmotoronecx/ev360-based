@@ -32,7 +32,7 @@ export default function Page() {
       <div className="relative h-[400px] bg-zinc-200 rounded-[2rem] overflow-hidden shadow-lg border border-white/20">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/assets/09_ForBuyers/avoid-the-mistake.png"
+          src="/assets/09_ForBuyers/avoid-the-mistake.webp"
           alt="Avoid the $15,000 mistake"
           className="w-full h-full object-cover"
         />
@@ -44,7 +44,7 @@ export default function Page() {
     <LandingPageLayout
       title="Buy Your Next EV With Total Confidence"
       subtitle="The used EV market is growing, but battery health is invisible. Our pre-purchase inspection reveals the true condition of the battery before you hand over your cash."
-      heroImage="/assets/09_ForBuyers/buy-your-next-ev-with-total-confidence.png"
+      heroImage="/assets/09_ForBuyers/buy-your-next-ev-with-total-confidence.webp"
       audience="Buyers"
       benefits={[
         {

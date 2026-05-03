@@ -72,7 +72,7 @@ export default function Page() {
           transition={{ duration: 1.5 }}
         >
           <ImageWithFallback
-            src="/assets/about-hero.png"
+            src="/assets/about-hero.webp"
             alt="EV360 Team"
             className="w-full h-full object-cover"
           />

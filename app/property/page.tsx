@@ -10,7 +10,7 @@ export default function Page() {
       <div className="order-2 md:order-1 relative h-[400px] bg-zinc-200 rounded-[2rem] overflow-hidden shadow-lg border border-white/20">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/assets/15_Strata-Property/manage-fire-risk.jpeg"
+          src="/assets/15_Strata-Property/manage-fire-risk.webp"
           alt="Manage fire risk in your building"
           className="w-full h-full object-cover"
         />
@@ -45,7 +45,7 @@ export default function Page() {
     <LandingPageLayout
       title="EV Safety for Strata & Building Managers"
       subtitle="Ensure the safety of your property and residents by implementing verified battery health checks for EVs charging in your building."
-      heroImage="/assets/15_Strata-Property/hero_strata.png"
+      heroImage="/assets/15_Strata-Property/hero_strata.webp"
       audience="Strata & Property"
       benefits={[
         {

@@ -15,7 +15,7 @@ export default function Page() {
       vehicle: "2021 Tesla Model 3",
       story: "Pre-Purchase Peace of Mind",
       quote: "We were about to spend $45,000 on a used Model 3. EV360's inspection revealed the battery had degraded to 82% health - way below what the seller claimed. They saved us from a costly mistake and helped us negotiate $8,000 off the price.",
-      image: "/assets/pre-purchase-peace-of-mind.png",
+      image: "/assets/pre-purchase-peace-of-mind.webp",
       savings: "$8,000",
       instagramReel: null // Placeholder for future Instagram embed
     },
@@ -25,7 +25,7 @@ export default function Page() {
       vehicle: "2020 Nissan Leaf",
       story: "Warranty Claim Success",
       quote: "My Leaf was losing range fast but the dealer kept saying it was 'normal'. EV360's diagnostic report showed 76% battery health, which qualified me for a warranty replacement. The detailed report gave me the evidence I needed.",
-      image: "/assets/warranty-claim-success.png",
+      image: "/assets/warranty-claim-success.webp",
       savings: "$22,000",
       instagramReel: null
     },
@@ -35,7 +35,7 @@ export default function Page() {
       vehicle: "2022 Hyundai Ioniq 5",
       story: "First-Time EV Buyer Confidence",
       quote: "As a first-time EV buyer, I had so many questions. The team at EV360 not only checked my car thoroughly but educated me on what to look for in battery health. Now I feel confident about my purchase and know exactly how to maintain it.",
-      image: "/assets/first-time-ev-buyer-confidence.png",
+      image: "/assets/first-time-ev-buyer-confidence.webp",
       savings: "Peace of Mind",
       instagramReel: null
     }
@@ -139,7 +139,7 @@ export default function Page() {
           transition={{ duration: 1.5 }}
         >
           <ImageWithFallback
-            src="/assets/stories-page-hero.png"
+            src="/assets/stories-page-hero.webp"
             alt="Customer stories"
             className="w-full h-full object-cover"
           />

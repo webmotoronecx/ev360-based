@@ -56,7 +56,7 @@ export default function Page() {
           transition={{ duration: 1.5 }}
         >
           <ImageWithFallback
-            src="/assets/education-hub-hero.png"
+            src="/assets/education-hub-hero.webp"
             alt="EV Education Hub"
             className="w-full h-full object-cover"
           />

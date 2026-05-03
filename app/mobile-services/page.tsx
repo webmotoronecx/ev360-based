@@ -139,7 +139,7 @@ export default function Page() {
           transition={{ duration: 1.5 }}
         >
           <ImageWithFallback
-            src="/assets/mobile-services-hero.png"
+            src="/assets/mobile-services-hero.webp"
             alt="Mobile EV services"
             className="w-full h-full object-cover"
           />

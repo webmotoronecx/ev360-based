@@ -91,7 +91,7 @@ export const siteConfig: SiteConfig = {
     headline: "360° EV battery health checks. Starting from $199*",
     sub: "Complete battery assessments, delivered at your home, workplace, or our service centre.",
     backgroundImages: [
-      "/assets/Hero_HowItWorks_v3.png",
+      "/assets/Hero_HowItWorks_v3.webp",
     ],
     rotationInterval: 6,
     theme: "dark",

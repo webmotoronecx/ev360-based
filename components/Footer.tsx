@@ -11,7 +11,7 @@ export function Footer() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <ImageWithFallback
-          src="/assets/footer-bg.png"
+          src="/assets/footer-bg.webp"
           alt="Electric vehicle on scenic road"
           className="w-full h-full object-cover"
         />

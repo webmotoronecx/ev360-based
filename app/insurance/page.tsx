@@ -47,7 +47,7 @@ export default function Page() {
     <LandingPageLayout
       title="Smarter EV Underwriting & Claims"
       subtitle="Stop guessing. Integrate independent battery health data into your policy pricing and claims workflows for electric vehicles."
-      heroImage="/assets/14_Insurers/smarter-ev-underwriting-claims.jpeg"
+      heroImage="/assets/14_Insurers/smarter-ev-underwriting-claims.webp"
       audience="Insurers"
       benefits={[
         {

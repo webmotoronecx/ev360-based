@@ -120,7 +120,7 @@ export default function Page() {
           transition={{ duration: 1.5 }}
         >
           <ImageWithFallback
-            src="/assets/17_Support/hero_support.jpeg"
+            src="/assets/17_Support/hero_support.webp"
             alt="Customer support"
             className="w-full h-full object-cover"
           />

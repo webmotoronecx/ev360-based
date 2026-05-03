@@ -72,7 +72,7 @@ export default function Page() {
           transition={{ duration: 1.5 }}
         >
           <ImageWithFallback
-            src="/assets/services-hero.png"
+            src="/assets/services-hero.webp"
             alt="EV diagnostic service"
             className="w-full h-full object-cover"
           />
@@ -316,7 +316,7 @@ export default function Page() {
               transition={{ duration: 0.8 }}
             >
               <ImageWithFallback
-                src="/assets/mobile-service.png"
+                src="/assets/mobile-service.webp"
                 alt="Mobile EV service"
                 className="w-full h-full object-cover"
               />

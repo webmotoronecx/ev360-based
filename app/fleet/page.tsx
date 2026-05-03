@@ -10,7 +10,7 @@ export default function Page() {
       <div className="order-2 md:order-1 relative h-[400px] bg-zinc-200 rounded-[2rem] overflow-hidden shadow-lg border border-white/20">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/assets/12_ForFleet/data-driven-fleet-management.jpeg"
+          src="/assets/12_ForFleet/data-driven-fleet-management.webp"
           alt="Data-driven fleet management"
           className="w-full h-full object-cover"
         />
@@ -45,7 +45,7 @@ export default function Page() {
     <LandingPageLayout
       title="Optimize Your Electric Fleet Lifecycle"
       subtitle="Maximize residual values and minimize downtime with regular, independent battery health monitoring for your entire fleet."
-      heroImage="/assets/12_ForFleet/optimize-your-electric-fleet-lifecycle.png"
+      heroImage="/assets/12_ForFleet/optimize-your-electric-fleet-lifecycle.webp"
       audience="Fleet Managers"
       benefits={[
         {

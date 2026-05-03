@@ -87,7 +87,7 @@ export default function Page() {
           transition={{ duration: 1.5 }}
         >
           <ImageWithFallback
-            src="/assets/partners-page-hero.png"
+            src="/assets/partners-page-hero.webp"
             alt="Business partnership"
             className="w-full h-full object-cover"
           />
@@ -227,7 +227,7 @@ export default function Page() {
               transition={{ duration: 0.8 }}
             >
               <ImageWithFallback
-                src="/assets/increase-customer.png"
+                src="/assets/increase-customer.webp"
                 alt="Partner success story"
                 className="w-full h-full object-cover"
               />

@@ -17,10 +17,10 @@ import { BusinessSolutions } from '@/components/BusinessSolutions';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { Hero } from '@/components/Hero';
 
-const technicianImage = '/assets/1b2b252267a47a3c99ef04d3de02f27d219c9150.png';
-const mobileVanImage = '/assets/211ec73fe84f24f3614d7848ac8db046247d62f7.png';
-const batteryValueImage = '/assets/22eb057b3bbdadb4a8847fef1f98c5cd56dd25b2.png';
-const reportImage = '/assets/f82e310949ec251e9d18c8d2dff33e9d24a0cc54.png';
+const technicianImage = '/assets/1b2b252267a47a3c99ef04d3de02f27d219c9150.webp';
+const mobileVanImage = '/assets/211ec73fe84f24f3614d7848ac8db046247d62f7.webp';
+const batteryValueImage = '/assets/22eb057b3bbdadb4a8847fef1f98c5cd56dd25b2.webp';
+const reportImage = '/assets/f82e310949ec251e9d18c8d2dff33e9d24a0cc54.webp';
 
 export function HomeClient() {
   const [activeProblem, setActiveProblem] = useState(0);
@@ -102,7 +102,7 @@ export function HomeClient() {
               <Link href="/buying" className="block h-full w-full">
                 <div className="absolute inset-0">
                   <ImageWithFallback
-                    src="/assets/hero_buyerspage.png"
+                    src="/assets/hero_buyerspage.webp"
                     alt="Pre-Purchase Verification"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -237,7 +237,7 @@ export function HomeClient() {
               className="relative"
             >
               <img
-                src="/assets/Cert_Mockup.png"
+                src="/assets/Cert_Mockup.webp"
                 alt="EV360 Certificate and Battery Health Report"
                 className="w-full max-w-[684px] mx-auto"
               />
@@ -537,7 +537,7 @@ export function HomeClient() {
             >
               <div className="relative h-full overflow-hidden rounded-[2rem]">
                 <ImageWithFallback
-                  src="/assets/we-come-to-you.png"
+                  src="/assets/we-come-to-you.webp"
                   alt="EV360 mobile service van"
                   className="w-full h-full object-cover"
                 />

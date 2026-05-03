@@ -33,7 +33,7 @@ export default function Page() {
       <div className="relative h-[400px] bg-zinc-200 rounded-[2rem] overflow-hidden shadow-lg border border-white/20">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/assets/13_Dealerships/build-trust-sell-more-inventory.png"
+          src="/assets/13_Dealerships/build-trust-sell-more-inventory.webp"
           alt="Build trust, sell more inventory"
           className="w-full h-full object-cover"
         />
