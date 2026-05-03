@@ -99,240 +99,398 @@ export const articles: Article[] = [
   },
   {
     slug: "true-cost-ownership-australia",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYWxjdWxhdG9yJTIwbW9uZXl8ZW58MXx8fHwxNzY0MTE5MDAwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/assets/articles/true-cost-ownership-australia/hero.webp",
     title: "The True Cost of EV Ownership in Australia vs. ICE Vehicles",
-    description: "Breaking down the numbers: fuel savings, maintenance costs, and registration incentives vs. higher upfront prices.",
+    description: "Breaking down the numbers: fuel savings, maintenance costs, and government incentives.",
     category: "Buying & Selling",
     date: "September 15, 2024",
     author: "Marcus Chen",
     content: `
-      <p class="lead">EVs are more expensive to buy, but significantly cheaper to run. At what point do you break even? Let's crunch the numbers for the average Australian household.</p>
-      
-      <h3>The Upfront Premium</h3>
-      <p>Let's compare a typical $60,000 EV (like a Tesla Model 3 or BYD Seal) against a $40,000 petrol sedan (like a Toyota Camry). The EV starts with a $20,000 disadvantage.</p>
+      <h3>The Upfront Premium: EVs vs. ICE Vehicles</h3>
+      <p>The sticker price is where electric vehicles traditionally lose the first round. A 2024 Tesla Model 3 Rear-Wheel Drive retails for approximately <strong>$63,900</strong>, while a comparably-sized Toyota Camry Ascent Sport starts at around <strong>$39,990</strong>. That's a $23,910 upfront premium for the EV.</p>
+      <p>However, the price gap is narrowing. Government incentives at both federal and state levels are helping to reduce the effective purchase price for many buyers. In states like NSW, EV buyers can access stamp duty exemptions (saving up to $3,000), while the ACT offers up to $15,000 in combined incentives for zero-emission vehicles. Queensland provides interest-free loans for EVs, and Victoria offers rebates for eligible buyers.</p>
+      <p>More importantly, the upfront price is only one piece of the total cost of ownership puzzle. What matters is the <strong>lifetime cost</strong> of operating the vehicle—and this is where EVs start to shine.</p>
 
       <div class="my-10">
-        <img src="https://images.unsplash.com/photo-1640802396402-094375631000?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2xhciUyMHBhbmVscyUyMGhvdXNlJTIwZWxlY3RyaWMlMjBjYXIlMjBjaGFyZ2luZ3xlbnwxfHx8fDE3NzE5MTA5NTV8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Solar Charging EV" class="rounded-2xl w-full object-cover h-[400px] shadow-lg" />
-        <p class="text-sm text-zinc-500 mt-2 text-center">Charging from home solar is the "secret weapon" of EV ownership costs.</p>
+        <img src="/assets/articles/true-cost-ownership-australia/inline-1.webp" alt="Solar charging EV" class="rounded-2xl w-full object-cover h-[400px] shadow-lg" />
+        <p class="text-sm text-zinc-500 mt-2 text-center">Charging from home solar panels is the ultimate cost-saving strategy for EV owners.</p>
       </div>
 
-      <h3>Running Costs: The Fuel Gap</h3>
-      <p>Assuming 15,000km driven annually, with petrol at $2.00/L and electricity at $0.25/kWh (grid mix) or $0.08/kWh (solar feed-in loss).</p>
+      <h3>Running Costs: Fuel, Maintenance, and Registration</h3>
+      <p>This is where electric vehicles pull ahead dramatically. Let's break down the three main ongoing cost categories for an average Australian household driving 15,000 kilometres annually:</p>
 
-      <div class="overflow-x-auto my-8">
-        <table class="w-full border-collapse text-left text-sm bg-white shadow-sm rounded-lg overflow-hidden">
-          <thead class="bg-zinc-900 text-white">
-            <tr>
-              <th class="p-4">Cost Category (Annual)</th>
-              <th class="p-4">Petrol Car (8L/100km)</th>
-              <th class="p-4">EV (Grid Charging)</th>
-              <th class="p-4">EV (Solar Charging)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-b border-zinc-100">
-              <td class="p-4 font-medium">Fuel/Energy</td>
-              <td class="p-4 text-red-600 font-bold">$2,400</td>
-              <td class="p-4">$600</td>
-              <td class="p-4 text-[var(--electric-green)] font-bold">$180</td>
-            </tr>
-            <tr class="border-b border-zinc-100 bg-zinc-50">
-              <td class="p-4 font-medium">Maintenance</td>
-              <td class="p-4">$400</td>
-              <td class="p-4">$150</td>
-              <td class="p-4">$150</td>
-            </tr>
-            <tr class="border-b border-zinc-100">
-              <td class="p-4 font-medium">Registration (NSW Example)</td>
-              <td class="p-4">$400</td>
-              <td class="p-4">$400</td>
-              <td class="p-4">$400</td>
-            </tr>
-            <tr class="bg-zinc-100 font-bold">
-              <td class="p-4">Total Annual Cost</td>
-              <td class="p-4">$3,200</td>
-              <td class="p-4">$1,150</td>
-              <td class="p-4">$730</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="bg-[#fafafa] border-l-4 border-[#334AFF] rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-zinc-900 text-lg mb-2">Fuel Costs</h4>
+        <p class="text-sm text-zinc-700 mb-4">Charging an EV costs significantly less than fuelling an ICE vehicle. Based on current Australian energy prices:</p>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between"><span class="text-zinc-700">Toyota Camry (8L/100km @ $2.00/L):</span><span class="font-bold text-red-600">$2,400/year</span></div>
+          <div class="flex justify-between"><span class="text-zinc-700">Tesla Model 3 (Grid charging @ $0.25/kWh):</span><span class="font-bold text-blue-600">$600/year</span></div>
+          <div class="flex justify-between"><span class="text-zinc-700">Tesla Model 3 (Solar charging @ $0.08/kWh):</span><span class="font-bold text-[#334AFF]">$180/year</span></div>
+        </div>
+        <p class="text-xs text-zinc-500 italic mt-4 m-0">Annual fuel savings: $1,800 - $2,220</p>
       </div>
 
-      <h3>The "Sunshine Tax" (FBT) Exemption</h3>
-      <p>For employees heavily using their car, the Federal Government's FBT exemption on EVs is a game changer. If you salary sacrifice a $60,000 EV through a novated lease, you pay for the car using <strong>pre-tax salary</strong>.</p>
-      
-      <div class="bg-[var(--electric-blue)]/10 border-l-4 border-[var(--electric-blue)] p-6 my-8 rounded-r-lg">
-        <h4 class="text-[var(--electric-blue)] font-bold mb-2 text-lg">Did you know?</h4>
-        <p class="text-zinc-800">A novated lease on an EV can save an average income earner ($90k) around <strong>$4,000 to $6,000 per year</strong> in income tax compared to buying the same car with a standard car loan.</p>
+      <div class="bg-[#fafafa] border-l-4 border-[#334AFF] rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-zinc-900 text-lg mb-2">Maintenance</h4>
+        <p class="text-sm text-zinc-700 mb-4">EVs have significantly fewer moving parts than ICE vehicles. No oil changes, no spark plugs, no timing belts, no exhaust systems, and regenerative braking means brake pads last much longer.</p>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between"><span class="text-zinc-700">Toyota Camry (annual service + consumables):</span><span class="font-bold text-zinc-900">$400/year</span></div>
+          <div class="flex justify-between"><span class="text-zinc-700">Tesla Model 3 (cabin air filter + tyres + washer fluid):</span><span class="font-bold text-blue-600">$150/year</span></div>
+        </div>
+        <p class="text-xs text-zinc-500 italic mt-4 m-0">Annual maintenance savings: $250</p>
       </div>
 
-      <h3>Verdict</h3>
-      <p>Without a novated lease, the breakeven point is around 5-6 years. With a novated lease, the EV is often <strong>cheaper from day one</strong> on a weekly cash-flow basis. The era of the "expensive" EV is ending.</p>
+      <div class="bg-[#fafafa] border-l-4 border-[#334AFF] rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-zinc-900 text-lg mb-2">Registration</h4>
+        <p class="text-sm text-zinc-700 mb-4">Registration costs vary by state, and some states are introducing road user charges for EVs. In most cases, registration costs are similar between EVs and ICE vehicles, though this varies:</p>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between"><span class="text-zinc-700">NSW (both vehicles):</span><span class="font-bold text-zinc-900">~$400/year</span></div>
+          <div class="flex justify-between"><span class="text-zinc-700">VIC (EV road user charge):</span><span class="font-bold text-zinc-900">+$300/year</span></div>
+          <div class="flex justify-between"><span class="text-zinc-700">QLD (stamp duty exemption for EVs):</span><span class="font-bold text-[#334AFF]">Savings vary</span></div>
+        </div>
+        <p class="text-xs text-zinc-500 italic mt-4 m-0">Registration costs are roughly equivalent, with some state-specific variations.</p>
+      </div>
+
+      <h3>Annual Cost Comparison: The Full Picture</h3>
+      <p>Here's how the total annual running costs stack up, assuming 15,000 km of driving per year:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Cost Category (Annual)</th>
+            <th>Toyota Camry</th>
+            <th>Tesla Model 3 (Grid)</th>
+            <th>Tesla Model 3 (Solar)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Fuel/Energy</strong></td><td>$2,400</td><td>$600</td><td>$180</td></tr>
+          <tr><td><strong>Maintenance</strong></td><td>$400</td><td>$150</td><td>$150</td></tr>
+          <tr><td><strong>Registration (NSW)</strong></td><td>$400</td><td>$400</td><td>$400</td></tr>
+          <tr><td><strong>Total Annual Cost</strong></td><td><strong>$3,200</strong></td><td><strong>$1,150</strong></td><td><strong>$730</strong></td></tr>
+        </tbody>
+      </table>
+
+      <div class="bg-gradient-to-r from-blue-50 to-green-50 border border-blue-100 rounded-2xl p-8 my-8">
+        <p class="font-medium text-zinc-900 text-lg m-0">Annual Savings with EV:</p>
+        <p class="text-3xl font-light text-[#334AFF] mt-2 mb-2">$2,050 - $2,470 per year</p>
+        <p class="text-sm text-zinc-600 m-0">Over 10 years, that's $20,500 - $24,700 in operating cost savings alone.</p>
+      </div>
+
+      <h3>Electric Vehicle Tax Benefits</h3>
+      <p>One of the most powerful financial incentives for EV ownership in Australia is the <strong>Fringe Benefits Tax (FBT) exemption</strong> for battery electric vehicles. This applies to EVs purchased or leased through a novated lease arrangement with your employer.</p>
+
+      <div class="bg-[#334AFF]/10 border-l-4 border-[#334AFF] rounded-r-xl p-8 my-8">
+        <h4 class="font-bold text-[#334AFF] text-xl mb-4">How the FBT Exemption Works</h4>
+        <p class="text-zinc-800">Normally, if your employer provides you with a car through salary sacrifice, you pay Fringe Benefits Tax on the value of that benefit. However, for eligible EVs, this tax is completely exempt, meaning you can pay for the vehicle using <strong>pre-tax salary</strong>.</p>
+        <p class="text-sm m-0"><strong>Eligibility:</strong> Battery electric vehicles with a luxury car tax value below $91,387 (2024-25 threshold)</p>
+        <p class="text-sm m-0"><strong>Savings potential:</strong> An average income earner ($90,000/year) can save <strong>$4,000 - $6,000 per year</strong> in tax through a novated lease compared to a standard car loan</p>
+        <p class="text-sm m-0"><strong>Who benefits most:</strong> Employees in the 37% or 45% tax brackets see the largest percentage savings</p>
+      </div>
+
+      <p>State-specific incentives also apply:</p>
+      <ul>
+        <li><strong>NSW:</strong> Stamp duty exemption (up to $3,000 savings) + $3,000 rebate for EVs under $68,750</li>
+        <li><strong>Victoria:</strong> Road user charge of 2.8c/km applies, but $3,000 rebate available for vehicles under $68,740</li>
+        <li><strong>Queensland:</strong> Interest-free loans up to $15,000 for new EVs</li>
+        <li><strong>ACT:</strong> Up to $15,000 in combined incentives including two years of free registration</li>
+        <li><strong>South Australia:</strong> $3,000 subsidy for new EVs under $68,750</li>
+      </ul>
+
+      <h3>Verdict: EVs Are Cheaper Over Time</h3>
+      <p>When you combine lower running costs with tax benefits and government incentives, the total cost of ownership equation shifts dramatically in favour of electric vehicles:</p>
+
+      <div class="bg-zinc-900 text-white p-8 rounded-2xl my-8">
+        <h4 class="text-2xl font-light mb-6">Break-Even Analysis</h4>
+        <div class="space-y-6">
+          <div>
+            <p class="text-sm text-zinc-400 m-0">Without Novated Lease:</p>
+            <p class="text-xl font-medium text-white mt-1 mb-1">Break-even at <span class="text-[#334AFF]">5-6 years</span></p>
+            <p class="text-xs text-zinc-500 m-0">After this point, every year of ownership increases your savings</p>
+          </div>
+          <div>
+            <p class="text-sm text-zinc-400 m-0">With Novated Lease (FBT Exemption):</p>
+            <p class="text-xl font-medium text-white mt-1 mb-1">EV is <span class="text-[#334AFF]">cheaper from day one</span></p>
+            <p class="text-xs text-zinc-500 m-0">Lower weekly payments + fuel savings + maintenance savings = immediate financial benefit</p>
+          </div>
+        </div>
+        <div class="border-t border-zinc-700 mt-6 pt-6">
+          <p class="text-sm text-zinc-400 mb-3">10-Year Total Cost of Ownership:</p>
+          <div class="space-y-2 text-base">
+            <div class="flex justify-between"><span class="text-white">Toyota Camry:</span><span class="font-medium text-white">$71,990</span></div>
+            <div class="flex justify-between"><span class="text-white">Tesla Model 3 (Grid charging):</span><span class="font-medium text-blue-300">$75,400</span></div>
+            <div class="flex justify-between"><span class="text-white">Tesla Model 3 (Solar + Novated lease):</span><span class="font-medium text-[#334AFF]">$54,200*</span></div>
+          </div>
+          <p class="text-xs text-zinc-500 italic mt-4 m-0">*Includes FBT savings, solar charging benefits, and lower maintenance costs</p>
+        </div>
+      </div>
+
+      <p>The era of the "expensive" electric vehicle is ending. While the upfront sticker price remains higher, the combination of dramatically lower running costs, zero emissions, superior performance, and generous tax incentives makes EVs increasingly attractive from a pure financial perspective.</p>
+      <p>For households with solar panels and access to novated leasing, EVs are already the more economical choice. For everyone else, the break-even point is getting shorter every year as battery costs decline and charging infrastructure expands.</p>
     `
   },
   {
     slug: "understanding-range-degradation",
-    image: "https://images.unsplash.com/photo-1622333847289-41e8172e650a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxFViUyMGRhc2hib2FyZCUyMGludGVyaW9yfGVufDF8fHx8MTc2NDA2ODY3MHww&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/assets/articles/understanding-range-degradation/hero.webp",
     title: "Understanding EV Range Degradation",
-    description: "What's normal, what's not, and when to be concerned about your electric vehicle's range performance.",
+    description: "What's normal, what's not, and when it makes sense to book a battery health check.",
     category: "Performance",
     date: "December 15, 2023",
     author: "Tom Baker",
     content: `
-      <p class="lead">Noticing your EV doesn't go as far as it used to? Some range loss is normal, but it's important to know the difference between expected degradation and a problem.</p>
-      
-      <h3>The "Guess-o-Meter"</h3>
-      <p>Your dashboard range estimate is based on recent driving history, temperature, and battery charge. It is often inaccurate. True range degradation can only be determined by measuring the battery's energy capacity.</p>
+      <p>If your EV is not going as far as it used to, do not panic. A drop in displayed range does not always mean the battery is wearing out. Weather, speed, terrain, tyre pressure, heating and cooling use, and charging habits can all affect the number you see on screen.</p>
+      <p>The range shown on your dashboard is an estimate, not a direct measure of battery health. Some vehicles calculate it more heavily from recent driving behaviour, while others lean more on standardised efficiency models. That means the number can move around even when the battery itself is performing normally.</p>
+      <p>Cold mornings, short trips, highway driving, strong headwinds, and heavy use of cabin heating or air conditioning can all make range appear worse than usual. In many cases, that loss is temporary and improves when conditions change.</p>
 
+      <h3>Why dashboard range can change</h3>
       <div class="my-10">
-        <img src="https://images.unsplash.com/photo-1622333847289-41e8172e650a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHZlaGljbGUlMjBkYXNoYm9hcmQlMjByYW5nZSUyMGRpc3BsYXl8ZW58MXx8fHwxNzcxOTEwOTU1fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="EV Dashboard Range" class="rounded-2xl w-full object-cover h-[400px] shadow-lg" />
-        <p class="text-sm text-zinc-500 mt-2 text-center">Don't panic if your range drops in winter. That's physics, not degradation.</p>
+        <img src="/assets/articles/understanding-range-degradation/inline-1.webp" alt="EV dashboard range display" class="rounded-2xl w-full object-cover h-[400px] shadow-lg" />
+        <p class="text-sm text-zinc-500 mt-2 text-center">Dashboard range estimates can vary based on recent driving conditions and climate.</p>
       </div>
-      
-      <h3>Normal Degradation Curve</h3>
-      <p>EV batteries typically follow a "bathtub curve" (without the second rise). They lose capacity quickly at first, then stabilize.</p>
-      
+
+      <h3>What normal degradation looks like</h3>
+      <p>All EV batteries lose some usable capacity over time. What matters most is the pattern. In many cases, capacity loss is gradual rather than sudden, and it can vary from one vehicle to another.</p>
+      <p>Battery ageing is influenced by several factors, including the vehicle design, battery chemistry, climate, mileage, charging behaviour, and how often the battery is exposed to extreme heat or cold. That is why two similar EVs can age differently over time.</p>
+      <p>It is also important to separate temporary range loss from permanent degradation. A winter drop in range, or a period of less efficient driving, does not automatically mean the battery has permanently lost capacity.</p>
+
       <div class="bg-zinc-900 p-8 rounded-2xl my-8 text-white">
-        <h4 class="text-center mb-6 font-light">Expected Battery Capacity Over Time</h4>
+        <h4 class="text-center mb-6 font-light text-base">Expected Battery Capacity Over Time</h4>
         <div class="space-y-4">
           <div class="flex items-center gap-4">
             <span class="w-24 text-sm text-zinc-400">New</span>
             <div class="flex-1 h-4 bg-zinc-800 rounded-full overflow-hidden">
-              <div class="h-full bg-[var(--electric-green)] w-[100%]"></div>
+              <div class="h-full bg-[#334AFF]" style="width:100%"></div>
             </div>
             <span class="w-12 text-sm font-mono">100%</span>
           </div>
           <div class="flex items-center gap-4">
             <span class="w-24 text-sm text-zinc-400">1 Year</span>
             <div class="flex-1 h-4 bg-zinc-800 rounded-full overflow-hidden">
-              <div class="h-full bg-[var(--electric-green)] w-[97%]"></div>
+              <div class="h-full bg-[#334AFF]" style="width:97%"></div>
             </div>
             <span class="w-12 text-sm font-mono">97%</span>
           </div>
           <div class="flex items-center gap-4">
             <span class="w-24 text-sm text-zinc-400">3 Years</span>
             <div class="flex-1 h-4 bg-zinc-800 rounded-full overflow-hidden">
-              <div class="h-full bg-[var(--electric-green)] w-[94%]"></div>
+              <div class="h-full bg-[#334AFF]" style="width:94%"></div>
             </div>
             <span class="w-12 text-sm font-mono">94%</span>
           </div>
           <div class="flex items-center gap-4">
             <span class="w-24 text-sm text-zinc-400">5 Years</span>
             <div class="flex-1 h-4 bg-zinc-800 rounded-full overflow-hidden">
-              <div class="h-full bg-[var(--electric-green)] w-[92%]"></div>
+              <div class="h-full bg-[#334AFF]" style="width:92%"></div>
             </div>
             <span class="w-12 text-sm font-mono">92%</span>
           </div>
           <div class="flex items-center gap-4">
             <span class="w-24 text-sm text-zinc-400">10 Years</span>
             <div class="flex-1 h-4 bg-zinc-800 rounded-full overflow-hidden">
-              <div class="h-full bg-[#EAB308] w-[85%]"></div>
+              <div class="h-full bg-[#EAB308]" style="width:85%"></div>
             </div>
             <span class="w-12 text-sm font-mono">85%</span>
           </div>
         </div>
-        <p class="text-xs text-zinc-500 mt-6 text-center italic">*Based on average liquid-cooled NMC battery data. LFP degrades even slower.</p>
+        <p class="text-xs text-zinc-500 mt-6 text-center">Illustrative guide only. Battery ageing varies by model, chemistry, climate, mileage, and charging habits.</p>
       </div>
 
-      <h3>When to Be Concerned</h3>
-      <p>If you notice a sudden drop in range (e.g., 10% loss in a month) or if your range drops significantly more than expected for the age of the car, it's time for a diagnostic check.</p>
+      <h3>When to book a battery health check</h3>
+      <p>A battery health check is worth considering if your EV shows a sudden and persistent drop in usable range that cannot be explained by weather, driving conditions, or recent use.</p>
+      <p>It is also a good idea to investigate if you notice battery warning messages, charging performance that has changed significantly, or range that is consistently well below what would normally be expected for your vehicle's age and use.</p>
+      <p>The best way to understand true battery condition is not to rely on the dashboard estimate alone. A proper battery health assessment gives you a clearer picture of usable capacity and overall battery performance.</p>
     `
   },
   {
     slug: "charging-best-practices",
-    image: "https://images.unsplash.com/photo-1760539127272-9eb3f0f0a48b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBlbGVjdHJpYyUyMGNhciUyMGNoYXJnaW5nfGVufDF8fHx8MTc2Mzk3OTgxM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/assets/articles/charging-best-practices/hero.webp",
     title: "Charging Best Practices for Battery Health",
     description: "Learn the optimal charging habits to maximize your EV battery's lifespan and maintain peak performance.",
     category: "Maintenance & Care",
     date: "January 10, 2024",
     author: "Dr. Elena Rossi",
     content: `
-      <p class="lead">How you charge your EV is the single biggest factor under your control for extending battery life. Treat your battery well, and it will return the favor with years of reliable service.</p>
-      
-      <h3>Charging Speed Hierarchy</h3>
-      <p>Not all electrons are created equal. The speed at which you force energy into the battery affects its heat generation and long-term health.</p>
+      <h3>How You Charge Your EV Matters</h3>
+      <p>How you charge your electric vehicle is the single biggest factor under your control when it comes to extending battery life. Unlike traditional vehicles where fuel quality is standardised, EV battery longevity is directly influenced by charging behaviour, temperature management, and daily habits.</p>
+      <p>The chemistry inside lithium-ion batteries is sensitive to stress from rapid charging, extreme temperatures, and voltage extremes. Thoughtful charging practices can add years to your battery's usable life, maintain better range retention, and protect your vehicle's resale value. The good news is that following a few simple principles makes all the difference.</p>
 
-      <div class="grid md:grid-cols-3 gap-6 my-8">
-        <div class="bg-zinc-50 p-6 rounded-xl border border-zinc-200">
-          <div class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold mb-4">L1</div>
-          <h4 class="font-bold mb-2">Granny Charger</h4>
-          <p class="text-sm text-zinc-500 mb-2">Standard Powerpoint</p>
-          <p class="text-sm"><strong>Speed:</strong> ~2kW</p>
-          <p class="text-sm"><strong>Health Impact:</strong> Best</p>
-        </div>
-        <div class="bg-zinc-50 p-6 rounded-xl border border-zinc-200">
-          <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold mb-4">L2</div>
-          <h4 class="font-bold mb-2">Wallbox / Public AC</h4>
-          <p class="text-sm text-zinc-500 mb-2">Home or Shopping Centers</p>
-          <p class="text-sm"><strong>Speed:</strong> 7-22kW</p>
-          <p class="text-sm"><strong>Health Impact:</strong> Excellent</p>
-        </div>
-        <div class="bg-zinc-50 p-6 rounded-xl border border-zinc-200">
-          <div class="w-10 h-10 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center font-bold mb-4">L3</div>
-          <h4 class="font-bold mb-2">DC Fast Charger</h4>
-          <p class="text-sm text-zinc-500 mb-2">Highway Stations</p>
-          <p class="text-sm"><strong>Speed:</strong> 50-350kW</p>
-          <p class="text-sm"><strong>Health Impact:</strong> Moderate Use Only</p>
-        </div>
+      <h3>Charging Speed Matters</h3>
+      <p>Not all charging methods are equal when it comes to battery health. Fast charging generates significantly more heat than slower charging, and excessive heat is one of the primary causes of battery degradation over time.</p>
+      <p><strong>Level 2 charging (7-22kW)</strong> is the sweet spot for daily use. It provides a convenient overnight charge without stressing the battery cells. Most EV owners install a Level 2 wallbox at home, which fully charges the vehicle in 4-8 hours depending on battery size.</p>
+      <p><strong>DC fast charging (50-350kW)</strong> should be reserved for road trips and emergency top-ups. While incredibly convenient, frequent use of DC fast charging accelerates battery degradation due to the intense heat generated during rapid energy transfer. Modern EVs have sophisticated thermal management systems, but these can only do so much to mitigate the stress of repeated fast charging.</p>
+
+      <p class="font-medium text-zinc-900 border-l-4 border-[#334AFF] pl-6 my-8">Rule of thumb: Use Level 2 charging for 90% of your daily needs, and save DC fast charging for when you genuinely need rapid replenishment on longer journeys.</p>
+
+      <h3>The 20%-80% Rule: A Crucial Practice</h3>
+      <p>Lithium-ion batteries experience the least stress when charged and discharged within the middle range of their capacity. The industry-standard recommendation is to keep your battery between 20% and 80% state of charge for daily use.</p>
+
+      <div class="bg-[#fafafa] border-l-4 border-[#334AFF] rounded-r-xl p-8 my-8">
+        <h4 class="font-bold text-zinc-900 text-lg mb-4">Why 20%-80%?</h4>
+        <p class="text-sm text-zinc-700"><strong>Below 20%:</strong> Deep discharges cause increased chemical stress on the battery cells, particularly when repeatedly draining below 10%. This accelerates capacity loss over time.</p>
+        <p class="text-sm text-zinc-700"><strong>Above 80%:</strong> Holding a high state of charge (especially above 90%) for extended periods creates voltage stress that degrades the cathode material faster. This is why many manufacturers recommend limiting daily charging to 80%.</p>
+        <p class="text-sm text-zinc-700 m-0"><strong>100% charges:</strong> Reserve these for road trips when you need maximum range. Charging to 100% occasionally is fine, but avoid leaving your EV sitting at 100% for days on end.</p>
       </div>
+
+      <p>Most modern EVs allow you to set a daily charge limit in the vehicle settings. Setting this to 80% is one of the simplest actions you can take to extend battery life.</p>
 
       <div class="my-10">
-        <img src="https://images.unsplash.com/photo-1732194205647-11c5af7496c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHZlaGljbGUlMjBmYXN0JTIwY2hhcmdpbmclMjBzdGF0aW9uJTIwc2NyZWVufGVufDF8fHx8MTc3MTkxMDk1NXww&ixlib=rb-4.1.0&q=80&w=1080" alt="Fast Charging Screen" class="rounded-2xl w-full object-cover h-[400px] shadow-lg" />
+        <img src="/assets/articles/charging-best-practices/inline-1.webp" alt="EV charging display" class="rounded-2xl w-full object-cover h-[400px] shadow-lg" />
+        <p class="text-sm text-zinc-500 mt-2 text-center">Modern EVs provide detailed charging information and allow you to set custom charge limits.</p>
       </div>
 
-      <h3>The 20-80% Rule</h3>
-      <p>Lithium-ion batteries are happiest when charged between 20% and 80%. Consistently discharging below 10% or holding charge above 90% causes chemical stress that accelerates degradation.</p>
-      
       <h3>Temperature Matters</h3>
-      <p>Avoid charging immediately after driving in extreme heat if possible. Let the battery cool down first. Similarly, in freezing temperatures, try to charge immediately after driving while the battery is still warm.</p>
+      <p>Battery chemistry is highly temperature-sensitive. Extreme heat and extreme cold both negatively impact battery performance and longevity, making thermal management a critical consideration for EV owners.</p>
+
+      <div class="bg-[#fafafa] border-l-4 border-[#ff6900] rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-zinc-900 mb-2">Hot Weather Considerations</h4>
+        <p class="text-sm text-zinc-700 m-0">Avoid charging immediately after driving in extreme heat if possible. Let the battery cool down for 20-30 minutes before plugging in. High temperatures during charging accelerate chemical reactions that degrade battery materials. If you live in a hot climate, try to charge during cooler evening or early morning hours, and park in shaded areas when possible.</p>
+      </div>
+      <div class="bg-[#fafafa] border-l-4 border-[#2b7fff] rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-zinc-900 mb-2">Cold Weather Considerations</h4>
+        <p class="text-sm text-zinc-700 m-0">In freezing temperatures, charge immediately after driving while the battery is still warm from use. Cold batteries have higher internal resistance, making charging slower and less efficient. Modern EVs use battery heaters to warm the pack before charging, but this consumes energy. Preconditioning your battery (if your vehicle supports it) before arriving at a charging station improves charging speed and efficiency.</p>
+      </div>
+
+      <p>Most modern EVs have active thermal management systems with liquid cooling and heating to maintain optimal battery temperature. However, these systems work best when you follow smart charging practices aligned with ambient conditions.</p>
+
+      <h3>Different Types of Chargers and Their Impact</h3>
+      <p>Understanding the three main charging types helps you make informed decisions about when to use each method:</p>
+
+      <div class="grid md:grid-cols-3 gap-6 my-8">
+        <div class="bg-white border-2 border-zinc-200 rounded-2xl p-6">
+          <div class="w-12 h-12 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-bold mb-4">L1</div>
+          <h4 class="font-bold text-zinc-900 mb-1">Granny Charger</h4>
+          <p class="text-xs text-zinc-500 uppercase tracking-wide mb-4">Standard Powerpoint</p>
+          <p class="text-sm m-0"><strong>Speed:</strong> 2-3 kW</p>
+          <p class="text-sm m-0"><strong>Charge Time:</strong> 24-48 hours</p>
+          <p class="text-sm mb-4"><strong>Health Impact:</strong> <span class="text-green-700 font-semibold">Excellent</span></p>
+          <p class="text-xs text-zinc-600 m-0">Slowest but gentlest on the battery. Ideal for overnight charging if you have low daily mileage.</p>
+        </div>
+        <div class="bg-white border-2 border-[#334AFF] rounded-2xl p-6 shadow-lg">
+          <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold mb-4">L2</div>
+          <h4 class="font-bold text-zinc-900 mb-1">Wallbox / Public AC</h4>
+          <p class="text-xs text-zinc-500 uppercase tracking-wide mb-4">Home or Shopping Centres</p>
+          <p class="text-sm m-0"><strong>Speed:</strong> 7-22 kW</p>
+          <p class="text-sm m-0"><strong>Charge Time:</strong> 4-8 hours</p>
+          <p class="text-sm mb-4"><strong>Health Impact:</strong> <span class="text-blue-700 font-semibold">Excellent (Recommended)</span></p>
+          <p class="text-xs text-zinc-600 m-0">The optimal balance of speed and battery health. Use this for 90% of your charging needs.</p>
+        </div>
+        <div class="bg-white border-2 border-zinc-200 rounded-2xl p-6">
+          <div class="w-12 h-12 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center font-bold mb-4">L3</div>
+          <h4 class="font-bold text-zinc-900 mb-1">DC Fast Charger</h4>
+          <p class="text-xs text-zinc-500 uppercase tracking-wide mb-4">Highway Stations</p>
+          <p class="text-sm m-0"><strong>Speed:</strong> 50-350 kW</p>
+          <p class="text-sm m-0"><strong>Charge Time:</strong> 15-45 min</p>
+          <p class="text-sm mb-4"><strong>Health Impact:</strong> <span class="text-orange-600 font-semibold">Use Sparingly</span></p>
+          <p class="text-xs text-zinc-600 m-0">Convenient for road trips but generates significant heat. Limit to when you genuinely need rapid charging.</p>
+        </div>
+      </div>
+
+      <h3>For Peace of Mind: Annual Battery Health Checkups</h3>
+      <p>Even with perfect charging habits, it's wise to have your battery's health professionally assessed once a year. An annual checkup provides valuable insights that go beyond what your dashboard displays:</p>
+      <ul>
+        <li><strong>Capacity verification:</strong> Confirm your battery's actual State of Health (SOH) compared to when it was new.</li>
+        <li><strong>Cell balance analysis:</strong> Detect imbalances between cell groups that could indicate developing issues.</li>
+        <li><strong>Degradation trending:</strong> Track how your battery is ageing compared to the average for your vehicle make and model.</li>
+        <li><strong>Warranty validation:</strong> Document your battery condition in case you need to make a warranty claim before coverage expires.</li>
+      </ul>
+      <p>Think of it like an annual physical exam for your EV. Early detection of issues can save thousands in unexpected repair costs and help you make informed decisions about vehicle maintenance or replacement timing.</p>
+
+      <h3>Drive Longer, Charge Smarter</h3>
+      <p>The battery in your electric vehicle is its most valuable component, and how you care for it directly impacts your ownership experience. By following these evidence-based charging practices, you can significantly extend battery life, maintain better range, and protect your vehicle's resale value.</p>
+      <p>The core principles are simple: charge slowly when possible, stay within the 20-80% range for daily use, be mindful of temperature, and avoid excessive DC fast charging. Modern EVs make it easy to follow these guidelines with built-in charge limit controls and thermal management systems.</p>
+      <p>Every manufacturer has specific recommendations for their battery chemistry and thermal management system. Consult your owner's manual for model-specific guidance, but the principles outlined here apply universally across all lithium-ion EV batteries.</p>
     `
   },
   {
     slug: "why-need-battery-certificate",
-    image: "https://images.unsplash.com/photo-1555140713-973b9f36cd1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWNoYW5pYyUyMGhvbGRpbmclMjBjbGlwYm9hcmQlMjBlbGVjdHJpYyUyMGNhciUyMGluc3BlY3Rpb24lMjBjZXJ0aWZpY2F0ZXxlbnwxfHx8fDE3NzE5MTE0MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/assets/articles/why-need-battery-certificate/hero.webp",
     title: "Why You Need a Certified Battery Health Report",
     description: "Think of it as a 'Building & Pest' report, but for your electric vehicle. Here is why the EV360 Certificate is your most valuable asset.",
     category: "Buying & Selling",
     date: "February 24, 2026",
     author: "Marcus Chen",
     content: `
-      <p class="lead">In the world of internal combustion, we have logbooks and odometer readings. In the world of EVs, these don't tell the full story. The EV360 Battery Certificate is the new gold standard for proving your vehicle's worth.</p>
-      
+      <p>In the world of internal combustion, we have logbooks and odometer readings. In the world of EVs, these don't tell the full story. The EV360 Battery Certificate is the new gold standard for proving your vehicle's worth.</p>
+
       <h3>What is the EV360 Certificate?</h3>
       <p>It is an independent, third-party verification of your battery's true condition. Unlike the simple "range estimate" on your dashboard, which fluctuates with weather and driving style, our certificate is based on deep diagnostic data extracted directly from the Battery Management System (BMS).</p>
+      <p>The EV360 Certificate provides a comprehensive assessment that reveals the actual state of health of your battery pack, measuring usable capacity, cell voltage balance, thermal performance, and degradation patterns over time. This data-driven approach removes guesswork and provides objective evidence of your battery's condition.</p>
 
       <div class="my-10">
-        <img src="https://images.unsplash.com/photo-1681505526188-b05e68c77582?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb250cmFjdCUyMGRvY3VtZW50JTIwc2lnbmF0dXJlJTIwaGFuZHNoYWtlfGVufDF8fHx8MTc3MTkxMTQzMHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Handshake over contract" class="rounded-2xl w-full object-cover h-[400px] shadow-lg" />
+        <img src="/assets/articles/why-need-battery-certificate/inline-1.webp" alt="Handshake over contract" class="rounded-2xl w-full object-cover h-[400px] shadow-lg" />
         <p class="text-sm text-zinc-500 mt-2 text-center">A certified report builds trust between buyer and seller instantly.</p>
       </div>
 
-      <h3>When Should You Get One?</h3>
-      
+      <h3>Why Battery Health Matters</h3>
+      <p>Understanding battery health is critical for both current owners and prospective buyers. Three key factors demonstrate why certification matters:</p>
+
+      <div class="bg-[#fafafa] border-l-4 border-[#334AFF] rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-zinc-900 text-lg mb-2">Replacement Costs</h4>
+        <p class="text-sm text-zinc-700 m-0">EV battery replacement can cost between $10,000 and $25,000 depending on the make and model. Understanding your battery's current health helps you anticipate future costs and make informed decisions about whether to keep, sell, or repair your vehicle. A certified report protects you from unexpected expenses and helps plan for the vehicle's long-term ownership costs.</p>
+      </div>
+      <div class="bg-[#fafafa] border-l-4 border-[#334AFF] rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-zinc-900 text-lg mb-2">Energy Efficiency</h4>
+        <p class="text-sm text-zinc-700 m-0">A healthy battery maintains better driving range and charging efficiency. When battery health degrades, you'll notice reduced range, slower charging times, and decreased performance. A certified health report helps you track degradation patterns and optimise charging habits to extend battery life and maintain the best possible driving range for your daily needs.</p>
+      </div>
+      <div class="bg-[#fafafa] border-l-4 border-[#334AFF] rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-zinc-900 text-lg mb-2">Buyer Confidence</h4>
+        <p class="text-sm text-zinc-700 m-0">A certified battery health report eliminates uncertainty for potential buyers. It provides independent verification of your vehicle's condition, building trust and confidence in the transaction. Sellers with certified reports consistently achieve faster sales and higher prices, while buyers gain peace of mind knowing exactly what they're purchasing.</p>
+      </div>
+
+      <h3>When Should You Get a Certified Battery Health Report?</h3>
+      <p>There are two critical moments when a battery health report becomes essential:</p>
+
       <div class="grid md:grid-cols-2 gap-6 my-8">
-        <div class="bg-zinc-50 p-6 rounded-xl border-l-4 border-[var(--electric-blue)]">
+        <div class="bg-[#fafafa] p-6 rounded-xl border-l-4 border-[#334AFF]">
           <h4 class="font-bold text-zinc-900 mb-2">When Selling (Crucial)</h4>
-          <p class="text-sm text-zinc-600">Buyers are terrified of buying a lemon with a dying battery. A certificate removes this fear, allowing you to command a premium price and sell faster.</p>
+          <p class="text-sm text-zinc-700 m-0">Buyers are rightfully cautious about purchasing a used EV without knowing the battery's condition. A certified health report removes this fear, allowing you to command a premium price and sell significantly faster. Vehicles with verified battery health reports consistently sell for 3-5% more than comparable vehicles without certification. The report acts as proof of quality and transparent disclosure, giving buyers the confidence to pay fair market value.</p>
         </div>
-        <div class="bg-zinc-50 p-6 rounded-xl border-l-4 border-[var(--electric-green)]">
+        <div class="bg-[#fafafa] p-6 rounded-xl border-l-4 border-[#fb2c36]">
           <h4 class="font-bold text-zinc-900 mb-2">When Buying (Non-Negotiable)</h4>
-          <p class="text-sm text-zinc-600">Never buy a used EV without seeing a recent health report. If the seller won't provide one, walk away. It's not worth the $15,000 risk.</p>
+          <p class="text-sm text-zinc-700 m-0">Never purchase a used EV without seeing a recent, independent battery health report. If the seller cannot or will not provide one, this should raise immediate red flags. The cost of a battery health inspection ($150-$300) is minimal insurance against the risk of inheriting a severely degraded battery worth thousands less than expected. Walk away from any deal that doesn't include verified battery certification.</p>
         </div>
       </div>
 
-      <h3>For Peace of Mind (Annual Checkup)</h3>
-      <p>Just like you visit the dentist once a year, an annual battery checkup is smart ownership. It helps you:</p>
-      <ul class="list-disc pl-5 space-y-2">
-        <li>Track your degradation curve against the average for your model.</li>
-        <li>Identify potential cell imbalances early before they become critical failures.</li>
-        <li>Check if you are eligible for a warranty replacement before your warranty expires.</li>
+      <h3>For Peace of Mind (Annual Checkups)</h3>
+      <p>Just like you visit the dentist once a year, an annual battery health checkup is smart EV ownership. Regular monitoring provides valuable benefits that extend beyond buying and selling:</p>
+      <ul>
+        <li><strong>Track degradation curves:</strong> Compare your battery's performance against the average for your specific make and model, identifying whether degradation is normal or accelerated.</li>
+        <li><strong>Identify cell imbalances early:</strong> Detect potential issues before they become critical failures, allowing for proactive maintenance that can extend battery life.</li>
+        <li><strong>Warranty eligibility:</strong> Check if your battery qualifies for warranty replacement before your manufacturer's warranty expires. Many warranties cover batteries that fall below 70-80% State of Health.</li>
+        <li><strong>Optimise charging habits:</strong> Receive personalised recommendations on charging practices based on your battery's current condition and usage patterns.</li>
       </ul>
 
-      <div class="bg-zinc-900 text-white p-8 rounded-2xl my-10 text-center">
-        <h3 class="text-2xl font-light mb-4">Don't guess. Know.</h3>
-        <p class="text-zinc-400 mb-8 max-w-2xl mx-auto">Get your certified EV360 report today and drive with confidence.</p>
-        <a href="/booking" class="inline-block px-8 py-4 rounded-full bg-[var(--electric-green)] text-zinc-900 font-bold hover:bg-[#a0f075] transition-colors">
-          Book Your Inspection
-        </a>
+      <h3>Case Study: 2019 Nissan Leaf</h3>
+      <p>Real-world data demonstrates the tangible value of battery health certification. Consider two identical 2019 Nissan Leafs recently sold in Sydney:</p>
+
+      <div class="bg-zinc-900 text-white p-8 rounded-2xl my-8">
+        <div class="grid grid-cols-2 gap-8">
+          <div>
+            <p class="text-sm text-zinc-400 m-0">Vehicle A (No Report)</p>
+            <p class="text-2xl font-light text-white mt-2 mb-4">$27,500</p>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-zinc-400">Mileage</span><span class="text-white">48,000 km</span></div>
+              <div class="flex justify-between"><span class="text-zinc-400">Battery Certification</span><span class="text-[#ff6467]">Not provided</span></div>
+              <div class="flex justify-between"><span class="text-zinc-400">Days on Market</span><span class="text-white">42 days</span></div>
+              <div class="flex justify-between"><span class="text-zinc-400">Final Sale Price</span><span class="text-white">$26,800</span></div>
+            </div>
+          </div>
+          <div>
+            <p class="text-sm text-zinc-400 m-0">Vehicle B (Certified)</p>
+            <p class="text-2xl font-light text-[#334AFF] mt-2 mb-4">$28,750</p>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-zinc-400">Mileage</span><span class="text-white">51,000 km</span></div>
+              <div class="flex justify-between"><span class="text-zinc-400">Battery Certification</span><span class="text-[#334AFF]">94% SOH (EV360)</span></div>
+              <div class="flex justify-between"><span class="text-zinc-400">Days on Market</span><span class="text-white">14 days</span></div>
+              <div class="flex justify-between"><span class="text-zinc-400">Final Sale Price</span><span class="text-[#334AFF]">$28,000</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-zinc-700 mt-6 pt-6 flex justify-between items-center">
+          <span class="text-sm text-zinc-400">Value Premium with Certification</span>
+          <span class="text-xl font-bold text-[#334AFF]">+$1,200 (4.5%)</span>
+        </div>
+        <p class="text-xs text-zinc-500 italic mt-4 m-0">Vehicle B achieved a 4.5% price premium and sold 3× faster despite having higher mileage, demonstrating the market value of verified battery health certification.</p>
       </div>
     `
   },
@@ -373,25 +531,68 @@ export const articles: Article[] = [
   },
   {
     slug: "battery-health-ev-value",
-    image: "https://images.unsplash.com/photo-1691908682968-32a05445157c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHZlaGljbGUlMjBkcml2ZXdheSUyMGhvbWV8ZW58MXx8fHwxNzY0MDY4NjY4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/assets/articles/battery-health-ev-value/hero.webp",
     title: "How Battery Health Affects EV Value",
-    description: "Learn why battery health is the single most important factor in determining an electric vehicle's resale value.",
+    description: "Learn why battery health is crucial in determining the resale value of your electric vehicle.",
     category: "Buying & Selling",
     date: "November 5, 2023",
     author: "Marcus Chen",
     content: `
-      <p class="lead">In the used EV market, mileage is no longer the king of valuation. Battery health has taken the throne.</p>
-      
+      <p>In the used EV market, mileage is no longer the primary indicator of value. Battery health has become the single most important factor in determining what your electric vehicle is worth.</p>
+
       <h3>The New Standard for Valuation</h3>
-      <p>Two identical EVs with the same mileage can have vastly different values if one has a battery SOH of 95% and the other has 82%. The difference could be thousands of dollars.</p>
-      
-      <h3>Why Buyers Pay More for Proven Health</h3>
-      <p>Replacing an EV battery can cost anywhere from $10,000 to $25,000. Buyers are rightfully terrified of inheriting a degraded battery. A certified battery health report acts as an insurance policy against this risk, allowing sellers to command a premium.</p>
-      
-      <div class="bg-zinc-50 p-6 rounded-xl border-l-4 border-green-500 my-6">
-        <h4 class="font-bold text-green-700 mb-2">Case Study: 2019 Nissan Leaf</h4>
-        <p class="text-sm">We recently saw two 2019 Nissan Leafs sold in the same week. Car A had 45,000km and no battery report. Car B had 52,000km but came with an EV360 report showing 93% SOH. Car B sold for $2,500 more than Car A, despite the higher mileage.</p>
+      <p>Traditional vehicle valuation relied heavily on odometer readings, service history, and cosmetic condition. While those factors still matter, the EV market has introduced a new critical metric: battery State of Health (SOH).</p>
+      <p>Two identical EVs with the same age and mileage can have vastly different resale values based solely on their battery condition. A vehicle showing 95% SOH can command thousands of dollars more than one at 82% SOH, even if every other specification is identical.</p>
+      <p>This shift reflects the reality that the battery pack represents 30-40% of an EV's total value. Unlike a traditional engine that can run reliably for hundreds of thousands of kilometres with basic maintenance, battery degradation is inevitable and replacement costs are substantial.</p>
+
+      <h3>Why Battery Health Matters</h3>
+      <p>Understanding the impact of battery health on EV value requires looking at three key factors:</p>
+
+      <div class="bg-[#fafafa] border-l-4 border-[#334AFF] rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-zinc-900 text-lg mb-2">Replacement Costs</h4>
+        <p class="text-sm text-zinc-700 m-0">EV battery replacement can range from $10,000 to $25,000 depending on the make and model. For vehicles approaching 80% SOH, buyers factor this potential future expense into their purchase decision, significantly reducing what they are willing to pay. A degraded battery essentially represents a hidden liability that savvy buyers discount heavily.</p>
       </div>
+      <div class="bg-[#fafafa] border-l-4 border-[#334AFF] rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-zinc-900 text-lg mb-2">Energy Efficiency and Range</h4>
+        <p class="text-sm text-zinc-700 m-0">A healthy battery delivers the range and performance buyers expect. An EV that originally offered 400km of range but now only achieves 320km due to degradation becomes less practical for daily use. This reduced utility directly translates to lower market value, particularly for buyers who need reliable range for commuting or travel.</p>
+      </div>
+      <div class="bg-[#fafafa] border-l-4 border-[#334AFF] rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-zinc-900 text-lg mb-2">Buyer Confidence</h4>
+        <p class="text-sm text-zinc-700 m-0">The used EV market suffers from information asymmetry. Buyers cannot easily assess battery condition through visual inspection or a test drive. A certified battery health report eliminates this uncertainty, building buyer confidence and justifying premium pricing. Vehicles sold with verified battery health reports consistently achieve faster sales and higher prices.</p>
+      </div>
+
+      <h3>Case Study: 2019 Nissan Leaf</h3>
+      <p>Recent market data illustrates the tangible impact of battery health on resale value. Two 2019 Nissan Leafs were listed for sale within the same week in Melbourne:</p>
+
+      <div class="bg-zinc-900 text-white p-8 rounded-2xl my-8">
+        <div class="grid grid-cols-2 gap-8">
+          <div>
+            <p class="text-sm text-zinc-400 m-0">Vehicle A</p>
+            <p class="text-2xl font-light text-white mt-2 mb-4">$28,500</p>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-zinc-400">Mileage</span><span class="text-white">45,000 km</span></div>
+              <div class="flex justify-between"><span class="text-zinc-400">Battery Report</span><span class="text-[#ff6467]">None provided</span></div>
+              <div class="flex justify-between"><span class="text-zinc-400">Days Listed</span><span class="text-white">34 days</span></div>
+            </div>
+          </div>
+          <div>
+            <p class="text-sm text-zinc-400 m-0">Vehicle B</p>
+            <p class="text-2xl font-light text-[#334AFF] mt-2 mb-4">$29,800</p>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-zinc-400">Mileage</span><span class="text-white">52,000 km</span></div>
+              <div class="flex justify-between"><span class="text-zinc-400">Battery Report</span><span class="text-[#334AFF]">93% SOH Certified</span></div>
+              <div class="flex justify-between"><span class="text-zinc-400">Days Listed</span><span class="text-white">12 days</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-zinc-700 mt-6 pt-6 flex justify-between items-center">
+          <span class="text-sm text-zinc-400">Value Difference</span>
+          <span class="text-xl font-bold text-[#334AFF]">+$1,300 (4.5%)</span>
+        </div>
+        <p class="text-xs text-zinc-500 italic mt-4 m-0">Vehicle B sold for $1,300 more despite having 7,000 additional kilometres, purely due to verified battery health certification.</p>
+      </div>
+
+      <p>This case study demonstrates a clear market premium for transparency. Vehicle B commanded 4.5% higher value and sold nearly three times faster, despite higher mileage. The certified battery health report transformed a potential concern into a verified asset, giving buyers the confidence to pay more and decide faster.</p>
     `
   },
   {
@@ -417,35 +618,247 @@ export const articles: Article[] = [
   },
   {
     slug: "pre-purchase-inspection-guide",
-    image: "https://images.unsplash.com/photo-1670813007457-5e12ba8cf03f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHZlaGljbGUlMjBjaXR5fGVufDF8fHx8MTc2NDA2ODY3MXww&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "Pre-Purchase EV Inspection Guide",
-    description: "Essential checks and questions when buying a used electric vehicle to avoid costly mistakes.",
+    image: "/assets/articles/pre-purchase-inspection-guide/hero.webp",
+    title: "Essential Checks and Questions When Buying a Used Electric Vehicle to Avoid Costly Mistakes",
+    description: "Learn how to avoid costly mistakes by checking these critical items before you buy.",
     category: "Buying & Selling",
     date: "February 2, 2024",
     author: "Marcus Chen",
     content: `
-      <p class="lead">Buying a used EV? Don't hand over your cash until you've checked these critical items.</p>
-      
-      <h3>1. The Battery Health Report</h3>
-      <p>This is non-negotiable. If the seller can't provide a recent, independent battery health report, you must get one yourself. A car might look perfect but hide a severely degraded battery.</p>
-      
-      <div class="my-8 p-6 bg-red-50 border border-red-100 rounded-lg">
-        <h4 class="font-bold text-red-700 mb-2">Warning Signs</h4>
-        <ul class="list-disc pl-5 text-red-800 text-sm">
-            <li>Seller refuses to show full charge capacity</li>
-            <li>Car is always parked at 100% charge in listing photos</li>
-            <li>Range estimate on dashboard is suspiciously low</li>
+      <h3>The Battery Health Report</h3>
+      <p>The battery is the heart of an electric vehicle—and by far the most expensive component. A new battery pack can cost anywhere from <strong>$10,000 to $25,000</strong> depending on the vehicle, making battery health the single most important factor in any used EV purchase decision.</p>
+      <p>Unlike a traditional internal combustion engine where you can visually inspect components or listen for warning signs, battery health is invisible to the naked eye. A car might look immaculate, drive perfectly during a test drive, and still hide a severely degraded battery that will cost you thousands in the future.</p>
+
+      <div class="bg-red-50 border-l-4 border-red-500 rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-red-800 mb-3">🚨 Critical Warning Signs</h4>
+        <p class="text-sm text-red-900 mb-3">Be extremely cautious if you notice any of the following red flags:</p>
+        <ul class="text-sm text-red-900 space-y-2 m-0">
+          <li><strong>Seller refuses to provide a battery health report</strong> or says they "don't have one"</li>
+          <li><strong>Car is always shown at 100% charge</strong> in all listing photos (hiding actual range)</li>
+          <li><strong>Dashboard range estimate is suspiciously low</strong> compared to manufacturer specs</li>
+          <li><strong>Seller insists on meeting at a location without a charger</strong> to prevent you from testing charge times</li>
+          <li><strong>Vehicle history shows frequent rapid charging</strong> at high state-of-charge levels</li>
+          <li><strong>Car is from an extreme climate zone</strong> (desert heat or arctic cold) without thermal management</li>
         </ul>
       </div>
 
-      <h3>2. Charging Port Inspection</h3>
-      <p>Check the charging pins for corrosion, damage, or signs of overheating (melting plastic). A damaged charge port can be an expensive fix.</p>
-      
-      <h3>3. Tire Wear</h3>
-      <p>EVs are heavy and have instant torque, which can eat through tires faster than gas cars. Check for uneven wear patterns which might indicate suspension issues.</p>
-      
-      <h3>4. Software Updates</h3>
-      <p>Check if the vehicle is running the latest software version. Some older EVs may have missed critical BMS (Battery Management System) updates that improve range and safety.</p>
+      <div class="bg-[#334AFF]/10 border-l-4 border-[#334AFF] rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-[#334AFF] mb-2">💡 Non-Negotiable: Independent Battery Assessment</h4>
+        <p class="text-sm text-zinc-800 m-0">Before committing to any used EV purchase, insist on a recent, independent battery health report from a certified provider like EV360. This report should include State of Health (SOH) percentage, cell voltage balance, charging performance metrics, and degradation trends. The cost of an inspection ($150-$300) is minimal insurance against the risk of inheriting a $20,000 battery problem.</p>
+      </div>
+
+      <p>A healthy battery should retain at least <strong>85-90% State of Health (SOH)</strong> after 5 years of typical use. Anything below 80% SOH means the vehicle has significantly reduced range and may be approaching warranty replacement thresholds.</p>
+
+      <div class="my-10">
+        <img src="/assets/articles/pre-purchase-inspection-guide/inline-1.webp" alt="Inspecting a used EV" class="rounded-2xl w-full object-cover h-[400px] shadow-lg" />
+        <p class="text-sm text-zinc-500 mt-2 text-center">A thorough pre-purchase inspection can save you from expensive battery replacement costs.</p>
+      </div>
+
+      <h3>Charging Port Inspection</h3>
+      <p>The charging port is one of the most frequently used components on an EV, yet it's often overlooked during inspections. A damaged charging port can lead to slow charging speeds, dangerous electrical issues, or complete charging failure—and replacement can cost thousands of dollars.</p>
+
+      <div class="bg-[#fafafa] border-l-4 border-[#334AFF] rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-zinc-900 mb-4">✅ Charging Port Inspection Checklist</h4>
+        <div class="space-y-4 text-sm text-zinc-700">
+          <div>
+            <p class="font-semibold text-zinc-900 mb-1">1. Visual Inspection of Pins and Contacts</p>
+            <ul class="m-0">
+              <li>Check all charging pins for <strong>corrosion, rust, or discolouration</strong></li>
+              <li>Look for <strong>bent, damaged, or missing pins</strong></li>
+              <li>Ensure pins are <strong>clean and free from debris</strong></li>
+              <li>Verify that all contacts are <strong>flush and properly aligned</strong></li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-zinc-900 mb-1">2. Signs of Overheating</p>
+            <ul class="m-0">
+              <li>Look for <strong>melted, warped, or discoloured plastic</strong> around the port</li>
+              <li>Check for <strong>burn marks or scorching</strong> on the housing</li>
+              <li>Smell for <strong>burnt plastic or electrical odours</strong></li>
+              <li>Examine the charging cable connector for similar damage</li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-zinc-900 mb-1">3. Port Door and Seals</p>
+            <ul class="m-0">
+              <li>Test the <strong>port door mechanism</strong> for smooth operation</li>
+              <li>Inspect rubber <strong>seals for cracks, tears, or deterioration</strong></li>
+              <li>Check for <strong>water intrusion or moisture inside the port</strong></li>
+              <li>Ensure the locking mechanism works properly</li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-zinc-900 mb-1">4. Functional Test</p>
+            <ul class="m-0">
+              <li>Plug in a <strong>compatible charger and verify it connects properly</strong></li>
+              <li>Listen for the <strong>characteristic "click" or lock sound</strong></li>
+              <li>Confirm the <strong>vehicle recognises the charger</strong> (check dashboard)</li>
+              <li>Monitor the <strong>initial charging rate</strong> to ensure normal operation</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-sm text-zinc-700 mt-4 mb-0"><strong>Pro Tip:</strong> If possible, test both AC (slow) and DC (fast) charging. Some vehicles have separate ports or pins for each, and issues with one type might not affect the other.</p>
+      </div>
+
+      <h3>Software Updates</h3>
+      <p>Electric vehicles are essentially computers on wheels, and software plays a critical role in battery management, charging efficiency, safety systems, and overall performance. An EV running outdated software can have significantly reduced range, slower charging, and missing safety features.</p>
+
+      <div class="bg-[#fafafa] border-l-4 border-[#334AFF] rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-zinc-900 mb-2">🔄 Battery Management System (BMS) Updates</h4>
+        <p class="text-sm text-zinc-700 mb-2">The BMS is the brain that manages battery charging, discharging, thermal regulation, and cell balancing. Manufacturers frequently release BMS updates to improve battery longevity, optimise charging speeds, and address newly discovered issues.</p>
+        <p class="text-sm text-zinc-700 m-0"><strong>Ask the seller:</strong> "When was the last software update performed?" and "Are there any outstanding recall notices or software updates pending?" Check the manufacturer's website or contact a dealership to verify.</p>
+      </div>
+
+      <div class="bg-[#fafafa] border-l-4 border-[#334AFF] rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-zinc-900 mb-2">📡 Over-the-Air (OTA) Update Capability</h4>
+        <p class="text-sm text-zinc-700 mb-2">Some EVs (like Tesla, Rivian, and newer models from Hyundai/Kia) receive updates wirelessly over the internet. Others require a dealership visit. Understanding this will help you budget for future maintenance.</p>
+        <p class="text-sm text-zinc-700 m-0"><strong>Check if:</strong> The vehicle supports OTA updates, Wi-Fi connectivity is functional, and the previous owner kept software up to date.</p>
+      </div>
+
+      <div class="bg-[#fafafa] border-l-4 border-red-500 rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-zinc-900 mb-2">⚠️ Outstanding Recalls</h4>
+        <p class="text-sm text-zinc-700 mb-2">Software recalls are common in EVs. Check the VIN against manufacturer recall databases to ensure all safety-related updates have been completed.</p>
+        <p class="text-sm text-zinc-700 m-0"><strong>Red flag:</strong> If the seller is unaware of any recalls or can't provide documentation that recalls were addressed, walk away or insist on dealership verification before purchase.</p>
+      </div>
+
+      <h3>Test Drive & Driving Range</h3>
+      <p>The test drive is your opportunity to evaluate real-world performance and validate the battery health claims. Unlike inspecting a petrol car where you listen for engine noise, an EV test drive focuses on smoothness, range accuracy, and acceleration consistency.</p>
+
+      <div class="bg-[#fafafa] border-l-4 border-[#334AFF] rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-zinc-900 mb-4">🚗 Comprehensive Test Drive Checklist</h4>
+        <div class="space-y-4 text-sm text-zinc-700">
+          <div>
+            <p class="font-semibold text-zinc-900 mb-1">📊 Range Consistency Testing</p>
+            <ul class="m-0">
+              <li><strong>Start the test drive with a known charge level</strong> (ideally 80-100%)</li>
+              <li><strong>Note the displayed range estimate</strong> at the beginning</li>
+              <li><strong>Drive a measured distance</strong> (at least 10-15 km) in mixed conditions</li>
+              <li><strong>Compare actual distance driven vs. range lost</strong> (should be roughly 1:1 in moderate conditions)</li>
+              <li><strong>Check for rapid range drops</strong> when using climate control or acceleration</li>
+            </ul>
+            <p class="text-xs text-zinc-600 italic mt-2 mb-0">Example: If you drive 10 km and the range drops by 30 km, this indicates either aggressive driving conditions or battery degradation.</p>
+          </div>
+          <div>
+            <p class="font-semibold text-zinc-900 mb-1">⚡ Acceleration Performance</p>
+            <ul class="m-0">
+              <li><strong>Test acceleration from a standstill</strong> to highway speeds</li>
+              <li><strong>Listen for unusual sounds</strong> (clicking, grinding, or whining from the motor)</li>
+              <li><strong>Feel for smooth, linear power delivery</strong> without hesitation or stuttering</li>
+              <li><strong>Test regenerative braking at various speeds</strong> and modes</li>
+              <li><strong>Verify instant torque response</strong> is consistent with manufacturer specs</li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-zinc-900 mb-1">🔌 Regenerative Braking Behaviour</p>
+            <ul class="m-0">
+              <li><strong>Test in different regeneration modes</strong> (low, medium, high/one-pedal driving)</li>
+              <li>Feel for smooth, predictable deceleration</li>
+              <li>Listen for any grinding or unusual brake noises</li>
+              <li><strong>Check dashboard for regeneration energy flow</strong> visualisation</li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-zinc-900 mb-1">🌡️ Climate Control Impact</p>
+            <ul class="m-0">
+              <li><strong>Turn on heating or air conditioning</strong> to maximum</li>
+              <li><strong>Observe the range impact</strong> (10-20% drop is normal)</li>
+              <li><strong>Test heated seats/steering wheel</strong> as alternatives</li>
+              <li><strong>Check cabin preconditioning feature</strong> if available</li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-zinc-900 mb-1">📱 Overall Driving Experience</p>
+            <ul class="m-0">
+              <li><strong>Test all driver assistance features</strong> (adaptive cruise, lane keeping, etc.)</li>
+              <li>Evaluate ride comfort and handling</li>
+              <li>Check for rattles, squeaks, or unusual noises</li>
+              <li>Verify infotainment system responsiveness</li>
+              <li><strong>Test smartphone connectivity</strong> (Apple CarPlay, Android Auto)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-yellow-50 border-l-4 border-yellow-500 rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-zinc-900 mb-2">⚠️ Range Reality Check</h4>
+        <p class="text-sm text-zinc-800 m-0">Keep in mind that official manufacturer range estimates (WLTP or EPA) are tested under ideal laboratory conditions. Real-world range is typically <strong>15-30% lower</strong> depending on driving style, weather, terrain, and use of climate control. A 5-year-old EV showing real-world range that is 25% below WLTP is generally normal; 40-50% below indicates significant degradation.</p>
+      </div>
+
+      <h3>Warranty & Documentation</h3>
+      <p>The warranty status and service history of a used EV can significantly impact its value and your long-term ownership costs. Unlike traditional cars where warranties are relatively straightforward, EV warranties often have nuanced battery coverage that requires careful review.</p>
+
+      <div class="bg-[#fafafa] border-l-4 border-[#334AFF] rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-zinc-900 mb-4">📄 Essential Documentation Checklist</h4>
+        <div class="space-y-4 text-sm text-zinc-700">
+          <div>
+            <p class="font-semibold text-zinc-900 mb-1">🛡️ Battery Warranty Coverage</p>
+            <ul class="m-0">
+              <li><strong>Verify remaining battery warranty duration</strong> (typically 8 years or 160,000 km)</li>
+              <li><strong>Check the warranty threshold</strong> (usually covers degradation below 70% SOH)</li>
+              <li><strong>Confirm warranty is transferable</strong> to new owners</li>
+              <li><strong>Review any warranty exclusions</strong> (flooding, collision damage, modifications)</li>
+              <li><strong>Ask if warranty has been claimed previously</strong> for battery-related issues</li>
+            </ul>
+            <p class="text-xs text-zinc-600 italic mt-2 mb-0">Note: Some manufacturers offer extended battery warranties beyond the standard coverage—check if the seller purchased this option.</p>
+          </div>
+          <div>
+            <p class="font-semibold text-zinc-900 mb-1">🔧 Service History & Maintenance Records</p>
+            <ul class="m-0">
+              <li><strong>Request complete service records</strong> from authorised dealerships or certified mechanics</li>
+              <li><strong>Verify recommended maintenance intervals</strong> were followed</li>
+              <li><strong>Check for any battery-related service alerts</strong> or error codes</li>
+              <li><strong>Review tyre rotation and alignment records</strong> (important for heavy EVs)</li>
+              <li>Confirm brake fluid, coolant, and cabin air filter changes</li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-zinc-900 mb-1">📋 Vehicle History Report</p>
+            <ul class="m-0">
+              <li><strong>Obtain a comprehensive vehicle history report</strong> (PPSR in Australia)</li>
+              <li><strong>Check for accident history or structural damage</strong> (critical for battery safety)</li>
+              <li>Verify odometer readings are consistent</li>
+              <li><strong>Look for flood or water damage</strong> (catastrophic for EVs)</li>
+              <li>Confirm number of previous owners</li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold text-zinc-900 mb-1">📝 Original Purchase Documentation</p>
+            <ul class="m-0">
+              <li><strong>Review original purchase agreement</strong> for any special conditions</li>
+              <li>Check if vehicle was part of a lease or fleet</li>
+              <li>Verify VIN matches all documentation</li>
+              <li><strong>Confirm government incentive eligibility</strong> for used EVs (if applicable)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-orange-50 border-l-4 border-orange-500 rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-zinc-900 mb-3">🔍 Warranty Fine Print: What to Watch For</h4>
+        <p class="text-sm text-zinc-800 m-0"><strong>Degradation thresholds:</strong> Most EV warranties only trigger if battery SOH drops below 70% during the warranty period. At 71% SOH, you might be out of luck even if you've experienced significant range loss.</p>
+        <p class="text-sm text-zinc-800 m-0"><strong>Voiding conditions:</strong> Modifications, aftermarket parts, racing, commercial use, towing beyond rated capacity, or failing to complete mandatory recalls can all void your warranty.</p>
+        <p class="text-sm text-zinc-800 m-0"><strong>Pro-rated coverage:</strong> Some warranties use pro-rated formulas that reduce coverage based on age or mileage, meaning you might only receive partial reimbursement for battery replacement.</p>
+      </div>
+
+      <h3>Don't Rush the Purchase</h3>
+      <p>Buying a used electric vehicle is a significant investment that requires patience and due diligence. While the lower running costs and environmental benefits of EVs are compelling, rushing into a purchase without proper inspection can lead to costly surprises that overshadow the savings.</p>
+      <p>Unlike traditional vehicles where problems are often audible or visible, EV issues—particularly battery degradation—can remain hidden until it's too late. A car that drives perfectly today might need a $20,000 battery replacement in two years if you don't verify its condition properly.</p>
+
+      <div class="bg-[#fafafa] border-l-4 border-[#334AFF] rounded-r-xl p-6 my-6">
+        <h4 class="font-bold text-zinc-900 mb-3">✅ Pre-Purchase Action Plan</h4>
+        <ol class="text-sm text-zinc-700 list-decimal pl-5 space-y-2 m-0">
+          <li><strong>Request a professional battery health report</strong> from EV360 or equivalent certified provider</li>
+          <li><strong>Conduct thorough visual inspection</strong> of charging port, exterior, and interior condition</li>
+          <li><strong>Perform comprehensive test drive</strong> testing range accuracy, acceleration, and regenerative braking</li>
+          <li><strong>Verify all software is up to date</strong> and check for outstanding recalls</li>
+          <li><strong>Review complete service history</strong> and warranty documentation</li>
+          <li><strong>Obtain vehicle history report</strong> to check for accidents, flooding, or odometer tampering</li>
+          <li><strong>Have a certified EV mechanic perform pre-purchase inspection</strong> if possible</li>
+          <li><strong>Negotiate price based on battery health</strong> and any identified issues</li>
+        </ol>
+      </div>
+
+      <p>Remember: a seller who is transparent about battery health, provides complete documentation, and welcomes thorough inspection is far more trustworthy than one who pressures you to "buy now" or dismisses your questions. Taking an extra week to complete all checks is a small price to pay for peace of mind and potentially saving tens of thousands of dollars in future repair costs.</p>
     `
   },
   {
