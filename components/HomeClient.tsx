@@ -152,6 +152,7 @@ export function HomeClient() {
                       alt="Selling an EV"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                   </div>
 
                   <div className="relative h-full p-8 flex flex-col justify-between z-20">
