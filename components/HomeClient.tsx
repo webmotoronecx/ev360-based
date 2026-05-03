@@ -16,6 +16,7 @@ import { TrustedTechnology } from '@/components/TrustedTechnology';
 import { BusinessSolutions } from '@/components/BusinessSolutions';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { Hero } from '@/components/Hero';
+import { articles, FEATURED_ARTICLE_SLUGS } from '@/lib/data/articles';
 
 const technicianImage = '/assets/1b2b252267a47a3c99ef04d3de02f27d219c9150.webp';
 const mobileVanImage = '/assets/211ec73fe84f24f3614d7848ac8db046247d62f7.webp';
@@ -25,23 +26,16 @@ const reportImage = '/assets/f82e310949ec251e9d18c8d2dff33e9d24a0cc54.webp';
 export function HomeClient() {
   const [activeProblem, setActiveProblem] = useState(0);
 
-  const educationCards = [
-    {
-      image: "https://images.unsplash.com/photo-1692052664566-477579a08e8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHZlaGljbGUlMjBkcml2ZXdheSUyMGhvbWV8ZW58MXx8fHwxNzY0MDY4NjY4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "What State of Health (SOH) Means",
-      description: "Understanding battery SOH is crucial for knowing your EV&apos;s true condition and remaining value."
-    },
-    {
-      image: batteryValueImage,
-      title: "How Battery Health Affects EV Value",
-      description: "Learn why battery health is the single most important factor in determining an electric vehicle&apos;s resale value."
-    },
-    {
-      image: "https://images.unsplash.com/photo-1738101001619-f0fd42ceafb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHZlaGljbGUlMjBvZmZpY2UlMjBwYXJraW5nfGVufDF8fHx8MTc2NDA2ODY2OXww&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "EV Battery Myths (Debunked)",
-      description: "Separating fact from fiction when it comes to electric vehicle battery degradation and longevity."
-    }
-  ];
+  // Show the first 3 featured articles (those designed in Figma)
+  const educationCards = FEATURED_ARTICLE_SLUGS.slice(0, 3)
+    .map((slug) => articles.find((a) => a.slug === slug))
+    .filter((a): a is NonNullable<typeof a> => Boolean(a))
+    .map((a) => ({
+      slug: a.slug,
+      image: `/assets/articles/${a.slug}/hero.webp`,
+      title: a.title,
+      description: a.description,
+    }));
 
   return (
     <div className="min-h-screen bg-white">
@@ -599,20 +593,21 @@ export function HomeClient() {
               </p>
             </div>
             <Link href="/learn">
-              <button className="px-6 py-3 rounded-full border border-zinc-300 text-zinc-900 hover:bg-zinc-100 transition-colors font-medium whitespace-nowrap">
+              <button className="px-6 py-3 rounded-full border border-zinc-300 text-zinc-900 hover:bg-zinc-100 transition-colors font-medium whitespace-nowrap cursor-pointer">
                 View All Articles
               </button>
             </Link>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {educationCards.map((card, index) => (
-              <EditorialCard
-                key={index}
-                image={card.image}
-                title={card.title}
-                description={card.description}
-              />
+            {educationCards.map((card) => (
+              <Link key={card.slug} href={`/learn/${card.slug}`}>
+                <EditorialCard
+                  image={card.image}
+                  title={card.title}
+                  description={card.description}
+                />
+              </Link>
             ))}
           </div>
         </div>

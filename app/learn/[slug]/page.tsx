@@ -305,7 +305,7 @@ export default function Page() {
                   performing in the real world.
                 </p>
                 <Link href="/booking" className="block relative">
-                  <button className="w-full py-4 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:bg-[#4B60FF] transition-colors flex items-center justify-center gap-2">
+                  <button className="w-full py-4 rounded-full bg-[var(--brand-primary)] text-white font-bold hover:bg-[#4B60FF] transition-colors flex items-center justify-center gap-2 cursor-pointer">
                     Check My Battery
                     <ArrowRight className="w-4 h-4" />
                   </button>

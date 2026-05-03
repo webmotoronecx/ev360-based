@@ -26,7 +26,7 @@ export interface Article {
 export const articles: Article[] = [
   {
     slug: "lfp-vs-nmc-australia",
-    image: "https://images.unsplash.com/photo-1590502160462-236c7f8924b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXR0ZXJ5JTIwY2VsbHMlMjBjaGVtaXN0cnl8ZW58MXx8fHwxNzY0MTE5MDIwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/assets/articles/lfp-vs-nmc-australia/hero.webp",
     title: "LFP vs. NMC: Which Battery Tech is Better for Australian Drivers?",
     description: "LFP batteries are taking over, but are they right for your needs? We compare the two dominant chemistries in a comprehensive guide.",
     category: "Battery Basics",
