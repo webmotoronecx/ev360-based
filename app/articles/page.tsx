@@ -6,19 +6,10 @@ import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { ScrollProgress } from '@/components/ScrollProgress';
-import { articles } from '@/lib/data/articles';
-
-const FEATURED_SLUGS = [
-  'understanding-range-degradation',
-  'battery-health-ev-value',
-  'why-need-battery-certificate',
-  'charging-best-practices',
-  'true-cost-ownership-australia',
-  'pre-purchase-inspection-guide',
-];
+import { articles, FEATURED_ARTICLE_SLUGS } from '@/lib/data/articles';
 
 export default function Page() {
-  const featured = FEATURED_SLUGS
+  const featured = FEATURED_ARTICLE_SLUGS
     .map((slug) => articles.find((a) => a.slug === slug))
     .filter((a): a is NonNullable<typeof a> => Boolean(a))
     .map((a) => ({

@@ -1,3 +1,16 @@
+/**
+ * Slugs of the 6 articles featured on /articles, in display order.
+ * Used by /articles (listing) and /articles/[slug] (prev/next navigation
+ * with wrap-around — last article's "next" is the first, etc.).
+ */
+export const FEATURED_ARTICLE_SLUGS = [
+  'understanding-range-degradation',
+  'battery-health-ev-value',
+  'why-need-battery-certificate',
+  'charging-best-practices',
+  'true-cost-ownership-australia',
+  'pre-purchase-inspection-guide',
+] as const;
 
 export interface Article {
   slug: string;

@@ -5,7 +5,7 @@ import { useParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { ArrowLeft, ArrowRight, Calendar, Clock, User, Twitter, Linkedin, Facebook, Link as LinkIcon } from 'lucide-react';
-import { articles } from '@/lib/data/articles';
+import { articles, FEATURED_ARTICLE_SLUGS } from '@/lib/data/articles';
 import { Footer } from '@/components/Footer';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { ScrollProgress } from '@/components/ScrollProgress';
@@ -74,9 +74,26 @@ export default function Page() {
   const heroImage = `/assets/articles/${article.slug}/hero.webp`;
   const processedContent = processContent(article.content || '');
   const headings = getHeadings(article.content || '');
-  const relatedArticles = articles
-    .filter((a) => a.category === article.category && a.slug !== article.slug)
-    .slice(0, 2);
+
+  // Read Next: previous + next from the featured list, wrapping around.
+  // (Article 1's "previous" is Article 6; Article 6's "next" is Article 1.)
+  const featuredIndex = FEATURED_ARTICLE_SLUGS.indexOf(
+    article.slug as (typeof FEATURED_ARTICLE_SLUGS)[number]
+  );
+  const total = FEATURED_ARTICLE_SLUGS.length;
+  const relatedArticles =
+    featuredIndex >= 0
+      ? [
+          articles.find(
+            (a) => a.slug === FEATURED_ARTICLE_SLUGS[(featuredIndex - 1 + total) % total]
+          ),
+          articles.find(
+            (a) => a.slug === FEATURED_ARTICLE_SLUGS[(featuredIndex + 1) % total]
+          ),
+        ].filter((a): a is NonNullable<typeof a> => Boolean(a))
+      : articles
+          .filter((a) => a.category === article.category && a.slug !== article.slug)
+          .slice(0, 2);
 
   return (
     <div className="min-h-screen bg-white">
