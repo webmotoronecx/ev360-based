@@ -9,6 +9,9 @@ import { ScrollProgress } from '@/components/ScrollProgress';
 import { articles, FEATURED_ARTICLE_SLUGS } from '@/lib/data/articles';
 
 export default function Page() {
+  // Featured articles (the 6 designed in Figma) first, then everything else.
+  // Featured ones use their local Figma hero; older articles keep their existing image.
+  const featuredSet = new Set<string>(FEATURED_ARTICLE_SLUGS);
   const featured = FEATURED_ARTICLE_SLUGS
     .map((slug) => articles.find((a) => a.slug === slug))
     .filter((a): a is NonNullable<typeof a> => Boolean(a))
@@ -16,6 +19,8 @@ export default function Page() {
       ...a,
       image: `/assets/articles/${a.slug}/hero.webp`,
     }));
+  const others = articles.filter((a) => !featuredSet.has(a.slug));
+  const allArticles = [...featured, ...others];
 
   return (
     <div className="min-h-screen bg-white">
@@ -73,7 +78,7 @@ export default function Page() {
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featured.map((article, index) => (
+            {allArticles.map((article, index) => (
               <motion.article
                 key={article.slug}
                 initial={{ opacity: 0, y: 40 }}
