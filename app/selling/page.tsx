@@ -58,6 +58,7 @@ export default function Page() {
       ctaText="Get Certified"
       ctaLink="/booking"
       content={content}
+      proofImage="/assets/selling/proof-you-need.png"
     />
   );
 }
