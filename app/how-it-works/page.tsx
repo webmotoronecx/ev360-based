@@ -7,7 +7,6 @@ import { Calendar, MapPin, FileCheck, MessageCircle, Battery, Zap, ChevronDown, 
 import Link from 'next/link';
 import { useState } from 'react';
 
-import { ReportPreview } from '@/components/ReportPreview';
 
 export default function Page() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -185,9 +184,7 @@ export default function Page() {
                       <ImageWithFallback src="/assets/we-arrive-inspect.png" alt="We arrive and inspect" className="absolute inset-0 w-full h-full object-cover" />
                     )}
                     {index === 3 && (
-                      <div className="absolute inset-0 bg-[#d3ddde]/50 flex items-center justify-center">
-                        <ReportPreview className="w-full max-w-sm shadow-2xl scale-90" />
-                      </div>
+                      <ImageWithFallback src="/assets/how-it-works/receive-report.png" alt="Receive your report" className="absolute inset-0 w-full h-full object-cover" />
                     )}
                   </motion.div>
                 </motion.div>
