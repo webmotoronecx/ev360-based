@@ -1,52 +1,26 @@
 "use client";
 
 import { Footer } from '@/components/Footer';
-import { EditorialCard } from '@/components/EditorialCard';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { motion } from 'motion/react';
-import { BookOpen, TrendingUp, Shield, Zap } from 'lucide-react';
-import { useState } from 'react';
+import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import { articles } from '@/lib/data/articles';
+import { ScrollProgress } from '@/components/ScrollProgress';
+import { articles, FEATURED_ARTICLE_SLUGS } from '@/lib/data/articles';
 
 export default function Page() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
-  // Calculate dynamic counts
-  const categoryCounts = articles.reduce((acc, article) => {
-    acc[article.category] = (acc[article.category] || 0) + 1;
-    return acc;
-  }, {} as Record<string, number>);
-
-  const categories = [
-    {
-      icon: BookOpen,
-      title: "Battery Basics",
-      color: "var(--brand-primary)"
-    },
-    {
-      icon: TrendingUp,
-      title: "Buying & Selling",
-      color: "var(--brand-primary)"
-    },
-    {
-      icon: Shield,
-      title: "Maintenance & Care",
-      color: "var(--brand-primary)"
-    },
-    {
-      icon: Zap,
-      title: "Performance",
-      color: "var(--brand-primary)"
-    }
-  ];
-
-  const filteredArticles = selectedCategory === "All"
-    ? articles
-    : articles.filter(article => article.category === selectedCategory);
+  const featured = FEATURED_ARTICLE_SLUGS
+    .map((slug) => articles.find((a) => a.slug === slug))
+    .filter((a): a is NonNullable<typeof a> => Boolean(a))
+    .map((a) => ({
+      ...a,
+      image: `/assets/articles/${a.slug}/hero.webp`,
+    }));
 
   return (
     <div className="min-h-screen bg-white">
+      <ScrollProgress />
+
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden" data-nav-theme="dark">
         <motion.div
@@ -80,94 +54,60 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Categories */}
-      <section className="py-24 bg-zinc-50" data-nav-theme="light">
-        <div className="max-w-[1440px] mx-auto px-8 lg:px-16">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {categories.map((category, index) => {
-              const Icon = category.icon;
-              const isSelected = selectedCategory === category.title;
-              const count = categoryCounts[category.title] || 0;
-
-              return (
-                <motion.div
-                  key={index}
-                  className={`bg-white rounded-[2rem] p-8 text-center space-y-4 cursor-pointer border transition-all ${
-                    isSelected ? 'border-[var(--brand-primary)] ring-2 ring-[var(--brand-primary)]/20' : 'border-transparent hover:border-zinc-200'
-                  }`}
-                  onClick={() => setSelectedCategory(isSelected ? "All" : category.title)}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
-                >
-                  <motion.div
-                    className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#eaedff]"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                  >
-                    <Icon className="w-8 h-8" style={{ color: category.color }} />
-                  </motion.div>
-                  <h3 className="text-xl">{category.title}</h3>
-                  <p className="text-zinc-500 text-sm font-mono">{count} {count === 1 ? 'article' : 'articles'}</p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Articles Grid */}
+      {/* Latest Articles */}
       <section className="py-32 bg-white" data-nav-theme="light">
         <div className="max-w-[1440px] mx-auto px-8 lg:px-16">
           <motion.div
-            className="mb-20 flex justify-between items-end"
+            className="mb-20 max-w-3xl"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div>
-              <h2 className="text-5xl md:text-6xl font-light mb-6 tracking-tight">
-                {selectedCategory === "All" ? "Latest Articles" : `${selectedCategory} Articles`}
-              </h2>
-              <p className="text-xl text-zinc-600 max-w-2xl">
-                {selectedCategory === "All"
-                  ? "Everything you need to know about EV battery health, maintenance, and ownership"
-                  : `Browse our curated guides about ${selectedCategory.toLowerCase()}`}
-              </p>
-            </div>
-            {selectedCategory !== "All" && (
-              <button
-                onClick={() => setSelectedCategory("All")}
-                className="text-zinc-500 hover:text-[var(--brand-primary)] transition-colors underline underline-offset-4"
-              >
-                View all articles
-              </button>
-            )}
+            <h2 className="text-5xl md:text-6xl font-light mb-6 tracking-tight">
+              Latest Articles
+            </h2>
+            <p className="text-xl text-zinc-600">
+              Everything you need to know about EV battery health, maintenance, and ownership.
+            </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
-            {filteredArticles.map((article, index) => (
-              <motion.div
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featured.map((article, index) => (
+              <motion.article
                 key={article.slug}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.6, delay: (index % 3) * 0.1 }}
-                layout
               >
-                <Link href={`/learn/${article.slug}`}>
-                  <EditorialCard {...article} />
+                <Link
+                  href={`/learn/${article.slug}`}
+                  className="group block bg-white rounded-2xl overflow-hidden border border-zinc-100 hover:border-zinc-200 hover:shadow-xl transition-all duration-300 h-full"
+                >
+                  <div className="relative aspect-[4/3] bg-zinc-100 overflow-hidden">
+                    <ImageWithFallback
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="p-8 space-y-4">
+                    <h3 className="text-2xl font-light text-zinc-900 leading-tight">
+                      {article.title}
+                    </h3>
+                    <p className="text-zinc-600 text-sm leading-relaxed">
+                      {article.description}
+                    </p>
+                    <div className="pt-4 border-t border-zinc-100 flex items-center gap-2 text-[var(--brand-primary)] text-xs font-bold tracking-[0.6px] uppercase">
+                      Read Article
+                      <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
                 </Link>
-              </motion.div>
+              </motion.article>
             ))}
           </div>
-
-          {filteredArticles.length === 0 && (
-            <div className="text-center py-20 text-zinc-500">
-              No articles found in this category.
-            </div>
-          )}
         </div>
       </section>
 

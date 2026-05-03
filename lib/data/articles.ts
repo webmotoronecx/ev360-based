@@ -1,6 +1,6 @@
 /**
- * Slugs of the 6 articles featured on /articles, in display order.
- * Used by /articles (listing) and /articles/[slug] (prev/next navigation
+ * Slugs of the 6 articles featured on /learn, in display order.
+ * Used by /learn (listing) and /learn/[slug] (prev/next navigation
  * with wrap-around — last article's "next" is the first, etc.).
  */
 export const FEATURED_ARTICLE_SLUGS = [
