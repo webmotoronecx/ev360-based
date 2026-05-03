@@ -66,6 +66,7 @@ export default function Page() {
       ctaText="Book Inspection"
       ctaLink="/booking"
       content={content}
+      proofImage="/assets/buying/proof-you-need.png"
     />
   );
 }

@@ -25,6 +25,9 @@ interface LandingPageProps {
   faq?: { q: string; a: string }[];
   content?: React.ReactNode;
   form?: React.ReactNode;
+  /** Optional certificate/report image for "The Proof You Need" section.
+   *  When provided, replaces the live <ReportPreview> with a static image. */
+  proofImage?: string;
 }
 
 export function LandingPageLayout({
@@ -39,7 +42,8 @@ export function LandingPageLayout({
   secondaryCtaLink,
   faq,
   content,
-  form
+  form,
+  proofImage
 }: LandingPageProps) {
   return (
     <div className="min-h-screen bg-white">
@@ -165,8 +169,17 @@ export function LandingPageLayout({
           </div>
         </section>
       ) : (
-        <section className="py-24 bg-zinc-900 overflow-hidden" data-nav-theme="dark">
-          <div className="max-w-[1440px] mx-auto px-8 lg:px-16">
+        <section className="relative py-24 bg-black overflow-hidden" data-nav-theme="dark">
+          <div
+            className="absolute right-[-200px] top-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(51,74,255,0.35) 0%, rgba(51,74,255,0.12) 35%, transparent 70%)",
+              filter: "blur(80px)",
+            }}
+          />
+
+          <div className="relative z-10 max-w-[1440px] mx-auto px-8 lg:px-16">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -181,7 +194,7 @@ export function LandingPageLayout({
                   Our independent EV360 Certificate provides the data-backed assurance required for high-value transactions, insurance policies, and fleet management decisions.
                 </p>
                 <Link href={ctaLink}>
-                  <button className="px-8 py-3 rounded-full bg-white text-zinc-900 font-medium hover:bg-zinc-200 transition-colors">
+                  <button className="px-8 py-3 rounded-full bg-white text-[var(--brand-primary)] font-medium hover:bg-zinc-100 transition-colors">
                     {ctaText}
                   </button>
                 </Link>
@@ -194,10 +207,20 @@ export function LandingPageLayout({
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-tr from-[var(--brand-primary)]/20 to-purple-500/10 rounded-full blur-[100px] -z-10" />
-                <TiltCard>
-                  <ReportPreview className="w-full max-w-md mx-auto shadow-2xl rotate-[2deg] hover:rotate-0 transition-transform duration-500" />
-                </TiltCard>
+                {proofImage ? (
+                  <ImageWithFallback
+                    src={proofImage}
+                    alt="EV360 Certificate"
+                    className="w-full max-w-md mx-auto"
+                  />
+                ) : (
+                  <>
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[var(--brand-primary)]/20 to-purple-500/10 rounded-full blur-[100px] -z-10" />
+                    <TiltCard>
+                      <ReportPreview className="w-full max-w-md mx-auto shadow-2xl rotate-[2deg] hover:rotate-0 transition-transform duration-500" />
+                    </TiltCard>
+                  </>
+                )}
               </motion.div>
             </div>
           </div>
