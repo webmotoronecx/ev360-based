@@ -170,12 +170,13 @@ export function LandingPageLayout({
         </section>
       ) : (
         <section className="relative py-24 bg-black overflow-hidden" data-nav-theme="dark">
+          {/* Wide saturated blue glow centered roughly behind the certificate, per Figma node 168:48 */}
           <div
-            className="absolute right-[-200px] top-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full pointer-events-none"
+            className="absolute left-1/2 top-1/2 -translate-x-1/4 -translate-y-1/2 w-[1600px] h-[1100px] rounded-full pointer-events-none"
             style={{
               background:
-                "radial-gradient(circle, rgba(51,74,255,0.35) 0%, rgba(51,74,255,0.12) 35%, transparent 70%)",
-              filter: "blur(80px)",
+                "radial-gradient(ellipse at center, rgba(51,74,255,0.65) 0%, rgba(51,74,255,0.35) 20%, rgba(51,74,255,0.15) 40%, transparent 65%)",
+              filter: "blur(40px)",
             }}
           />
 
