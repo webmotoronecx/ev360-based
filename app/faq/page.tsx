@@ -1,7 +1,6 @@
 "use client";
 
 import { Footer } from '@/components/Footer';
-import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { motion } from 'motion/react';
 import { Plus, Minus } from 'lucide-react';
 import { useState } from 'react';
@@ -125,21 +124,19 @@ export default function Page() {
     <div className="min-h-screen bg-white">
       <ScrollProgress />
 
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden" data-nav-theme="dark">
-        <motion.div
-          className="absolute inset-0"
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.5 }}
-        >
-          <ImageWithFallback
-            src="/assets/16_FAQ/hero_faq.webp"
-            alt="Customer support"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
-        </motion.div>
+      {/* Hero Section — dark with blue radial glow, per Figma node 41:5184 */}
+      <section
+        className="relative h-screen flex items-center justify-center overflow-hidden bg-black"
+        data-nav-theme="dark"
+      >
+        <div
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] rounded-full pointer-events-none"
+          style={{
+            background:
+              'radial-gradient(circle, rgba(51,74,255,0.45) 0%, rgba(51,74,255,0.15) 30%, transparent 65%)',
+            filter: 'blur(60px)',
+          }}
+        />
 
         <div className="relative z-10 max-w-[1440px] mx-auto px-8 lg:px-16 text-center">
           <motion.div
