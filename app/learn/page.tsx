@@ -9,18 +9,16 @@ import { ScrollProgress } from '@/components/ScrollProgress';
 import { articles, FEATURED_ARTICLE_SLUGS } from '@/lib/data/articles';
 
 export default function Page() {
-  // Featured articles (the 6 designed in Figma) first, then everything else.
-  // Featured ones use their local Figma hero; older articles keep their existing image.
-  const featuredSet = new Set<string>(FEATURED_ARTICLE_SLUGS);
-  const featured = FEATURED_ARTICLE_SLUGS
+  // Show only the 6 featured articles (the ones designed in Figma).
+  // Older articles still live in lib/data/articles.ts and are reachable
+  // by direct URL, but they're not surfaced on this listing.
+  const allArticles = FEATURED_ARTICLE_SLUGS
     .map((slug) => articles.find((a) => a.slug === slug))
     .filter((a): a is NonNullable<typeof a> => Boolean(a))
     .map((a) => ({
       ...a,
       image: `/assets/articles/${a.slug}/hero.webp`,
     }));
-  const others = articles.filter((a) => !featuredSet.has(a.slug));
-  const allArticles = [...featured, ...others];
 
   return (
     <div className="min-h-screen bg-white">
