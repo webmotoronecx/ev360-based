@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getGHLWebhook } from "@/config/ghl-webhooks";
+import { isBlockedEmail } from "@/config/spam-blacklist";
 
 /**
  * Receives form submissions from the website and forwards them to the
@@ -63,6 +64,15 @@ export async function POST(request: NextRequest) {
 
     if (message && (typeof message !== "string" || message.length > 5000)) {
       return NextResponse.json({ error: "Message too long" }, { status: 400 });
+    }
+
+    // ----- Spam filter 3: email blacklist -----
+    // Drop submissions from known spam/disposable domains and emails.
+    // Edit config/spam-blacklist.ts to add more entries.
+    // Silent 200 so bots think it worked and stop retrying.
+    if (isBlockedEmail(email)) {
+      console.warn(`[spam] Blocked email (formId: ${formId}, email: ${email})`);
+      return NextResponse.json({ ok: true });
     }
 
     // Strip honeypot and elapsed from forwarded payload
