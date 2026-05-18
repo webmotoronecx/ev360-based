@@ -3,7 +3,7 @@
 import { Footer } from '@/components/Footer';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import { motion } from 'motion/react';
-import { Battery, Cpu, Zap, Shield, CheckCircle, Activity, Gauge, FileText, ArrowRight } from 'lucide-react';
+import { Battery, Cpu, Zap, Shield, CheckCircle, Activity, Gauge, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Page() {
@@ -332,53 +332,12 @@ export default function Page() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="relative h-[700px] rounded-[2rem] bg-gradient-to-br from-zinc-100 to-zinc-50 flex items-center justify-center p-8 shadow-2xl">
-                <div className="bg-white rounded-[2rem] shadow-xl p-8 w-full max-w-md">
-                  <div className="space-y-6">
-                    <div className="flex items-center justify-between pb-6 border-b border-zinc-200">
-                      <div>
-                        <h3 className="text-2xl font-medium">EV Health Report</h3>
-                        <p className="text-sm text-zinc-500 mt-1">Full Diagnostic Analysis</p>
-                      </div>
-                      <div className="w-16 h-16 rounded-2xl bg-[#334AFF] flex items-center justify-center">
-                        <FileText className="w-8 h-8 text-white" />
-                      </div>
-                    </div>
-
-                    <div className="space-y-4">
-                      <div className="p-4 rounded-xl bg-green-50 border border-green-200">
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-medium text-green-900">Overall Health</span>
-                          <span className="text-2xl font-bold text-green-600">92%</span>
-                        </div>
-                        <div className="w-full h-2 bg-green-200 rounded-full overflow-hidden">
-                          <div className="h-full w-[92%] bg-green-600 rounded-full" />
-                        </div>
-                      </div>
-
-                      <div className="p-4 rounded-xl bg-blue-50 border border-blue-200">
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-medium text-blue-900">Battery SOH</span>
-                          <span className="text-2xl font-bold text-blue-600">89%</span>
-                        </div>
-                        <div className="w-full h-2 bg-blue-200 rounded-full overflow-hidden">
-                          <div className="h-full w-[89%] bg-blue-600 rounded-full" />
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-2 gap-4 pt-4">
-                        <div className="p-3 rounded-xl bg-zinc-50">
-                          <p className="text-xs text-zinc-500 mb-1">Charging</p>
-                          <p className="text-lg font-medium text-zinc-900">Excellent</p>
-                        </div>
-                        <div className="p-3 rounded-xl bg-zinc-50">
-                          <p className="text-xs text-zinc-500 mb-1">Safety</p>
-                          <p className="text-lg font-medium text-zinc-900">Passed</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="relative h-[700px] rounded-[2rem] overflow-hidden shadow-2xl">
+                <ImageWithFallback
+                  src="/assets/how-it-works/receive-report.webp"
+                  alt="EV health report"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
               </div>
             </motion.div>
           </div>
