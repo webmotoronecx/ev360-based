@@ -47,22 +47,22 @@ export const ghlWebhooks: Record<string, GHLWebhookConfig> = {
 
   "form-fleet": {
     label: "Website — Fleet Managers",
-    url: "REPLACE_WITH_GHL_WEBHOOK_URL",
+    url: "https://services.leadconnectorhq.com/hooks/Le0a16YsUwJZPkYCafpJ/webhook-trigger/LxEsWTGZkUgO01pVBGuO",
   },
 
   "form-dealership": {
     label: "Website — Dealerships",
-    url: "REPLACE_WITH_GHL_WEBHOOK_URL",
+    url: "https://services.leadconnectorhq.com/hooks/Le0a16YsUwJZPkYCafpJ/webhook-trigger/CPJfEFevsbXY269p88e3",
   },
 
   "form-insurance": {
     label: "Website — Insurers",
-    url: "REPLACE_WITH_GHL_WEBHOOK_URL",
+    url: "https://services.leadconnectorhq.com/hooks/Le0a16YsUwJZPkYCafpJ/webhook-trigger/m4QNUguE17uWBVDcjDQf",
   },
 
   "form-property": {
     label: "Website — Strata & Property",
-    url: "REPLACE_WITH_GHL_WEBHOOK_URL",
+    url: "https://services.leadconnectorhq.com/hooks/Le0a16YsUwJZPkYCafpJ/webhook-trigger/TM7uClTljjpso4Pc1DF0",
   },
 };
 
