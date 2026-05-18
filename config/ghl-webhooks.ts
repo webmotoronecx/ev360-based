@@ -14,6 +14,22 @@
  *
  * Each form has its own unique webhook URL so each can trigger a
  * different workflow with its own customer and admin email templates.
+ *
+ * Recommended GHL setup for each form:
+ * ┌──────────────────┬─────────────────────────┬─────────────────────┐
+ * │ formId           │ Pipeline                │ Add Tag             │
+ * ├──────────────────┼─────────────────────────┼─────────────────────┤
+ * │ form-contact     │ General Enquiries       │ website-contact     │
+ * │ form-fleet       │ Business Partnerships   │ website-fleet       │
+ * │ form-dealership  │ Business Partnerships   │ website-dealership  │
+ * │ form-insurance   │ Business Partnerships   │ website-insurance   │
+ * │ form-property    │ Business Partnerships   │ website-property    │
+ * └──────────────────┴─────────────────────────┴─────────────────────┘
+ *
+ * Source attribution: the endpoint forwards `formLabel` with every
+ * submission, so each GHL workflow can populate Opportunity Source
+ * with {{inboundWebhookRequest.formLabel}} to auto-tag the form name
+ * (e.g. "Website — Fleet Managers") on every opportunity.
  */
 
 export interface GHLWebhookConfig {
