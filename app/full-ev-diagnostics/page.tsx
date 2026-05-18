@@ -141,7 +141,7 @@ export default function Page() {
           transition={{ duration: 1.5 }}
         >
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1617788138017-80ad40651399?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            src="/assets/full-ev-diagnostics/hero.webp"
             alt="Full EV diagnostics"
             className="w-full h-full object-cover"
           />
@@ -155,9 +155,9 @@ export default function Page() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#334AFF] border border-white/20 backdrop-blur-md mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 border border-white/20 backdrop-blur-md mb-4">
               <Activity className="w-3 h-3 text-white" />
-              <span className="text-white text-xs font-mono uppercase tracking-wider">Professional Grade</span>
+              <span className="text-white text-xs font-mono uppercase tracking-[0.6px]">Professional Grade</span>
             </div>
             <h1 className="text-5xl md:text-6xl font-light text-white tracking-tight leading-[1.1]">
               Full EV Diagnostics
